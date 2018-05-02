@@ -14,7 +14,7 @@ from operator_py.proposal_target import *
 from operator_py.box_annotator_ohem import *
 
 
-class resnet_v1_101_rcnn(Symbol):
+class resnet_v1_101_rcnn_attri_v2(Symbol):
     def __init__(self):
         """
         Use __init__ to define parameter network needs
@@ -754,7 +754,7 @@ class resnet_v1_101_rcnn(Symbol):
                     threshold=cfg.TRAIN.RPN_NMS_THRESH, rpn_min_size=cfg.TRAIN.RPN_MIN_SIZE)
             # ROI proposal target
             gt_boxes_reshape = mx.sym.Reshape(data=gt_boxes, shape=(-1, 5), name='gt_boxes_reshape')
-            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,41),name='attri_reshape')
+            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,115),name='attri_reshape')
             rois, label,attri,bbox_target, bbox_weight = mx.sym.Custom(rois=rois, gt_boxes=gt_boxes_reshape,attri_=attri_reshape,
                                                                   op_type='proposal_target',
                                                                   num_classes=num_reg_classes,
@@ -879,7 +879,7 @@ class resnet_v1_101_rcnn(Symbol):
             #multilabel_loss_2 = mx.sym.broadcast_mul(multilabel_loss_2, loss_mask)
             #multilabel_loss_2 = mx.sym.sum(multilabel_loss_2) / mx.sym.sum(loss_mask)
             multilabel_loss = multilabel_loss_1# + multilabel_loss_2
-            #multilabel_loss = mx.sym.MakeLoss(multilabel_loss, grad_scale=1./(num_attri))
+            multilabel_loss = mx.sym.MakeLoss(multilabel_loss, grad_scale=1./(num_attri))
             #
 
             # overlap loss
@@ -890,7 +890,7 @@ class resnet_v1_101_rcnn(Symbol):
             #overlap_loss = mx.sym.MakeLoss(overlap_loss_, grad_scale=1./(num_classes-1))
             #
 
-            group = mx.symbol.Group([rpn_cls_prob, rpn_bbox_loss, cls_prob, bbox_loss,mx.sym.BlockGrad(rcnn_label)])
+            group = mx.symbol.Group([rpn_cls_prob, rpn_bbox_loss, cls_prob, bbox_loss,multilabel_loss,mx.sym.BlockGrad(rcnn_label)])
 
         else:
             cls_prob = mx.sym.SoftmaxActivation(name='cls_prob', data=cls_score)

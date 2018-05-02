@@ -14,7 +14,7 @@ from operator_py.proposal_target import *
 from operator_py.box_annotator_ohem import *
 
 
-class resnet_v1_101_rcnn(Symbol):
+class resnet_v1_101_rcnn_org(Symbol):
     def __init__(self):
         """
         Use __init__ to define parameter network needs
@@ -616,7 +616,7 @@ class resnet_v1_101_rcnn(Symbol):
         res4b22 = mx.symbol.broadcast_add(name='res4b22', *[res4b21_relu, scale4b22_branch2c])
         res4b22_relu = mx.symbol.Activation(name='res4b22_relu', data=res4b22, act_type='relu')
         return res4b22_relu
-
+        
     def get_resnet_v1_conv5(self, conv_feat):
         res5a_branch1 = mx.symbol.Convolution(name='res5a_branch1', data=conv_feat, num_filter=2048, pad=(0, 0),
                                               kernel=(1, 1), stride=(1, 1), no_bias=True)
@@ -695,7 +695,6 @@ class resnet_v1_101_rcnn(Symbol):
 
         # config alias for convenient
         num_classes = cfg.dataset.NUM_CLASSES
-        num_attri = cfg.dataset.NUM_ATTRI
         num_reg_classes = (2 if cfg.CLASS_AGNOSTIC else num_classes)
         num_anchors = cfg.network.NUM_ANCHORS
 
@@ -704,7 +703,6 @@ class resnet_v1_101_rcnn(Symbol):
             data = mx.sym.Variable(name="data")
             im_info = mx.sym.Variable(name="im_info")
             gt_boxes = mx.sym.Variable(name="gt_boxes")
-            _attri = mx.sym.Variable(name='attri')
             rpn_label = mx.sym.Variable(name='label')
             rpn_bbox_target = mx.sym.Variable(name='bbox_target')
             rpn_bbox_weight = mx.sym.Variable(name='bbox_weight')
@@ -754,8 +752,7 @@ class resnet_v1_101_rcnn(Symbol):
                     threshold=cfg.TRAIN.RPN_NMS_THRESH, rpn_min_size=cfg.TRAIN.RPN_MIN_SIZE)
             # ROI proposal target
             gt_boxes_reshape = mx.sym.Reshape(data=gt_boxes, shape=(-1, 5), name='gt_boxes_reshape')
-            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,41),name='attri_reshape')
-            rois, label,attri,bbox_target, bbox_weight = mx.sym.Custom(rois=rois, gt_boxes=gt_boxes_reshape,attri_=attri_reshape,
+            rois, label, bbox_target, bbox_weight = mx.sym.Custom(rois=rois, gt_boxes=gt_boxes_reshape,
                                                                   op_type='proposal_target',
                                                                   num_classes=num_reg_classes,
                                                                   batch_images=cfg.TRAIN.BATCH_IMAGES,
@@ -788,42 +785,15 @@ class resnet_v1_101_rcnn(Symbol):
         conv_new_1 = mx.sym.Convolution(data=relu1, kernel=(1, 1), num_filter=256, name="conv_new_1")
         conv_new_1_relu = mx.sym.Activation(data=conv_new_1, act_type='relu', name='conv_new_1_relu')
 
-        # modified by zhaoyang
-
-        roi_feature = mx.symbol.ROIPooling(
-            name='roi_feature', data=conv_new_1_relu, rois=rois, pooled_size=(7, 7), spatial_scale=0.0625)
-
-        roi_mask_1 = mx.symbol.ROIPooling(
-            name='roi_mask_1', data=conv_new_1_relu, rois=rois, pooled_size=(14, 14), spatial_scale=0.0625)
-        roi_mask_2 = mx.sym.Convolution(data=roi_mask_1, kernel=(3, 3), pad=(1, 1), num_filter=256, name="roi_mask_2")
-        roi_mask_2_relu = mx.sym.Activation(data=roi_mask_2, act_type='relu', name='roi_mask_1_relu')
-        roi_mask_3 = mx.sym.Convolution(data=roi_mask_2_relu, kernel=(3, 3), pad=(1, 1), num_filter=256, name='roi_mask_3')
-        roi_mask_3_relu = mx.sym.Activation(data=roi_mask_3, act_type='relu', name='roi_mask_2_relu')
-
-        roi_part_1 = mx.sym.Convolution(data=roi_mask_3_relu, kernel=(1, 1), pad=(0, 0), num_filter=num_attri, name='roi_part_1')
-        #roi_part_2 = mx.sym.Convolution(data=roi_mask_3_relu, kernel=(1, 1), pad=(0, 0), num_filter=num_classes - 1, name='roi_part_2')
-        #roi_part_1_sigmoid = mx.sym.Activation(data=roi_part_1, act_type='sigmoid', name='roi_part_1_sigmoid')
-        roi_part_1_softmax = mx.sym.softmax(data = roi_part_1,axis=1)
-        #roi_part_2_sigmoid = mx.sym.Activation(data=roi_part_2, act_type='sigmoid', name='roi_part_2_sigmoid')
-
-        # multi label loss
-        roi_part_mean_1 = mx.sym.max(roi_part_1_softmax, axis=(2,3))
-        #roi_part_mean_1 = mx.sym.mean(roi_part_1_sigmoid, axis=(2,3))
-        #roi_part_mean_2 = mx.sym.mean(roi_part_2_sigmoid, axis=(2,3))
-        ###
-
-        # overlap loss
-        #roi_part_mul = roi_part_1_sigmoid * roi_part_2_sigmoid
-        #roi_part_mul_mean = mx.sym.mean(roi_part_mul, axis=(2,3))
-        #
+        roi_pool = mx.symbol.ROIPooling(
+            name='roi_pool', data=conv_new_1_relu, rois=rois, pooled_size=(7, 7), spatial_scale=0.0625)
 
         # 2 fc
-        fc_new_1 = mx.symbol.FullyConnected(name='fc_new_1', data=roi_feature, num_hidden=1024)
+        fc_new_1 = mx.symbol.FullyConnected(name='fc_new_1', data=roi_pool, num_hidden=1024)
         fc_new_1_relu = mx.sym.Activation(data=fc_new_1, act_type='relu', name='fc_new_1_relu')
 
         fc_new_2 = mx.symbol.FullyConnected(name='fc_new_2', data=fc_new_1_relu, num_hidden=1024)
         fc_new_2_relu = mx.sym.Activation(data=fc_new_2, act_type='relu', name='fc_new_2_relu')
-
 
         # cls_score/bbox_pred
         cls_score = mx.symbol.FullyConnected(name='cls_score', data=fc_new_2_relu, num_hidden=num_classes)
@@ -842,64 +812,27 @@ class resnet_v1_101_rcnn(Symbol):
                                                                   data=(bbox_pred - bbox_target))
                 bbox_loss = mx.sym.MakeLoss(name='bbox_loss', data=bbox_loss_,
                                             grad_scale=1.0 / cfg.TRAIN.BATCH_ROIS_OHEM)
-
-
                 rcnn_label = labels_ohem
             else:
                 cls_prob = mx.sym.SoftmaxOutput(name='cls_prob', data=cls_score, label=label, normalization='valid')
                 bbox_loss_ = bbox_weight * mx.sym.smooth_l1(name='bbox_loss_', scalar=1.0,
                                                             data=(bbox_pred - bbox_target))
                 bbox_loss = mx.sym.MakeLoss(name='bbox_loss', data=bbox_loss_, grad_scale=1.0 / cfg.TRAIN.BATCH_ROIS)
-
                 rcnn_label = label
-                rcnn_attri = attri
-
 
             # reshape output
             rcnn_label = mx.sym.Reshape(data=rcnn_label, shape=(cfg.TRAIN.BATCH_IMAGES, -1), name='label_reshape')
-
-            rcnn_attri =  mx.sym.Reshape(data=rcnn_attri, shape=(cfg.TRAIN.BATCH_IMAGES, -1), name='rcnn_attri_reshape')
-
             cls_prob = mx.sym.Reshape(data=cls_prob, shape=(cfg.TRAIN.BATCH_IMAGES, -1, num_classes),
                                       name='cls_prob_reshape')
             bbox_loss = mx.sym.Reshape(data=bbox_loss, shape=(cfg.TRAIN.BATCH_IMAGES, -1, 4 * num_reg_classes),
                                        name='bbox_loss_reshape')
-
-            eps = 1e-5
-            loss_mask = mx.sym.cast((rcnn_label != 0), np.float32)
-            loss_mask = mx.sym.Reshape(loss_mask, shape=(-1, 1))
-            # multilabel loss
-            #label_onehot = mx.sym.one_hot(rcnn_label, num_classes)
-            label_onehot = mx.sym.Reshape(rcnn_attri, shape=(-1, num_attri))
-            #label_onehot = mx.sym.slice_axis(data=label_onehot, axis=1, begin=1, end=num_classes)
-            multilabel_loss_1 = -label_onehot * mx.sym.log(roi_part_mean_1 + eps) - (1-label_onehot) * mx.sym.log(1 - roi_part_mean_1 + eps)
-            multilabel_loss_1 = mx.sym.broadcast_mul(multilabel_loss_1, loss_mask)
-            multilabel_loss_1 = mx.sym.sum(multilabel_loss_1) / mx.sym.sum(loss_mask)
-            #multilabel_loss_2 = -label_onehot * mx.sym.log(roi_part_mean_2 + eps) - (1-label_onehot) * mx.sym.log(1 - roi_part_mean_2 + eps)
-            #multilabel_loss_2 = mx.sym.broadcast_mul(multilabel_loss_2, loss_mask)
-            #multilabel_loss_2 = mx.sym.sum(multilabel_loss_2) / mx.sym.sum(loss_mask)
-            multilabel_loss = multilabel_loss_1# + multilabel_loss_2
-            #multilabel_loss = mx.sym.MakeLoss(multilabel_loss, grad_scale=1./(num_attri))
-            #
-
-            # overlap loss
-            #roi_part_mul_mean
-            #overlap_loss_ = -mx.sym.log(1-roi_part_mul_mean + eps)
-            #overlap_loss_ = mx.sym.broadcast_mul(overlap_loss_, loss_mask)
-            #overlap_loss_ = mx.sym.sum(overlap_loss_) / mx.sym.sum(loss_mask)
-            #overlap_loss = mx.sym.MakeLoss(overlap_loss_, grad_scale=1./(num_classes-1))
-            #
-
-            group = mx.symbol.Group([rpn_cls_prob, rpn_bbox_loss, cls_prob, bbox_loss,mx.sym.BlockGrad(rcnn_label)])
-
+            group = mx.sym.Group([rpn_cls_prob, rpn_bbox_loss, cls_prob, bbox_loss, mx.sym.BlockGrad(rcnn_label)])
         else:
             cls_prob = mx.sym.SoftmaxActivation(name='cls_prob', data=cls_score)
             cls_prob = mx.sym.Reshape(data=cls_prob, shape=(cfg.TEST.BATCH_IMAGES, -1, num_classes),
                                       name='cls_prob_reshape')
             bbox_pred = mx.sym.Reshape(data=bbox_pred, shape=(cfg.TEST.BATCH_IMAGES, -1, 4 * num_reg_classes),
                                        name='bbox_pred_reshape')
-            roi_part_mean_1 = mx.sym.Reshape(data=roi_part_mean_1, shape=(cfg.TEST.BATCH_IMAGES, -1, num_attri),
-                                       name='attri_prob_reshape')
             group = mx.sym.Group([rois, cls_prob, bbox_pred])
 
         self.sym = group
@@ -1051,12 +984,10 @@ class resnet_v1_101_rcnn(Symbol):
     def init_weight_rcnn(self, cfg, arg_params, aux_params):
         arg_params['conv_new_1_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['conv_new_1_weight'])
         arg_params['conv_new_1_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['conv_new_1_bias'])
-
         arg_params['fc_new_1_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['fc_new_1_weight'])
         arg_params['fc_new_1_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['fc_new_1_bias'])
         arg_params['fc_new_2_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['fc_new_2_weight'])
         arg_params['fc_new_2_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['fc_new_2_bias'])
-
         arg_params['cls_score_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['cls_score_weight'])
         arg_params['cls_score_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['cls_score_bias'])
         arg_params['bbox_pred_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['bbox_pred_weight'])
@@ -1072,18 +1003,7 @@ class resnet_v1_101_rcnn(Symbol):
                                                               shape=self.arg_shape_dict['rpn_bbox_pred_weight'])
         arg_params['rpn_bbox_pred_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['rpn_bbox_pred_bias'])
 
-    def init_weight_part(self, arg_params, aux_params):
-        arg_params['roi_mask_2_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_mask_2_weight'])
-        arg_params['roi_mask_2_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_mask_2_bias'])
-        arg_params['roi_mask_3_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_mask_3_weight'])
-        arg_params['roi_mask_3_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_mask_3_bias'])
-        arg_params['roi_part_1_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_part_1_weight'])
-        arg_params['roi_part_1_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_part_1_bias'])
-        #arg_params['roi_part_2_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_part_2_weight'])
-        #arg_params['roi_part_2_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_part_2_bias'])
-
     def init_weight(self, cfg, arg_params, aux_params):
         self.init_weight_rpn(cfg, arg_params, aux_params)
         self.init_weight_rcnn(cfg, arg_params, aux_params)
-        self.init_weight_part(arg_params, aux_params)
 

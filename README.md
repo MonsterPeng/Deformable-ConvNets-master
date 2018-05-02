@@ -270,4 +270,3 @@ A: It has been identified that MXNet on Windows has this problem. So we recommen
 Q: Can you share your caffe implementation?
 
 A: Due to several reasons (code is based on a old, internal Caffe, port to public Caffe needs extra work, time limit, etc.). We do not plan to release our Caffe code. Since current MXNet convolution implementation is very similar to Caffe (almost the same), it is easy to port to Caffe by yourself, the core CUDA code could be kept unchanged. Anyone who wish to do it is welcome to make a pull request.
-new

@@ -1,8 +1,8 @@
 ---
 MXNET_VERSION: "mxnet"
-output_path: "./output/rcnn/coco"
-symbol: resnet_v1_101_rcnn
-gpus: '0,1,2,3'
+output_path: "./output/rcnn/food122"
+symbol: resnet_v1_101_rcnn_attri_v2
+gpus: '0'
 CLASS_AGNOSTIC: false
 SCALES:
 - 600
@@ -43,30 +43,29 @@ network:
   - 1
   - 2
   ANCHOR_SCALES:
-  - 4
   - 8
   - 16
   - 32
-  NUM_ANCHORS: 12
+  NUM_ANCHORS: 9
 dataset:
-  NUM_CLASSES: 81
-  NUM_ATTRI: 1000
-  dataset: coco
-  dataset_path: "./data/coco"
-  image_set: train2014+val2014
+  NUM_CLASSES: 123
+  NUM_ATTRI: 115
+  dataset: Food
+  dataset_path: "./data/VOCdevkit"
+  image_set: 122_trainval
   root_path: "./data"
-  test_image_set: test-dev2015
+  test_image_set: 122_test
   proposal: rpn
 TRAIN:
   lr: 0.0005
-  lr_step: '5.333'
+  lr_step: '4.83'
   warmup: true
   warmup_lr: 0.00005
-  # typically we will use 8000 warmup step for single GPU for COCO
+  # typically we will use 4000 warmup step for single GPU on VOC
   warmup_step: 1000
   begin_epoch: 0
-  end_epoch: 8
-  model_prefix: 'rcnn_coco'
+  end_epoch: 7
+  model_prefix: 'rcnn_food'
   # whether resume training
   RESUME: false
   # whether flip image
@@ -150,6 +149,5 @@ TEST:
   PROPOSAL_MIN_SIZE: 0
   # RCNN nms
   NMS: 0.3
-  test_epoch: 8
-  max_per_image: 100
+  test_epoch: 7
 

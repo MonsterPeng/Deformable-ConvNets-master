@@ -40,17 +40,8 @@ class Food(IMDB):
         self.root_path = root_path
         self.devkit_path = devkit_path
         self.data_path = os.path.join(devkit_path, 'Food' + year)
-        self.classes = [str(x) for x in range(125)]
-	self.classes[0] = '__background__'	
-	self.classes.remove('40')
-	self.classes.remove('84')
-	'''
-	 self.classes = ['__background__',  # always index 0
-                        '78','65','119','67','57',
-                        '117','28','45','7','12',
-                        '24','20','23','98','1',
-                        '66','80','21','82','71',
-                        '58','26','74','118','25']
+        '''
+        self.classes = [str(x) for x in range(51) ]
         
         self.classes = ['__background__',  # always index 0
                         'aeroplane', 'bicycle', 'bird', 'boat',
@@ -58,8 +49,28 @@ class Food(IMDB):
                         'cow', 'diningtable', 'dog', 'horse',
                         'motorbike', 'person', 'pottedplant',
                         'sheep', 'sofa', 'train', 'tvmonitor']
+        
+        self.classes = ['__background__',  # always index 0
+                        '78','65','119','67','130','57',
+                        '117','127','28','45','7','135','12',
+                        '24','20','23','98',
+                        '66','80','21','82','71',
+                        '58','129','133','132','26','128','126','74','118','25','134']
+	'''
+        self.classes = [str(x) for x in range(125)]
+        self.classes.remove('84')
+        self.classes.remove('40')
+        self.classes[0] = '__background__'
         '''
+        self.classes = ['__background__',  # always index 0
+                        '78','65','119','67','57',
+                        '117','28','45','7','12',
+                        '24','20','23','98','1',
+                        '66','80','21','82','71',
+                        '58','26','74','118','25']
+	'''
         self.num_classes = len(self.classes)
+        self.num_attri = 115
         self.image_set_index = self.load_image_set_index()
         self.num_images = len(self.image_set_index)
         print 'num_images', self.num_images
@@ -148,7 +159,7 @@ class Food(IMDB):
         import xml.etree.ElementTree as ET
         roi_rec = dict()
         roi_rec['image'] = self.image_path_from_index(index)
-
+        print roi_rec['image']
         filename = os.path.join(self.data_path, 'Annotations', index + '.xml')
         tree = ET.parse(filename)
         size = tree.find('size')
@@ -166,7 +177,7 @@ class Food(IMDB):
         boxes = np.zeros((num_objs, 4), dtype=np.uint16)
         gt_classes = np.zeros((num_objs), dtype=np.int32)
         overlaps = np.zeros((num_objs, self.num_classes), dtype=np.float32)
-
+        attri_overlaps = np.zeros((num_objs, self.num_attri),dtype=np.float32)
         class_to_index = dict(zip(self.classes, range(self.num_classes)))
         # Load object bounding boxes into a data frame.
         for ix, obj in enumerate(objs):
@@ -176,6 +187,10 @@ class Food(IMDB):
             y1 = float(bbox.find('ymin').text) - 1
             x2 = float(bbox.find('xmax').text) - 1
             y2 = float(bbox.find('ymax').text) - 1
+            attri = obj.find('attribute').find('attr').text
+            if attri != 'None':
+                for i in attri.strip().split(','):
+                    attri_overlaps[ix,int(i)-1] = 1.0
             cls = class_to_index[obj.find('name').text.lower().strip()]
             boxes[ix, :] = [x1, y1, x2, y2]
             gt_classes[ix] = cls
@@ -186,6 +201,7 @@ class Food(IMDB):
                         'gt_overlaps': overlaps,
                         'max_classes': overlaps.argmax(axis=1),
                         'max_overlaps': overlaps.max(axis=1),
+                        'attri_overlaps':attri_overlaps,
                         'flipped': False})
         return roi_rec
 
@@ -299,14 +315,14 @@ class Food(IMDB):
         result_dir = os.path.join(self.result_path, 'results')
         if not os.path.exists(result_dir):
             os.mkdir(result_dir)
-        year_folder = os.path.join(self.result_path, 'results', 'Food' + self.year)
+        year_folder = os.path.join(self.result_path, 'results', 'VOC' + self.year)
         if not os.path.exists(year_folder):
             os.mkdir(year_folder)
-        res_file_folder = os.path.join(self.result_path, 'results', 'Food' + self.year, 'Segmentation')
+        res_file_folder = os.path.join(self.result_path, 'results', 'VOC' + self.year, 'Segmentation')
         if not os.path.exists(res_file_folder):
             os.mkdir(res_file_folder)
 
-        result_dir = os.path.join(self.result_path, 'results', 'Food' + self.year, 'Segmentation')
+        result_dir = os.path.join(self.result_path, 'results', 'VOC' + self.year, 'Segmentation')
         if not os.path.exists(result_dir):
             os.mkdir(result_dir)
 
@@ -367,7 +383,7 @@ class Food(IMDB):
         :return: the evaluation metrics
         """
         confusion_matrix = np.zeros((self.num_classes,self.num_classes))
-        result_dir = os.path.join(self.result_path, 'results', 'Food' + self.year, 'Segmentation')
+        result_dir = os.path.join(self.result_path, 'results', 'VOC' + self.year, 'Segmentation')
 
         for i, index in enumerate(self.image_set_index):
             seg_gt_info = self.load_pascal_segmentation_annotation(index)
@@ -445,7 +461,7 @@ class Food(IMDB):
         #kinds = ['all', 'small', 'medium', 'large']
         kinds = ['all']
 	Maps = []
-        for ovthresh in np.arange(0.5,1.0,0.05):
+        for ovthresh in np.arange(0.5, 1.0,0.05):
             for k in kinds:
                 info_str += 'MAP@{} - ({})\n'.format(ovthresh, k)
                 aps = []
@@ -458,9 +474,61 @@ class Food(IMDB):
                     aps += [ap]
                     #print('AP for {} = {:.4f}'.format(cls, ap))
                     info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
-                Maps += [np.mean(aps)]
+                Maps +=[np.mean(aps)]
                 print('Mean AP@{:.2f} = {:.4f}'.format(ovthresh, np.mean(aps)))
-                info_str += 'Mean AP@{:.1f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
-	print('{:.4f}'.format(np.mean(Maps)))
+                info_str += 'Mean AP@{:.2f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
+        print('{:.4f}'.format( np.mean(Maps)))
         return info_str
-    
+    def append_flipped_images(self, roidb):
+        """
+        append flipped images to an roidb
+        flip boxes coordinates, images will be actually flipped when loading into network
+        :param roidb: [image_index]['boxes', 'gt_classes', 'gt_overlaps', 'flipped']
+        :return: roidb: [image_index]['boxes', 'gt_classes', 'gt_overlaps', 'flipped']
+        """
+        print 'append flipped images to roidb'
+        assert self.num_images == len(roidb)
+        for i in range(self.num_images):
+            roi_rec = roidb[i]
+            boxes = roi_rec['boxes'].copy()
+            oldx1 = boxes[:, 0].copy()
+            oldx2 = boxes[:, 2].copy()
+            boxes[:, 0] = roi_rec['width'] - oldx2 - 1
+            boxes[:, 2] = roi_rec['width'] - oldx1 - 1
+            assert (boxes[:, 2] >= boxes[:, 0]).all()
+            entry = {'image': roi_rec['image'],
+                     'height': roi_rec['height'],
+                     'width': roi_rec['width'],
+                     'boxes': boxes,
+                     'gt_classes': roidb[i]['gt_classes'],
+                     'gt_overlaps': roidb[i]['gt_overlaps'],
+                     'max_classes': roidb[i]['max_classes'],
+                     'max_overlaps': roidb[i]['max_overlaps'],
+                     'attri_overlaps': roidb[i]['attri_overlaps'],
+                     'flipped': True}
+
+            # if roidb has mask
+            if 'cache_seg_inst' in roi_rec:
+                [filename, extension] = os.path.splitext(roi_rec['cache_seg_inst'])
+                entry['cache_seg_inst'] = os.path.join(filename + '_flip' + extension)
+
+            roidb.append(entry)
+
+        self.image_set_index *= 2
+        return roidb
+    def merge_roidbs(a, b):
+        """
+        merge roidbs into one
+        :param a: roidb to be merged into
+        :param b: roidb to be merged
+        :return: merged imdb
+        """
+        assert len(a) == len(b)
+        for i in range(len(a)):
+            a[i]['boxes'] = np.vstack((a[i]['boxes'], b[i]['boxes']))
+            a[i]['gt_classes'] = np.hstack((a[i]['gt_classes'], b[i]['gt_classes']))
+            a[i]['gt_overlaps'] = np.vstack((a[i]['gt_overlaps'], b[i]['gt_overlaps']))
+            a[i]['max_classes'] = np.hstack((a[i]['max_classes'], b[i]['max_classes']))
+            a[i]['max_overlaps'] = np.hstack((a[i]['max_overlaps'], b[i]['max_overlaps']))
+            a[i]['attri_overlaps'] = np.hstack((a[i]['attri_overlaps'], b[i]['attri_overlaps']))
+        return a

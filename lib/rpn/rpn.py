@@ -53,12 +53,16 @@ def get_rpn_batch(roidb, cfg):
         gt_boxes = np.empty((roidb[0]['boxes'].shape[0], 5), dtype=np.float32)
         gt_boxes[:, 0:4] = roidb[0]['boxes'][gt_inds, :]
         gt_boxes[:, 4] = roidb[0]['gt_classes'][gt_inds]
+        attri = np.empty((roidb[0]['boxes'].shape[0], 115), dtype=np.float32)
+        attri[:,:] = roidb[0]['attri_overlaps'][gt_inds] 
     else:
         gt_boxes = np.empty((0, 5), dtype=np.float32)
+        attri = np.empty((roidb[0]['boxes'].shape[0], 41), dtype=np.float32)
 
     data = {'data': im_array,
             'im_info': im_info}
-    label = {'gt_boxes': gt_boxes}
+    label = {'gt_boxes': gt_boxes,
+             'attri'   : attri}
 
     return data, label
 
