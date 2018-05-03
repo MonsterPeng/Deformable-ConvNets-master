@@ -480,6 +480,7 @@ class Food(IMDB):
                 print('Mean AP@{:.2f} = {:.4f}'.format(ovthresh, np.mean(aps)))
                 info_str += 'Mean AP@{:.2f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
         print('{:.4f}'.format( np.mean(Maps)))
+        info_str += 'Mean AP= {:.4f}\n\n'.format(np.mean(Maps))
         return info_str
     def append_flipped_images(self, roidb):
         """
