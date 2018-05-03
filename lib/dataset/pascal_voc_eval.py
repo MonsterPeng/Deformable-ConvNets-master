@@ -25,7 +25,7 @@ def parse_voc_rec(filename):
     objects = []
     for obj in tree.findall('object'):
         obj_dict = dict()
-        obj_dict['name'] = obj.find('name').text
+        obj_dict['name'] = obj.find('name').text.strip()
         obj_dict['difficult'] = int(obj.find('difficult').text)
         bbox = obj.find('bndbox')
         obj_dict['bbox'] = [int(float(bbox.find('xmin').text)),
@@ -124,6 +124,7 @@ def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.
     # extract objects in :param classname:
     class_recs = {}
     npos = 0
+    
     for image_filename in image_filenames:
         objects = [obj for obj in recs[image_filename] if obj['name'] == classname]
         bbox = np.array([x['bbox'] for x in objects])
@@ -373,7 +374,7 @@ def check_voc_sds_cache(cache_dir, devkit_path, image_names, class_names):
     if not exist_cache:
         # load annotations:
         # create a list with size classes
-        record_list = [{} for _ in xrange(21)]
+        record_list = [{} for _ in xrange(51)]
         for i, image_name in enumerate(image_names):
             record = parse_inst(image_name, devkit_path)
             for j, mask_dic in enumerate(record):

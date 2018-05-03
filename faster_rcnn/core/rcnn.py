@@ -72,6 +72,7 @@ def get_rcnn_batch(roidb, cfg):
 
     rois_array = list()
     labels_array = list()
+    #attri_array = list()
     bbox_targets_array = list()
     bbox_weights_array = list()
 
@@ -86,7 +87,8 @@ def get_rcnn_batch(roidb, cfg):
         labels = roi_rec['max_classes']
         overlaps = roi_rec['max_overlaps']
         bbox_targets = roi_rec['bbox_targets']
-    
+        #attri = roi_rec['attri_overlaps']
+
         im_rois, labels,bbox_targets, bbox_weights = \
             sample_rois(rois, fg_rois_per_image, rois_per_image, num_classes, cfg,
                         labels,overlaps, bbox_targets)
@@ -100,17 +102,20 @@ def get_rcnn_batch(roidb, cfg):
 
         # add labels
         labels_array.append(labels)
+        #attri_array.append(attri)
         bbox_targets_array.append(bbox_targets)
         bbox_weights_array.append(bbox_weights)
 
     rois_array = np.array(rois_array)
     labels_array = np.array(labels_array)
+    #attri_array = np.array(attri_array)
     bbox_targets_array = np.array(bbox_targets_array)
     bbox_weights_array = np.array(bbox_weights_array)
 
     data = {'data': im_array,
             'rois': rois_array}
     label = {'label': labels_array,
+             #'attri': attri_array ,
              'bbox_target': bbox_targets_array,
              'bbox_weight': bbox_weights_array}
 
@@ -126,6 +131,7 @@ def sample_rois(rois, fg_rois_per_image, rois_per_image, num_classes, cfg,
     :param rois_per_image: total roi number
     :param num_classes: number of classes
     :param labels: maybe precomputed
+    :param attri : maybe precomputed(attribute)
     :param overlaps: maybe precomputed (max_overlaps)
     :param bbox_targets: maybe precomputed
     :param gt_boxes: optional for e2e [n, 5] (x1, y1, x2, y2, cls)
@@ -136,6 +142,7 @@ def sample_rois(rois, fg_rois_per_image, rois_per_image, num_classes, cfg,
         gt_assignment = overlaps.argmax(axis=1)
         overlaps = overlaps.max(axis=1)
         labels = gt_boxes[gt_assignment, 4]
+        #attri = attri[gt_assignment,:]
 
     # foreground RoI with FG_THRESH overlap
     fg_indexes = np.where(overlaps >= cfg.TRAIN.FG_THRESH)[0]
@@ -165,9 +172,9 @@ def sample_rois(rois, fg_rois_per_image, rois_per_image, num_classes, cfg,
 
     # select labels
     labels = labels[keep_indexes]
-    
+    #attri = attri[keep_indexes]
     # set labels of bg_rois to be 0
-    
+    #attri[fg_rois_per_this_image:] = 0
     labels[fg_rois_per_this_image:] = 0
     rois = rois[keep_indexes]
 

@@ -323,7 +323,7 @@ class AnchorLoader(mx.io.DataIter):
             self.data_name = ['data', 'im_info', 'gt_boxes']
         else:
             self.data_name = ['data']
-        self.label_name = ['label','bbox_target', 'bbox_weight']
+        self.label_name = ['label', 'bbox_target', 'bbox_weight']
 
         # status variable for synchronization between get_data and get_label
         self.cur = 0
@@ -447,7 +447,7 @@ class AnchorLoader(mx.io.DataIter):
 
             # add gt_boxes to data for e2e
             data['gt_boxes'] = label['gt_boxes'][np.newaxis, :, :]
-            
+            #data['attri'] = label['attri'][np.newaxis, :, :]
 
             # assign anchor for label
             label = assign_anchor(feat_shape, label['gt_boxes'], data['im_info'], self.cfg,
@@ -498,7 +498,7 @@ class AnchorLoader(mx.io.DataIter):
 
         # add gt_boxes to data for e2e
         data['gt_boxes'] = label['gt_boxes'][np.newaxis, :, :]
-        
+        #data['attri'] = label['attri'][np.newaxis, :, :]
 
         # assign anchor for label
         label = assign_anchor(feat_shape, label['gt_boxes'], data['im_info'], self.cfg,

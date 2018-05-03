@@ -174,3 +174,37 @@ class RCNNL1LossMetric(mx.metric.EvalMetric):
 
         self.sum_metric += np.sum(bbox_loss)
         self.num_inst += num_inst
+
+class AttriLossMetric(mx.metric.EvalMetric):
+    def __init__(self, eps=1e-8):
+        super(AttriLossMetric, self).__init__('AttriLoss')
+        self.eps = eps
+        self.name = ['loss1', 'loss2', 'loss3', 'loss4']
+        self.reset()
+
+    def reset(self):
+        self.num_inst = 0
+        self.loss1 = 0.
+        self.loss2 = 0.
+        self.loss3 = 0.
+        self.loss4 = 0.
+
+    def update(self, labels, preds):
+
+        self.loss1 += np.sum(preds[-4].asnumpy())
+        self.loss2 += np.sum(preds[-3].asnumpy())
+        self.loss3 += np.sum(preds[-2].asnumpy())
+        self.loss4 += np.sum(preds[-1].asnumpy())
+
+        self.num_inst += preds[0].asnumpy().shape[0]
+
+    def get(self):
+        if self.num_inst == 0:
+            return self.name, [0., 0., 0.]
+        
+        loss1 = self.loss1 / self.num_inst
+        loss2 = self.loss2 / self.num_inst
+        loss3 = self.loss3 / self.num_inst
+        loss4 = self.loss4 / self.num_inst
+
+        return self.name, [loss1, loss2, loss3, loss4]
