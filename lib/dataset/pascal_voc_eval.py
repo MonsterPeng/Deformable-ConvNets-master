@@ -134,7 +134,7 @@ def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.
         
 
         idx = in_area(bbox)
-        
+        print image_filename
         class_recs[image_filename] = {'bbox': bbox[idx],
                                       'difficult': difficult[idx],
                                       'det': [det[i] for i, u in enumerate(idx) if u]}
