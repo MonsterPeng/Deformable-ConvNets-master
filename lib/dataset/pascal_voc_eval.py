@@ -94,7 +94,7 @@ def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.
                 print 'reading annotations for {:d}/{:d}'.format(ind + 1, len(image_filenames))
         print 'saving annotations cache to {:s}'.format(annocache)
         with open(annocache, 'wb') as f:
-            cPickle.dump(recs, f, protocol=cPickle.HIGHEST_PROTOCOL)
+            cPickle.dump(recs, f, protocol=cPickle.HIGHEST_PROTOCOL)   
     else:
         with open(annocache, 'rb') as f:
             recs = cPickle.load(f)
@@ -143,6 +143,7 @@ def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.
     detfile = detpath.format(classname)
     with open(detfile, 'r') as f:
         lines = f.readlines()
+
 
     splitlines = [x.strip().split(' ') for x in lines]
     image_ids = [x[0] for x in splitlines]

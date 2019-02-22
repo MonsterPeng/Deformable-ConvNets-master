@@ -2,7 +2,7 @@
 MXNET_VERSION: "mxnet"
 output_path: "./output/rcnn/food122"
 symbol: resnet_v1_101_rcnn
-gpus: '0'
+gpus: '1,2,4,5'
 CLASS_AGNOSTIC: false
 SCALES:
 - 600
@@ -11,8 +11,8 @@ default:
   frequent: 100
   kvstore: device
 network:
-  pretrained: "./model/pretrained_model/resnet_v1_101"
-  pretrained_epoch: 0
+  pretrained: "output/rcnn/food122/resnet_v1_101_food122_rcnn_end2end/122_trainval/rcnn_food122"
+  pretrained_epoch: 4
   PIXEL_MEANS:
   - 103.06
   - 115.90
@@ -50,7 +50,7 @@ network:
 dataset:
   NUM_CLASSES: 123
   dataset: Food
-  dataset_path: "./data/VOCdevkit"
+  dataset_path: "../dataset"
   image_set: 122_trainval
   root_path: "./data"
   test_image_set: 122_test
@@ -62,7 +62,7 @@ TRAIN:
   warmup_lr: 0.00005
   # typically we will use 4000 warmup step for single GPU on VOC
   warmup_step: 1000
-  begin_epoch: 0
+  begin_epoch: 4
   end_epoch: 7
   model_prefix: 'rcnn_food122'
   # whether resume training
@@ -81,8 +81,8 @@ TRAIN:
   ASPECT_GROUPING: true
   # R-CNN
   # rcnn rois batch size
-  BATCH_ROIS: 128
-  BATCH_ROIS_OHEM: 128
+  BATCH_ROIS: 256
+  BATCH_ROIS_OHEM: 256
   # rcnn rois sampling params
   FG_FRACTION: 0.25
   FG_THRESH: 0.5
