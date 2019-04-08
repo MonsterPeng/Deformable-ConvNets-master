@@ -2,7 +2,7 @@
 MXNET_VERSION: "mxnet"
 output_path: "./output/rcnn/food122"
 symbol: resnet_v1_101_rcnn_attri_v2
-gpus: '0'
+gpus: '4,5'
 CLASS_AGNOSTIC: false
 SCALES:
 - 600
@@ -11,8 +11,8 @@ default:
   frequent: 100
   kvstore: device
 network:
-  pretrained: "./model/pretrained_model/resnet_v1_101"
-  pretrained_epoch: 0
+  pretrained: "./output/rcnn/food122/resnet_v1_101_food122_attri_rcnn_end2end_v2/122_trainval/rcnn_food"
+  pretrained_epoch: 1
   PIXEL_MEANS:
   - 103.06
   - 115.90
@@ -51,7 +51,7 @@ dataset:
   NUM_CLASSES: 123
   NUM_ATTRI: 115
   dataset: Food
-  dataset_path: "./data/VOCdevkit"
+  dataset_path: "../dataset"
   image_set: 122_trainval
   root_path: "./data"
   test_image_set: 122_test
@@ -63,7 +63,7 @@ TRAIN:
   warmup_lr: 0.00005
   # typically we will use 4000 warmup step for single GPU on VOC
   warmup_step: 1000
-  begin_epoch: 0
+  begin_epoch: 1
   end_epoch: 7
   model_prefix: 'rcnn_food'
   # whether resume training
@@ -82,8 +82,8 @@ TRAIN:
   ASPECT_GROUPING: true
   # R-CNN
   # rcnn rois batch size
-  BATCH_ROIS: 128
-  BATCH_ROIS_OHEM: 128
+  BATCH_ROIS: 256
+  BATCH_ROIS_OHEM: 256
   # rcnn rois sampling params
   FG_FRACTION: 0.25
   FG_THRESH: 0.5
@@ -99,7 +99,7 @@ TRAIN:
 
   # RPN anchor loader
   # rpn anchors batch size
-  RPN_BATCH_SIZE: 256
+  RPN_BATCH_SIZE: 512
   # rpn anchors sampling params
   RPN_FG_FRACTION: 0.5
   RPN_POSITIVE_OVERLAP: 0.7

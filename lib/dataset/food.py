@@ -60,6 +60,7 @@ class Food(IMDB):
         self.classes = [str(x) for x in range(125)]
         self.classes.remove('84')
         self.classes.remove('40')
+        
         self.classes[0] = '__background__'
         '''
         self.classes = ['__background__',  # always index 0
@@ -460,7 +461,7 @@ class Food(IMDB):
         
         #kinds = ['all', 'small', 'medium', 'large']
         kinds = ['all']
-	Maps = []
+        Maps = []
         for ovthresh in np.arange(0.5, 1.0,0.05):
             for k in kinds:
                 info_str += 'MAP@{} - ({})\n'.format(ovthresh, k)
@@ -470,7 +471,7 @@ class Food(IMDB):
                         continue
                     filename = self.get_result_file_template().format(cls)
                     rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
-                                             ovthresh=ovthresh, use_07_metric=use_07_metric, kind = k)
+                                             ovthresh=ovthresh, use_07_metric=use_07_metric)
                     aps += [ap]
                     #print('AP for {} = {:.4f}'.format(cls, ap))
                     info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)

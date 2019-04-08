@@ -25,7 +25,7 @@ def parse_voc_rec(filename):
     objects = []
     for obj in tree.findall('object'):
         obj_dict = dict()
-        obj_dict['name'] = obj.find('name').text.strip()
+        obj_dict['name'] = obj.find('name').text
         obj_dict['difficult'] = int(obj.find('difficult').text)
         bbox = obj.find('bndbox')
         obj_dict['bbox'] = [int(float(bbox.find('xmin').text)),
@@ -69,7 +69,8 @@ def voc_ap(rec, prec, use_07_metric=False):
         ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])
     return ap
 
-def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.5, use_07_metric=False, kind = 'all'):
+
+def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.5, use_07_metric=False):
     """
     pascal voc evaluation
     :param detpath: detection results detpath.format(classname)
@@ -99,45 +100,18 @@ def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.
         with open(annocache, 'rb') as f:
             recs = cPickle.load(f)
 
-    def in_area(bbox):
-        if bbox.size == 0:
-            return []       
-        if kind == 'all':
-            return [True for i in range(len(bbox))]
-        assert len(bbox.shape) == 2, bbox.shape
-        assert bbox.shape[1] == 4, bbox.shape
-        bbox = bbox.astype(np.float)
-        dx = bbox[:, 2] - bbox[:, 0]
-        dy = bbox[:, 3] - bbox[:, 1]
-        iw = np.maximum(dx + 1., 0.)
-        ih = np.maximum(dy + 1., 0.)
-        area = iw * ih
-        if kind == 'small':
-            return area < 32 * 32
-        elif kind == 'medium':
-            return (area >= 32 * 32) & (area < 96 * 96)
-        elif kind == 'large':
-            return area >= 96 * 96
-        assert 0, 'wrong kind'
-            
-            
     # extract objects in :param classname:
     class_recs = {}
     npos = 0
-    
     for image_filename in image_filenames:
         objects = [obj for obj in recs[image_filename] if obj['name'] == classname]
         bbox = np.array([x['bbox'] for x in objects])
         difficult = np.array([x['difficult'] for x in objects]).astype(np.bool)
         det = [False] * len(objects)  # stand for detected
         npos = npos + sum(~difficult)
-        
-
-        idx = in_area(bbox)
-        print image_filename
-        class_recs[image_filename] = {'bbox': bbox[idx],
-                                      'difficult': difficult[idx],
-                                      'det': [det[i] for i, u in enumerate(idx) if u]}
+        class_recs[image_filename] = {'bbox': bbox,
+                                      'difficult': difficult,
+                                      'det': det}
 
     # read detections
     detfile = detpath.format(classname)
@@ -148,12 +122,6 @@ def voc_eval(detpath, annopath, imageset_file, classname, annocache, ovthresh=0.
     image_ids = [x[0] for x in splitlines]
     confidence = np.array([float(x[1]) for x in splitlines])
     bbox = np.array([[float(z) for z in x[2:]] for x in splitlines])
-    
-    idx = in_area(bbox)
-    
-    image_ids = [image_ids[i] for i, u in enumerate(idx) if u]
-    confidence = confidence[idx]
-    bbox = bbox[idx]
 
     # sort by confidence
     if bbox.shape[0] > 0:
@@ -374,7 +342,7 @@ def check_voc_sds_cache(cache_dir, devkit_path, image_names, class_names):
     if not exist_cache:
         # load annotations:
         # create a list with size classes
-        record_list = [{} for _ in xrange(51)]
+        record_list = [{} for _ in xrange(21)]
         for i, image_name in enumerate(image_names):
             record = parse_inst(image_name, devkit_path)
             for j, mask_dic in enumerate(record):
