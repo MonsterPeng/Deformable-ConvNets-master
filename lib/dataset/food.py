@@ -1,3 +1,4 @@
+#coding:utf-8
 # --------------------------------------------------------
 # Deformable Convolutional Networks
 # Copyright (c) 2017 Microsoft
@@ -18,6 +19,7 @@ import cv2
 import os
 import numpy as np
 import PIL
+import io
 
 from imdb import IMDB
 from pascal_voc_eval import voc_eval, voc_eval_sds
@@ -448,6 +450,23 @@ class Food(IMDB):
         python evaluation wrapper
         :return: info_str
         """
+        result_out = True
+        result_thersh = 0.85
+        if result_out:
+            clas = dict()
+            f = io.open(self.data_path+'/food_info.txt','r',encoding='UTF-8') 
+            lines = f.readlines()
+
+            for line in lines:
+                data = line.split(' ')
+                data.pop(1)
+                clas[int(line.split(' ')[1])] = data  #clas[24] = [腐竹油菜 3.0 92.8 3.42 4.06 1.99 3.1]
+           
+            f.close()
+            result_file = os.path.join(self.result_path, 'results', 'Food' + self.year, 'result_all.txt')
+            
+            f = io.open(result_file,'w',encoding ='UTF-8' )
+            f2 = io.open(os.path.join(self.result_path, 'results', 'Food' + self.year, 'result_{}.txt'.format(result_thersh)),'w',encoding ='UTF-8')
         info_str = ''
         annopath = os.path.join(self.data_path, 'Annotations', '{0!s}.xml')
         imageset_file = os.path.join(self.data_path, 'ImageSets', 'Main', self.image_set + '.txt')
@@ -473,11 +492,18 @@ class Food(IMDB):
                     rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
                                              ovthresh=ovthresh, use_07_metric=use_07_metric)
                     aps += [ap]
-                    print('AP for {} = {:.4f}'.format(cls, ap))
+                    if result_out:
+                        f.write(clas[int(cls)][0] +'  {} = {:.4f}\n'.format(cls, ap))
+                        if ap<float(result_thersh):
+                            f2.write(clas[int(cls)][0] +'  {} = {:.4f}\n'.format(cls, ap))
+                            print(clas[int(cls)][0] +'  {} = {:.4f}'.format(cls, ap))
                     info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
                 Maps +=[np.mean(aps)]
                 print('Mean AP@{:.2f} = {:.4f}'.format(ovthresh, np.mean(aps)))
                 info_str += 'Mean AP@{:.2f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
+        if result_out:
+            f.close()
+            f2.close()
         print('{:.4f}'.format( np.mean(Maps)))
         return info_str
     def append_flipped_images(self, roidb):
