@@ -41,15 +41,13 @@ class PascalVOC(IMDB):
         self.devkit_path = devkit_path
         self.data_path = os.path.join(devkit_path, 'VOC' + year)
 
-        self.classes = [str(x) for x in range(51) ]
-        #self.classes = ['__background__',  # always index 0
-        #                'aeroplane', 'bicycle', 'bird', 'boat',
-        #                'bottle', 'bus', 'car', 'cat', 'chair',
-        #                'cow', 'diningtable', 'dog', 'horse',
-        #                'motorbike', 'person', 'pottedplant',
-        #                'sheep', 'sofa', 'train', 'tvmonitor']
+        self.classes = ['__background__',  # always index 0
+                        'aeroplane', 'bicycle', 'bird', 'boat',
+                        'bottle', 'bus', 'car', 'cat', 'chair',
+                        'cow', 'diningtable', 'dog', 'horse',
+                        'motorbike', 'person', 'pottedplant',
+                        'sheep', 'sofa', 'train', 'tvmonitor']
         self.num_classes = len(self.classes)
-        self.num_attri = 1000
         self.image_set_index = self.load_image_set_index()
         self.num_images = len(self.image_set_index)
         print 'num_images', self.num_images
@@ -156,7 +154,7 @@ class PascalVOC(IMDB):
         boxes = np.zeros((num_objs, 4), dtype=np.uint16)
         gt_classes = np.zeros((num_objs), dtype=np.int32)
         overlaps = np.zeros((num_objs, self.num_classes), dtype=np.float32)
-        attri_overlaps = np.zeros((num_objs, self.num_attri),dtype=np.float32)
+
         class_to_index = dict(zip(self.classes, range(self.num_classes)))
         # Load object bounding boxes into a data frame.
         for ix, obj in enumerate(objs):
@@ -166,10 +164,6 @@ class PascalVOC(IMDB):
             y1 = float(bbox.find('ymin').text) - 1
             x2 = float(bbox.find('xmax').text) - 1
             y2 = float(bbox.find('ymax').text) - 1
-            attri = obj.find('attribute').find('attr').text
-            if attri != 'None':
-                for i in attri.strip().split(','):
-                    attri_overlaps[ix,int(i)-1] = 1.0
             cls = class_to_index[obj.find('name').text.lower().strip()]
             boxes[ix, :] = [x1, y1, x2, y2]
             gt_classes[ix] = cls
@@ -180,7 +174,6 @@ class PascalVOC(IMDB):
                         'gt_overlaps': overlaps,
                         'max_classes': overlaps.argmax(axis=1),
                         'max_overlaps': overlaps.max(axis=1),
-                        'attri_overlaps':attri_overlaps,
                         'flipped': False})
         return roi_rec
 
@@ -430,83 +423,34 @@ class PascalVOC(IMDB):
         annopath = os.path.join(self.data_path, 'Annotations', '{0!s}.xml')
         imageset_file = os.path.join(self.data_path, 'ImageSets', 'Main', self.image_set + '.txt')
         annocache = os.path.join(self.cache_path, self.name + '_annotations.pkl')
-        
+        aps = []
         # The PASCAL VOC metric changed in 2010
         use_07_metric = True if self.year == 'SDS' or int(self.year) < 2010 else False
         print 'VOC07 metric? ' + ('Y' if use_07_metric else 'No')
         info_str += 'VOC07 metric? ' + ('Y' if use_07_metric else 'No')
         info_str += '\n'
-        
-        #kinds = ['all', 'small', 'medium', 'large']
-	kinds = ['all']
-        for ovthresh in [0.5, 0.7]:
-            for k in kinds:
-                info_str += 'MAP@{} - ({})\n'.format(ovthresh, k)
-                aps = []
-                for cls_ind, cls in enumerate(self.classes):
-                    if cls == '__background__':
-                        continue
-                    filename = self.get_result_file_template().format(cls)
-                    rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
-                                             ovthresh=ovthresh, use_07_metric=use_07_metric, kind = k)
-                    aps += [ap]
-                    print('AP for {} = {:.4f}'.format(cls, ap))
-                    info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
-                
-                print('Mean AP@{:.1f} = {:.4f}'.format(ovthresh, np.mean(aps)))
-                info_str += 'Mean AP@{:.1f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
-
+        for cls_ind, cls in enumerate(self.classes):
+            if cls == '__background__':
+                continue
+            filename = self.get_result_file_template().format(cls)
+            rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
+                                     ovthresh=0.5, use_07_metric=use_07_metric)
+            aps += [ap]
+            print('AP for {} = {:.4f}'.format(cls, ap))
+            info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
+        print('Mean AP@0.5 = {:.4f}'.format(np.mean(aps)))
+        info_str += 'Mean AP@0.5 = {:.4f}\n\n'.format(np.mean(aps))
+        # @0.7
+        aps = []
+        for cls_ind, cls in enumerate(self.classes):
+            if cls == '__background__':
+                continue
+            filename = self.get_result_file_template().format(cls)
+            rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
+                                     ovthresh=0.7, use_07_metric=use_07_metric)
+            aps += [ap]
+            print('AP for {} = {:.4f}'.format(cls, ap))
+            info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
+        print('Mean AP@0.7 = {:.4f}'.format(np.mean(aps)))
+        info_str += 'Mean AP@0.7 = {:.4f}'.format(np.mean(aps))
         return info_str
-    def append_flipped_images(self, roidb):
-        """
-        append flipped images to an roidb
-        flip boxes coordinates, images will be actually flipped when loading into network
-        :param roidb: [image_index]['boxes', 'gt_classes', 'gt_overlaps', 'flipped']
-        :return: roidb: [image_index]['boxes', 'gt_classes', 'gt_overlaps', 'flipped']
-        """
-        print 'append flipped images to roidb'
-        assert self.num_images == len(roidb)
-        for i in range(self.num_images):
-            roi_rec = roidb[i]
-            boxes = roi_rec['boxes'].copy()
-            oldx1 = boxes[:, 0].copy()
-            oldx2 = boxes[:, 2].copy()
-            boxes[:, 0] = roi_rec['width'] - oldx2 - 1
-            boxes[:, 2] = roi_rec['width'] - oldx1 - 1
-            assert (boxes[:, 2] >= boxes[:, 0]).all()
-            entry = {'image': roi_rec['image'],
-                     'height': roi_rec['height'],
-                     'width': roi_rec['width'],
-                     'boxes': boxes,
-                     'gt_classes': roidb[i]['gt_classes'],
-                     'gt_overlaps': roidb[i]['gt_overlaps'],
-                     'max_classes': roidb[i]['max_classes'],
-                     'max_overlaps': roidb[i]['max_overlaps'],
-                     'attri_overlaps': roidb[i]['attri_overlaps'],
-                     'flipped': True}
-
-            # if roidb has mask
-            if 'cache_seg_inst' in roi_rec:
-                [filename, extension] = os.path.splitext(roi_rec['cache_seg_inst'])
-                entry['cache_seg_inst'] = os.path.join(filename + '_flip' + extension)
-
-            roidb.append(entry)
-
-        self.image_set_index *= 2
-        return roidb
-    def merge_roidbs(a, b):
-        """
-        merge roidbs into one
-        :param a: roidb to be merged into
-        :param b: roidb to be merged
-        :return: merged imdb
-        """
-        assert len(a) == len(b)
-        for i in range(len(a)):
-            a[i]['boxes'] = np.vstack((a[i]['boxes'], b[i]['boxes']))
-            a[i]['gt_classes'] = np.hstack((a[i]['gt_classes'], b[i]['gt_classes']))
-            a[i]['gt_overlaps'] = np.vstack((a[i]['gt_overlaps'], b[i]['gt_overlaps']))
-            a[i]['max_classes'] = np.hstack((a[i]['max_classes'], b[i]['max_classes']))
-            a[i]['max_overlaps'] = np.hstack((a[i]['max_overlaps'], b[i]['max_overlaps']))
-            a[i]['attri_overlaps'] = np.hstack((a[i]['attri_overlaps'], b[i]['attri_overlaps']))
-        return a

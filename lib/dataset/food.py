@@ -60,6 +60,7 @@ class Food(IMDB):
         self.classes = [str(x) for x in range(125)]
         self.classes.remove('84')
         self.classes.remove('40')
+        
         self.classes[0] = '__background__'
         '''
         self.classes = ['__background__',  # always index 0
@@ -70,7 +71,7 @@ class Food(IMDB):
                         '58','26','74','118','25']
 	'''
         self.num_classes = len(self.classes)
-        
+        self.num_attri = 115
         self.image_set_index = self.load_image_set_index()
         self.num_images = len(self.image_set_index)
         print 'num_images', self.num_images
@@ -177,7 +178,7 @@ class Food(IMDB):
         boxes = np.zeros((num_objs, 4), dtype=np.uint16)
         gt_classes = np.zeros((num_objs), dtype=np.int32)
         overlaps = np.zeros((num_objs, self.num_classes), dtype=np.float32)
-        #attri_overlaps = np.zeros((num_objs, self.num_attri),dtype=np.float32)
+        attri_overlaps = np.zeros((num_objs, self.num_attri),dtype=np.float32)
         class_to_index = dict(zip(self.classes, range(self.num_classes)))
         # Load object bounding boxes into a data frame.
         for ix, obj in enumerate(objs):
@@ -187,12 +188,10 @@ class Food(IMDB):
             y1 = float(bbox.find('ymin').text) - 1
             x2 = float(bbox.find('xmax').text) - 1
             y2 = float(bbox.find('ymax').text) - 1
-            '''
             attri = obj.find('attribute').find('attr').text
             if attri != 'None':
                 for i in attri.strip().split(','):
                     attri_overlaps[ix,int(i)-1] = 1.0
-            '''
             cls = class_to_index[obj.find('name').text.lower().strip()]
             boxes[ix, :] = [x1, y1, x2, y2]
             gt_classes[ix] = cls
@@ -203,7 +202,7 @@ class Food(IMDB):
                         'gt_overlaps': overlaps,
                         'max_classes': overlaps.argmax(axis=1),
                         'max_overlaps': overlaps.max(axis=1),
-                        #'attri_overlaps':attri_overlaps,
+                        'attri_overlaps':attri_overlaps,
                         'flipped': False})
         return roi_rec
 
@@ -462,8 +461,8 @@ class Food(IMDB):
         
         #kinds = ['all', 'small', 'medium', 'large']
         kinds = ['all']
-	Maps = []
-        for ovthresh in np.arange(0.5, 1.0,0.05):
+        Maps = []
+        for ovthresh in [0.5,0.7]:#np.arange(0.5, 1.0,0.05):
             for k in kinds:
                 info_str += 'MAP@{} - ({})\n'.format(ovthresh, k)
                 aps = []
@@ -472,15 +471,14 @@ class Food(IMDB):
                         continue
                     filename = self.get_result_file_template().format(cls)
                     rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
-                                             ovthresh=ovthresh, use_07_metric=use_07_metric, kind = k)
+                                             ovthresh=ovthresh, use_07_metric=use_07_metric)
                     aps += [ap]
-                    #print('AP for {} = {:.4f}'.format(cls, ap))
+                    print('AP for {} = {:.4f}'.format(cls, ap))
                     info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
                 Maps +=[np.mean(aps)]
                 print('Mean AP@{:.2f} = {:.4f}'.format(ovthresh, np.mean(aps)))
                 info_str += 'Mean AP@{:.2f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
         print('{:.4f}'.format( np.mean(Maps)))
-        info_str += 'Mean AP= {:.4f}\n\n'.format(np.mean(Maps))
         return info_str
     def append_flipped_images(self, roidb):
         """
@@ -507,7 +505,7 @@ class Food(IMDB):
                      'gt_overlaps': roidb[i]['gt_overlaps'],
                      'max_classes': roidb[i]['max_classes'],
                      'max_overlaps': roidb[i]['max_overlaps'],
-                     #'attri_overlaps': roidb[i]['attri_overlaps'],
+                     'attri_overlaps': roidb[i]['attri_overlaps'],
                      'flipped': True}
 
             # if roidb has mask
@@ -533,5 +531,5 @@ class Food(IMDB):
             a[i]['gt_overlaps'] = np.vstack((a[i]['gt_overlaps'], b[i]['gt_overlaps']))
             a[i]['max_classes'] = np.hstack((a[i]['max_classes'], b[i]['max_classes']))
             a[i]['max_overlaps'] = np.hstack((a[i]['max_overlaps'], b[i]['max_overlaps']))
-            #a[i]['attri_overlaps'] = np.hstack((a[i]['attri_overlaps'], b[i]['attri_overlaps']))
+            a[i]['attri_overlaps'] = np.hstack((a[i]['attri_overlaps'], b[i]['attri_overlaps']))
         return a
