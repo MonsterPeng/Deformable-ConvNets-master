@@ -437,8 +437,7 @@ class PascalVOC(IMDB):
         info_str += 'VOC07 metric? ' + ('Y' if use_07_metric else 'No')
         info_str += '\n'
         
-        #kinds = ['all', 'small', 'medium', 'large']
-	kinds = ['all']
+        kinds = ['all', 'small', 'medium', 'large']
         for ovthresh in [0.5, 0.7]:
             for k in kinds:
                 info_str += 'MAP@{} - ({})\n'.format(ovthresh, k)
@@ -448,7 +447,7 @@ class PascalVOC(IMDB):
                         continue
                     filename = self.get_result_file_template().format(cls)
                     rec, prec, ap = voc_eval(filename, annopath, imageset_file, cls, annocache,
-                                             ovthresh=ovthresh, use_07_metric=use_07_metric, kind = k)
+                                             ovthresh=ovthresh, use_07_metric=use_07_metric)
                     aps += [ap]
                     print('AP for {} = {:.4f}'.format(cls, ap))
                     info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
