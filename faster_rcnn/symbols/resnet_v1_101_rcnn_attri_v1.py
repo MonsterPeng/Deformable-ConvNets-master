@@ -754,7 +754,7 @@ class resnet_v1_101_rcnn_attri_v1(Symbol):
                     threshold=cfg.TRAIN.RPN_NMS_THRESH, rpn_min_size=cfg.TRAIN.RPN_MIN_SIZE)
             # ROI proposal target
             gt_boxes_reshape = mx.sym.Reshape(data=gt_boxes, shape=(-1, 5), name='gt_boxes_reshape')
-            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,41),name='attri_reshape')
+            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,115),name='attri_reshape')
             rois, label,attri,bbox_target, bbox_weight = mx.sym.Custom(rois=rois, gt_boxes=gt_boxes_reshape,attri_=attri_reshape,
                                                                   op_type='proposal_target',
                                                                   num_classes=num_reg_classes,
@@ -794,21 +794,26 @@ class resnet_v1_101_rcnn_attri_v1(Symbol):
             name='roi_feature', data=conv_new_1_relu, rois=rois, pooled_size=(7, 7), spatial_scale=0.0625)
 
         roi_mask_1 = mx.symbol.ROIPooling(
-            name='roi_mask_1', data=conv_new_1_relu, rois=rois, pooled_size=(14, 14), spatial_scale=0.0625)
+            name='roi_mask_1', data=conv_new_1_relu, rois=rois, pooled_size=(20, 20), spatial_scale=0.0625)
         roi_mask_2 = mx.sym.Convolution(data=roi_mask_1, kernel=(3, 3), pad=(1, 1), num_filter=256, name="roi_mask_2")
         roi_mask_2_relu = mx.sym.Activation(data=roi_mask_2, act_type='relu', name='roi_mask_1_relu')
         roi_mask_3 = mx.sym.Convolution(data=roi_mask_2_relu, kernel=(3, 3), pad=(1, 1), num_filter=256, name='roi_mask_3')
         roi_mask_3_relu = mx.sym.Activation(data=roi_mask_3, act_type='relu', name='roi_mask_2_relu')
 
-        roi_part_1 = mx.sym.Convolution(data=roi_mask_3_relu, kernel=(1, 1), pad=(0, 0), num_filter=num_attri, name='roi_part_1')
+        #attri_fc
+        fc_part_1 = mx.symbol.FullyConnected(name='fc_part_1', data=roi_mask_3_relu, num_hidden=1024)
+        fc_part_1_relu = mx.sym.Activation(data=fc_part_1, act_type='relu', name='fc_part_1_relu')
+        #roi_part_1 = mx.sym.Convolution(data=roi_mask_3_relu, kernel=(1, 1), pad=(0, 0), num_filter=num_attri, name='roi_part_1')
         #roi_part_2 = mx.sym.Convolution(data=roi_mask_3_relu, kernel=(1, 1), pad=(0, 0), num_filter=num_classes - 1, name='roi_part_2')
-        roi_part_1_sigmoid = mx.sym.Activation(data=roi_part_1, act_type='sigmoid', name='roi_part_1_sigmoid')
+        #roi_part_1_sigmoid = mx.sym.Activation(data=roi_part_1, act_type='sigmoid', name='roi_part_1_sigmoid')
         #roi_part_1_softmax = mx.sym.softmax(data = roi_part_1,axis=1)
         #roi_part_2_sigmoid = mx.sym.Activation(data=roi_part_2, act_type='sigmoid', name='roi_part_2_sigmoid')
 
         # multi label loss
+        fc_part_2 = mx.symbol.FullyConnected(name='fc_part_2', data=fc_part_1, num_hidden=num_attri)
+        roi_part_mean_1 = mx.sym.Activation(data=fc_part_2, act_type='sigmoid', name='roi_part_mean_1')
         #roi_part_mean_1 = mx.sym.max(roi_part_1_softmax, axis=(2,3))
-        roi_part_mean_1 = mx.sym.mean(roi_part_1_sigmoid, axis=(2,3))
+        #roi_part_mean_1 = mx.sym.mean(roi_part_1_sigmoid, axis=(2,3))
         #roi_part_mean_2 = mx.sym.mean(roi_part_2_sigmoid, axis=(2,3))
         ###
 
@@ -900,7 +905,7 @@ class resnet_v1_101_rcnn_attri_v1(Symbol):
                                        name='bbox_pred_reshape')
             roi_part_mean_1 = mx.sym.Reshape(data=roi_part_mean_1, shape=(cfg.TEST.BATCH_IMAGES, -1, num_attri),
                                        name='attri_prob_reshape')
-            group = mx.sym.Group([rois, cls_prob, bbox_pred])
+            group = mx.sym.Group([rois, cls_prob, bbox_pred,roi_part_mean_1])
 
         self.sym = group
         return group
@@ -1077,8 +1082,12 @@ class resnet_v1_101_rcnn_attri_v1(Symbol):
         arg_params['roi_mask_2_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_mask_2_bias'])
         arg_params['roi_mask_3_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_mask_3_weight'])
         arg_params['roi_mask_3_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_mask_3_bias'])
-        arg_params['roi_part_1_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_part_1_weight'])
-        arg_params['roi_part_1_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_part_1_bias'])
+        arg_params['fc_part_1_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['fc_part_1_weight'])
+        arg_params['fc_part_1_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['fc_part_1_bias'])
+        arg_params['fc_part_2_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['fc_part_2_weight'])
+        arg_params['fc_part_2_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['fc_part_2_bias'])
+        #arg_params['roi_part_1_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_part_1_weight'])
+        #arg_params['roi_part_1_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_part_1_bias'])
         #arg_params['roi_part_2_weight'] = mx.random.normal(0, 0.01, shape=self.arg_shape_dict['roi_part_2_weight'])
         #arg_params['roi_part_2_bias'] = mx.nd.zeros(shape=self.arg_shape_dict['roi_part_2_bias'])
 

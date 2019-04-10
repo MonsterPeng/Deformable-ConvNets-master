@@ -900,7 +900,7 @@ class resnet_v1_101_rcnn_attri_v2(Symbol):
                                        name='bbox_pred_reshape')
             roi_part_mean_1 = mx.sym.Reshape(data=roi_part_mean_1, shape=(cfg.TEST.BATCH_IMAGES, -1, num_attri),
                                        name='attri_prob_reshape')
-            group = mx.sym.Group([rois, cls_prob, bbox_pred，roi_part_mean_1])
+            group = mx.sym.Group([rois, cls_prob, bbox_pred,roi_part_mean_1])
 
         self.sym = group
         return group

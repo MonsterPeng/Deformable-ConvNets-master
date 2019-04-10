@@ -754,7 +754,7 @@ class resnet_v1_101_rcnn_attri_v3(Symbol):
                     threshold=cfg.TRAIN.RPN_NMS_THRESH, rpn_min_size=cfg.TRAIN.RPN_MIN_SIZE)
             # ROI proposal target
             gt_boxes_reshape = mx.sym.Reshape(data=gt_boxes, shape=(-1, 5), name='gt_boxes_reshape')
-            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,41),name='attri_reshape')
+            attri_reshape = mx.sym.Reshape(data=_attri, shape=(-1,115),name='attri_reshape')
             rois, label,attri,bbox_target, bbox_weight = mx.sym.Custom(rois=rois, gt_boxes=gt_boxes_reshape,attri_=attri_reshape,
                                                                   op_type='proposal_target',
                                                                   num_classes=num_reg_classes,
@@ -794,7 +794,7 @@ class resnet_v1_101_rcnn_attri_v3(Symbol):
             name='roi_feature', data=conv_new_1_relu, rois=rois, pooled_size=(7, 7), spatial_scale=0.0625)
 
         roi_mask_1 = mx.symbol.ROIPooling(
-            name='roi_mask_1', data=conv_new_1_relu, rois=rois, pooled_size=(14, 14), spatial_scale=0.0625)
+            name='roi_mask_1', data=conv_new_1_relu, rois=rois, pooled_size=(20, 20), spatial_scale=0.0625)
         roi_mask_2 = mx.sym.Convolution(data=roi_mask_1, kernel=(3, 3), pad=(1, 1), num_filter=256, name="roi_mask_2")
         roi_mask_2_relu = mx.sym.Activation(data=roi_mask_2, act_type='relu', name='roi_mask_1_relu')
         roi_mask_3 = mx.sym.Convolution(data=roi_mask_2_relu, kernel=(3, 3), pad=(1, 1), num_filter=256, name='roi_mask_3')
@@ -900,7 +900,7 @@ class resnet_v1_101_rcnn_attri_v3(Symbol):
                                        name='bbox_pred_reshape')
             roi_part_mean_1 = mx.sym.Reshape(data=roi_part_mean_1, shape=(cfg.TEST.BATCH_IMAGES, -1, num_attri),
                                        name='attri_prob_reshape')
-            group = mx.sym.Group([rois, cls_prob, bbox_pred])
+            group = mx.sym.Group([rois, cls_prob, bbox_pred,roi_part_mean_1])
 
         self.sym = group
         return group
