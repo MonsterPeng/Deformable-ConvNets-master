@@ -2,7 +2,7 @@
 MXNET_VERSION: "mxnet"
 output_path: "./output/rcnn/food122"
 symbol: resnet_v1_101_rcnn_attri_v5
-gpus: '1,2,4,5'
+gpus: '1,2,6,7'
 CLASS_AGNOSTIC: false
 SCALES:
 - 600

@@ -434,16 +434,27 @@ class Food(IMDB):
                 continue
             print 'Writing {} VOC results file'.format(cls)
             filename = self.get_result_file_template().format(cls)
+            filename_attri = filename.replace(cls+'.txt',cls+'_attri.txt')
+            f_attri = open(filename_attri,'w')
             with open(filename, 'wt') as f:
                 for im_ind, index in enumerate(self.image_set_index):
                     dets = all_boxes[cls_ind][im_ind]
                     if len(dets) == 0:
                         continue
                     # the VOCdevkit expects 1-based indices
+                    #print (dets.shape)
                     for k in range(dets.shape[0]):
+                        #print dets[k,5:]
+                        attri_write = '{:s}'.format(index)
+                        for i in range(115):
+                            attri_write+=" {:.2f}".format(dets[k,5+i])
+                        attri_write+='\n'
+                        #print (len(attri_write.strip().split(" ")))
+                        f_attri.write(attri_write)
                         f.write('{:s} {:.3f} {:.1f} {:.1f} {:.1f} {:.1f}\n'.
-                                format(index, dets[k, -1],
+                                format(index, dets[k, 4],
                                        dets[k, 0] + 1, dets[k, 1] + 1, dets[k, 2] + 1, dets[k, 3] + 1))
+                    
 
     def do_python_eval(self):
         """
@@ -451,7 +462,7 @@ class Food(IMDB):
         :return: info_str
         """
         result_out = True
-        result_thersh = 0.85
+        result_thersh = 0.80
         if result_out:
             clas = dict()
             f = io.open(self.data_path+'/food_info.txt','r',encoding='UTF-8') 
@@ -501,6 +512,9 @@ class Food(IMDB):
                 Maps +=[np.mean(aps)]
                 print('Mean AP@{:.2f} = {:.4f}'.format(ovthresh, np.mean(aps)))
                 info_str += 'Mean AP@{:.2f} = {:.4f}\n\n'.format(ovthresh, np.mean(aps))
+                if result_out:
+                    f.write(u'\nMean AP@{:.2f} = {:.4f}\n'.format(ovthresh, np.mean(aps)))
+                    f2.write(u'\nMean AP@{:.2f} = {:.4f}\n'.format(ovthresh, np.mean(aps)))
         if result_out:
             f.close()
             f2.close()

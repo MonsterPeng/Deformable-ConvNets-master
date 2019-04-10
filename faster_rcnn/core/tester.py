@@ -46,7 +46,7 @@ def im_proposal(predictor, data_batch, data_names, scales):
         # drop the batch index
         boxes = output['rois_output'].asnumpy()[:, 1:]
         scores = output['rois_score'].asnumpy()
-
+        
         # transform to original scale
         boxes = boxes / scale
         scores_all.append(scores)
@@ -123,10 +123,11 @@ def generate_proposals(predictor, test_data, imdb, cfg, vis=False, thresh=0.):
 
 def im_detect(predictor, data_batch, data_names, scales, cfg):
     output_all = predictor.predict(data_batch)
-
+    
     data_dict_all = [dict(zip(data_names, idata)) for idata in data_batch.data]
     scores_all = []
     pred_boxes_all = []
+    pred_attri_all = []
     for output, data_dict, scale in zip(output_all, data_dict_all, scales):
         if cfg.TEST.HAS_RPN:
             rois = output['rois_output'].asnumpy()[:, 1:]
@@ -137,6 +138,7 @@ def im_detect(predictor, data_batch, data_names, scales, cfg):
         # save output
         scores = output['cls_prob_reshape_output'].asnumpy()[0]
         bbox_deltas = output['bbox_pred_reshape_output'].asnumpy()[0]
+        pred_attri = output['attri_prob_reshape_output'].asnumpy()[0]
 
         # post processing
         pred_boxes = bbox_pred(rois, bbox_deltas)
@@ -147,7 +149,8 @@ def im_detect(predictor, data_batch, data_names, scales, cfg):
 
         scores_all.append(scores)
         pred_boxes_all.append(pred_boxes)
-    return scores_all, pred_boxes_all, data_dict_all
+        pred_attri_all.append(pred_attri)
+    return scores_all, pred_boxes_all, data_dict_all,pred_attri_all
 
 
 def pred_eval(predictor, test_data, imdb, cfg, vis=False, thresh=1e-3, logger=None, ignore_cache=True):
@@ -197,26 +200,30 @@ def pred_eval(predictor, test_data, imdb, cfg, vis=False, thresh=1e-3, logger=No
         t = time.time()
 
         scales = [iim_info[0, 2] for iim_info in im_info]
-        scores_all, boxes_all, data_dict_all = im_detect(predictor, data_batch, data_names, scales, cfg)
+        scores_all, boxes_all, data_dict_all,attri_all = im_detect(predictor, data_batch, data_names, scales, cfg)
 
         t2 = time.time() - t
         t = time.time()
-        for delta, (scores, boxes, data_dict) in enumerate(zip(scores_all, boxes_all, data_dict_all)):
+        for delta, (scores, boxes, data_dict,attri) in enumerate(zip(scores_all, boxes_all, data_dict_all,attri_all)):
             for j in range(1, imdb.num_classes):
                 indexes = np.where(scores[:, j] > thresh)[0]
                 cls_scores = scores[indexes, j, np.newaxis]
                 cls_boxes = boxes[indexes, 4:8] if cfg.CLASS_AGNOSTIC else boxes[indexes, j * 4:(j + 1) * 4]
+                cls_attri = attri[indexes]
+                
+                #print (cls_attri.shape,cls_boxes.shape,cls_scores.shape)
                 cls_dets = np.hstack((cls_boxes, cls_scores))
                 keep = nms(cls_dets)
-                all_boxes[j][idx+delta] = cls_dets[keep, :]
+                all_boxes[j][idx+delta] = np.hstack((cls_dets[keep, :],cls_attri[keep,:]))
+                
 
             if max_per_image > 0:
-                image_scores = np.hstack([all_boxes[j][idx+delta][:, -1]
+                image_scores = np.hstack([all_boxes[j][idx+delta][:, 4]
                                           for j in range(1, imdb.num_classes)])
                 if len(image_scores) > max_per_image:
                     image_thresh = np.sort(image_scores)[-max_per_image]
                     for j in range(1, imdb.num_classes):
-                        keep = np.where(all_boxes[j][idx+delta][:, -1] >= image_thresh)[0]
+                        keep = np.where(all_boxes[j][idx+delta][:, 4] >= image_thresh)[0]
                         all_boxes[j][idx+delta] = all_boxes[j][idx+delta][keep, :]
 
             if vis:
