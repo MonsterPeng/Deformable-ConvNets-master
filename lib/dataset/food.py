@@ -492,7 +492,7 @@ class Food(IMDB):
         #kinds = ['all', 'small', 'medium', 'large']
         kinds = ['all']
         Maps = []
-        for ovthresh in [0.5,0.7]:#np.arange(0.5, 1.0,0.05):
+        for ovthresh in np.arange(0.5, 1.0,0.05):
             for k in kinds:
                 info_str += 'MAP@{} - ({})\n'.format(ovthresh, k)
                 aps = []
@@ -507,7 +507,7 @@ class Food(IMDB):
                         f.write(clas[int(cls)][0] +'  {} = {:.4f}\n'.format(cls, ap))
                         if ap<float(result_thersh):
                             f2.write(clas[int(cls)][0] +'  {} = {:.4f}\n'.format(cls, ap))
-                            print(clas[int(cls)][0] +'  {} = {:.4f}'.format(cls, ap))
+                            #print(clas[int(cls)][0] +'  {} = {:.4f}'.format(cls, ap))
                     info_str += 'AP for {} = {:.4f}\n'.format(cls, ap)
                 Maps +=[np.mean(aps)]
                 print('Mean AP@{:.2f} = {:.4f}'.format(ovthresh, np.mean(aps)))
@@ -519,6 +519,7 @@ class Food(IMDB):
             f.close()
             f2.close()
         print('{:.4f}'.format( np.mean(Maps)))
+        info_str +='All Map {:.4f}\n'.format( np.mean(Maps))
         return info_str
     def append_flipped_images(self, roidb):
         """
