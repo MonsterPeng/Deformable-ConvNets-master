@@ -6,3 +6,4 @@ import resnet_v1_101_rcnn_attri_v1
 import resnet_v1_101_rcnn_attri_v3
 import resnet_v1_101_rcnn_attri_v4
 import resnet_v1_101_rcnn_attri_v5
+import resnet_v1_101_rcnn_attri_v6

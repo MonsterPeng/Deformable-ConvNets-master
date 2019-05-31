@@ -1,0 +1,1972 @@
+('Called with argument:', Namespace(cfg='experiments/faster_rcnn/cfgs/resnet_v1_101_food122_attri_rcnn_end2end_v3.yaml', frequent=100))
+{'CLASS_AGNOSTIC': False,
+ 'MXNET_VERSION': 'mxnet',
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': False,
+          'HAS_RPN': True,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 0,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 0,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'max_per_image': 300,
+          'test_epoch': 6},
+ 'TRAIN': {'ALTERNATE': {'RCNN_BATCH_IMAGES': 0,
+                         'RPN_BATCH_IMAGES': 0,
+                         'rfcn1_epoch': 0,
+                         'rfcn1_lr': 0,
+                         'rfcn1_lr_step': '',
+                         'rfcn2_epoch': 0,
+                         'rfcn2_lr': 0,
+                         'rfcn2_lr_step': '',
+                         'rpn1_epoch': 0,
+                         'rpn1_lr': 0,
+                         'rpn1_lr_step': '',
+                         'rpn2_epoch': 0,
+                         'rpn2_lr': 0,
+                         'rpn2_lr_step': '',
+                         'rpn3_epoch': 0,
+                         'rpn3_lr': 0,
+                         'rpn3_lr_step': ''},
+           'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 1,
+           'BATCH_ROIS': 128,
+           'BATCH_ROIS_OHEM': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': True,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.1,
+           'CXX_PROPOSAL': False,
+           'ENABLE_OHEM': False,
+           'END2END': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'FLIP': True,
+           'RESUME': False,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 0,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 300,
+           'RPN_PRE_NMS_TOP_N': 6000,
+           'SHUFFLE': True,
+           'begin_epoch': 0,
+           'end_epoch': 7,
+           'lr': 0.0005,
+           'lr_factor': 0.1,
+           'lr_step': '4.83',
+           'model_prefix': 'rcnn_food',
+           'momentum': 0.9,
+           'warmup': True,
+           'warmup_lr': 5e-05,
+           'warmup_step': 1000,
+           'wd': 0.0005},
+ 'dataset': {'NUM_ATTRI': 115,
+             'NUM_CLASSES': 123,
+             'dataset': 'Food',
+             'dataset_path': '../dataset',
+             'image_set': '122_trainval',
+             'proposal': 'rpn',
+             'root_path': './data',
+             'test_image_set': '122_test'},
+ 'default': {'frequent': 100, 'kvstore': 'device'},
+ 'gpus': '3,4',
+ 'network': {'ANCHOR_RATIOS': [0.5, 1, 2],
+             'ANCHOR_SCALES': [8, 16, 32],
+             'FIXED_PARAMS': ['conv1',
+                              'bn_conv1',
+                              'res2',
+                              'bn2',
+                              'gamma',
+                              'beta'],
+             'FIXED_PARAMS_SHARED': ['conv1',
+                                     'bn_conv1',
+                                     'res2',
+                                     'bn2',
+                                     'res3',
+                                     'bn3',
+                                     'res4',
+                                     'bn4',
+                                     'gamma',
+                                     'beta'],
+             'IMAGE_STRIDE': 0,
+             'NUM_ANCHORS': 9,
+             'PIXEL_MEANS': array([ 103.06,  115.9 ,  123.15]('Called with argument:', Namespace(cfg='experiments/faster_rcnn/cfgs/resnet_v1_101_food122_attri_rcnn_end2end_v6.yaml', frequent=100))
+{'CLASS_AGNOSTIC': False,
+ 'MXNET_VERSION': 'mxnet',
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': False,
+          'HAS_RPN': True,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 0,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 0,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'max_per_image': 300,
+          'test_epoch': 6},
+ 'TRAIN': {'ALTERNATE': {'RCNN_BATCH_IMAGES': 0,
+                         'RPN_BATCH_IMAGES': 0,
+                         'rfcn1_epoch': 0,
+                         'rfcn1_lr': 0,
+                         'rfcn1_lr_step': '',
+                         'rfcn2_epoch': 0,
+                         'rfcn2_lr': 0,
+                         'rfcn2_lr_step': '',
+                         'rpn1_epoch': 0,
+                         'rpn1_lr': 0,
+                         'rpn1_lr_step': '',
+                         'rpn2_epoch': 0,
+                         'rpn2_lr': 0,
+                         'rpn2_lr_step': '',
+                         'rpn3_epoch': 0,
+                         'rpn3_lr': 0,
+                         'rpn3_lr_step': ''},
+           'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 1,
+           'BATCH_ROIS': 128,
+           'BATCH_ROIS_OHEM': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': True,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.1,
+           'CXX_PROPOSAL': False,
+           'ENABLE_OHEM': False,
+           'END2END': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'FLIP': True,
+           'RESUME': False,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 0,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 300,
+           'RPN_PRE_NMS_TOP_N': 6000,
+           'SHUFFLE': True,
+           'begin_epoch': 0,
+           'end_epoch': 7,
+           'lr': 0.0005,
+           'lr_factor': 0.1,
+           'lr_step': '4.83',
+           'model_prefix': 'rcnn_food',
+           'momentum': 0.9,
+           'warmup': True,
+           'warmup_lr': 5e-05,
+           'warmup_step': 2000,
+           'wd': 0.0005},
+ 'dataset': {'NUM_ATTRI': 115,
+             'NUM_CLASSES': 123,
+             'dataset': 'Food',
+             'dataset_path': '../dataset',
+             'image_set': '122_trainval',
+             'proposal': 'rpn',
+             'root_path': './data',
+             'test_image_set': '122_test'},
+ 'default': {'frequent': 100, 'kvstore': 'device'},
+ 'gpus': '3,4',
+ 'network': {'ANCHOR_RATIOS': [0.5, 1, 2],
+             'ANCHOR_SCALES': [8, 16, 32],
+             'FIXED_PARAMS': ['conv1',
+                              'bn_conv1',
+                              'res2',
+                              'bn2',
+                              'gamma',
+                              'beta'],
+             'FIXED_PARAMS_SHARED': ['conv1',
+                                     'bn_conv1',
+                                     'res2',
+                                     'bn2',
+                                     'res3',
+                                     'bn3',
+                                     'res4',
+                                     'bn4',
+                                     'gamma',
+                                     'beta'],
+             'IMAGE_STRIDE': 0,
+             'NUM_ANCHORS': 9,
+             'PIXEL_MEANS': array([ 103.06,  115.9 ,  123.15]),
+             'RCNN_FEAT_STRIDE': 16,
+             'RPN_FEAT_STRIDE': 16,
+             'pretrained': './model/pretrained_model/resnet_v1_101',
+             'pretrained_epoch': 0},
+ 'output_path': './output/rcnn/food122',
+ 'symbol': 'resnet_v1_101_rcnn_attri_v3'}
+num_images 10465
+food_122_trainval gt roidb loaded from ./data/cache/food_122_trainval_gt_roidb.pkl
+append flipped images to roidb
+filtered 0 roidb entries: 20930 -> 20930
+providing maximum shape [('data', (1, 3, 600, 1000)), ('gt_boxes', (1, 100, 5)), ('attri', (1, 100, 115))] [('label', (1, 21546)), ('bbox_target', (1, 36, 38, 63)), ('bbox_weight', (1, 36, 38, 63))]
+{'attri': (1L, 2L, 115L),
+ 'bbox_target': (1L, 36L, 35L, 63L),
+ 'bbox_weight': (1L, 36L, 35L, 63L),
+ 'data': (1L, 3L, 562L, 1000L),
+ 'gt_boxes': (1L, 2L, 5L),
+ 'im_info': (1L, 3L),
+ 'label': (1L, 19845L)}
+('lr', 0.0005, 'lr_epoch_diff', [4.83], 'lr_iters', [50545])
+Epoch[0] Batch [100]	Speed: 4.78 samples/sec	Train-RPNAcc=0.897335,	RPNLogLoss=0.260564,	RPNL1Loss=0.038957,	RCNNAcc=0.813815,	RCNNLogLoss=2.413250,	RCNNL1Loss=0.251073,	
+Epoch[0] Batch [200]	Speed: 7.03 samples/sec	Train-RPNAcc=0.922613,	RPNLogLoss=0.191342,	RPNL1Loss=0.036483,	RCNNAcc=0.832673,	RCNNLogLoss=1.744408,	RCNNL1Loss=0.300969,	
+Epoch[0] Batch [300]	Speed: 5.07 samples/sec	Train-RPNAcc=0.940323,	RPNLogLoss=0.153988,	RPNL1Loss=0.035383,	RCNNAcc=0.835276,	RCNNLogLoss=1.525019,	RCNNL1Loss=0.327233,	
+Epoch[0] Batch [400]	Speed: 4.66 samples/sec	Train-RPNAcc=0.952351,	RPNLogLoss=0.127487,	RPNL1Loss=0.034048,	RCNNAcc=0.832440,	RCNNLogLoss=1.428942,	RCNNL1Loss=0.356568,	
+Epoch[0] Batch [500]	Speed: 4.68 samples/sec	Train-RPNAcc=0.960123,	RPNLogLoss=0.109297,	RPNL1Loss=0.032906,	RCNNAcc=0.827283,	RCNNLogLoss=1.392504,	RCNNL1Loss=0.383483,	
+Epoch[0] Batch [600]	Speed: 4.67 samples/sec	Train-RPNAcc=0.964821,	RPNLogLoss=0.097421,	RPNL1Loss=0.031879,	RCNNAcc=0.824771,	RCNNLogLoss=1.359479,	RCNNL1Loss=0.396000,	
+Epoch[0] Batch [700]	Speed: 4.71 samples/sec	Train-RPNAcc=0.968561,	RPNLogLoss=0.087983,	RPNL1Loss=0.030828,	RCNNAcc=0.821466,	RCNNLogLoss=1.342515,	RCNNL1Loss=0.406038,	
+Epoch[0] Batch [800]	Speed: 4.85 samples/sec	Train-RPNAcc=0.971320,	RPNLogLoss=0.081323,	RPNL1Loss=0.029814,	RCNNAcc=0.820191,	RCNNLogLoss=1.319265,	RCNNL1Loss=0.409506,	
+Epoch[0] Batch [900]	Speed: 4.90 samples/sec	Train-RPNAcc=0.973625,	RPNLogLoss=0.075496,	RPNL1Loss=0.028949,	RCNNAcc=0.818318,	RCNNLogLoss=1.306459,	RCNNL1Loss=0.414164,	
+Epoch[0] Batch [1000]	Speed: 4.85 samples/sec	Train-RPNAcc=0.975515,	RPNLogLoss=0.070824,	RPNL1Loss=0.028140,	RCNNAcc=0.816886,	RCNNLogLoss=1.294799,	RCNNL1Loss=0.415994,	
+Epoch[0] Batch [1100]	Speed: 4.84 samples/sec	Train-RPNAcc=0.976740,	RPNLogLoss=0.067625,	RPNL1Loss=0.028085,	RCNNAcc=0.818390,	RCNNLogLoss=1.277953,	RCNNL1Loss=0.413777,	
+Epoch[0] Batch [1200]	Speed: 4.95 samples/sec	Train-RPNAcc=0.978142,	RPNLogLoss=0.064232,	RPNL1Loss=0.027432,	RCNNAcc=0.819262,	RCNNLogLoss=1.262751,	RCNNL1Loss=0.411218,	
+Epoch[0] Batch [1300]	Speed: 4.82 samples/sec	Train-RPNAcc=0.979305,	RPNLogLoss=0.061080,	RPNL1Loss=0.026547,	RCNNAcc=0.819442,	RCNNLogLoss=1.247249,	RCNNL1Loss=0.406010,	
+Epoch[0] Batch [1400]	Speed: 4.82 samples/sec	Train-RPNAcc=0.980282,	RPNLogLoss=0.058440,	RPNL1Loss=0.025486,	RCNNAcc=0.820653,	RCNNLogLoss=1.227646,	RCNNL1Loss=0.396343,	
+Epoch[0] Batch [1500]	Speed: 4.75 samples/sec	Train-RPNAcc=0.981299,	RPNLogLoss=0.055736,	RPNL1Loss=0.024475,	RCNNAcc=0.820851,	RCNNLogLoss=1.215027,	RCNNL1Loss=0.387437,	
+Epoch[0] Batch [1600]	Speed: 4.92 samples/sec	Train-RPNAcc=0.982145,	RPNLogLoss=0.053493,	RPNL1Loss=0.023699,	RCNNAcc=0.822016,	RCNNLogLoss=1.196526,	RCNNL1Loss=0.376066,	
+Epoch[0] Batch [1700]	Speed: 4.79 samples/sec	Train-RPNAcc=0.982874,	RPNLogLoss=0.051483,	RPNL1Loss=0.022887,	RCNNAcc=0.823015,	RCNNLogLoss=1.180323,	RCNNL1Loss=0.364904,	
+Epoch[0] Batch [1800]	Speed: 4.92 samples/sec	Train-RPNAcc=0.983535,	RPNLogLoss=0.049654,	RPNL1Loss=0.022077,	RCNNAcc=0.824670,	RCNNLogLoss=1.161999,	RCNNL1Loss=0.352758,	
+Epoch[0] Batch [1900]	Speed: 4.78 samples/sec	Train-RPNAcc=0.984136,	RPNLogLoss=0.047977,	RPNL1Loss=0.02137),
+             'RCNN_FEAT_STRIDE': 16,
+             'RPN_FEAT_STRIDE': 16,
+             'pretrained': './model/pretrained_model/resnet_v1_101',
+             'pretrained_epoch': 0},
+ 'output_path': './output/rcnn/food122',
+ 'symbol': 'resnet_v1_101_rcnn_attri_v6'}
+num_images 10465
+food_122_trainval gt roidb loaded from ./data/cache/food_122_trainval_gt_roidb.pkl
+append flipped images to roidb
+filtered 0 roidb entries: 20930 -> 20930
+providing maximum shape [('data', (1, 3, 600, 1000)), ('gt_boxes', (1, 100, 5)), ('attri', (1, 100, 115))] [('label', (1, 21546)), ('bbox_target', (1, 36, 38, 63)), ('bbox_weight', (1, 36, 38, 63))]
+{'attri': (1L, 2L, 115L),
+ 'bbox_target': (1L, 36L, 35L, 63L),
+ 'bbox_weight': (1L, 36L, 35L, 63L),
+ 'data': (1L, 3L, 562L, 1000L),
+ 'gt_boxes': (1L, 2L, 5L),
+ 'im_info': (1L, 3L),
+ 'label': (1L, 19845L)}
+('lr', 0.0005, 'lr_epoch_diff', [4.83], 'lr_iters', [50545])
+Epoch[0] Batch [100]	Speed: 4.20 samples/sec	Train-RPNAcc=0.894261,	RPNLogLoss=0.269576,	RPNL1Loss=0.040566,	RCNNAcc=0.814511,	RCNNLogLoss=2.431873,	RCNNL1Loss=0.253133,	
+Epoch[0] Batch [200]	Speed: 4.23 samples/sec	Train-RPNAcc=0.921030,	RPNLogLoss=0.195526,	RPNL1Loss=0.037272,	RCNNAcc=0.831332,	RCNNLogLoss=1.770561,	RCNNL1Loss=0.307847,	
+Epoch[0] Batch [300]	Speed: 4.20 samples/sec	Train-RPNAcc=0.938564,	RPNLogLoss=0.156223,	RPNL1Loss=0.034890,	RCNNAcc=0.834847,	RCNNLogLoss=1.540751,	RCNNL1Loss=0.330316,	
+Epoch[0] Batch [400]	Speed: 4.31 samples/sec	Train-RPNAcc=0.951172,	RPNLogLoss=0.129976,	RPNL1Loss=0.034375,	RCNNAcc=0.827502,	RCNNLogLoss=1.469848,	RCNNL1Loss=0.364343,	
+Epoch[0] Batch [500]	Speed: 4.53 samples/sec	Train-RPNAcc=0.958723,	RPNLogLoss=0.112898,	RPNL1Loss=0.033312,	RCNNAcc=0.824149,	RCNNLogLoss=1.414141,	RCNNL1Loss=0.381365,	
+Epoch[0] Batch [600]	Speed: 4.57 samples/sec	Train-RPNAcc=0.963953,	RPNLogLoss=0.100146,	RPNL1Loss=0.032558,	RCNNAcc=0.821365,	RCNNLogLoss=1.376447,	RCNNL1Loss=0.393512,	
+Epoch[0] Batch [700]	Speed: 4.46 samples/sec	Train-RPNAcc=0.967822,	RPNLogLoss=0.090288,	RPNL1Loss=0.031490,	RCNNAcc=0.819348,	RCNNLogLoss=1.349566,	RCNNL1Loss=0.402512,	
+Epoch[0] Batch [800]	Speed: 4.56 samples/sec	Train-RPNAcc=0.970645,	RPNLogLoss=0.083863,	RPNL1Loss=0.030755,	RCNNAcc=0.818328,	RCNNLogLoss=1.325861,	RCNNL1Loss=0.407300,	
+Epoch[0] Batch [900]	Speed: 4.59 samples/sec	Train-RPNAcc=0.972873,	RPNLogLoss=0.078118,	RPNL1Loss=0.030017,	RCNNAcc=0.817468,	RCNNLogLoss=1.305042,	RCNNL1Loss=0.409782,	
+Epoch[0] Batch [1000]	Speed: 4.63 samples/sec	Train-RPNAcc=0.974555,	RPNLogLoss=0.073699,	RPNL1Loss=0.029285,	RCNNAcc=0.816371,	RCNNLogLoss=1.290701,	RCNNL1Loss=0.413490,	
+Epoch[0] Batch [1100]	Speed: 4.59 samples/sec	Train-RPNAcc=0.976099,	RPNLogLoss=0.069917,	RPNL1Loss=0.028612,	RCNNAcc=0.815133,	RCNNLogLoss=1.280280,	RCNNL1Loss=0.416430,	
+Epoch[0] Batch [1200]	Speed: 4.52 samples/sec	Train-RPNAcc=0.977367,	RPNLogLoss=0.066676,	RPNL1Loss=0.027935,	RCNNAcc=0.815170,	RCNNLogLoss=1.265226,	RCNNL1Loss=0.415714,	
+Epoch[0] Batch [1300]	Speed: 4.57 samples/sec	Train-RPNAcc=0.978465,	RPNLogLoss=0.063714,	RPNL1Loss=0.027240,	RCNNAcc=0.814803,	RCNNLogLoss=1.254351,	RCNNL1Loss=0.416202,	
+Epoch[0] Batch [1400]	Speed: 4.56 samples/sec	Train-RPNAcc=0.979529,	RPNLogLoss=0.060877,	RPNL1Loss=0.026667,	RCNNAcc=0.814156,	RCNNLogLoss=1.247155,	RCNNL1Loss=0.416923,	
+Epoch[0] Batch [1500]	Speed: 4.53 samples/sec	Train-RPNAcc=0.980415,	RPNLogLoss=0.058506,	RPNL1Loss=0.025960,	RCNNAcc=0.814332,	RCNNLogLoss=1.236169,	RCNNL1Loss=0.415308,	
+Epoch[0] Batch [1600]	Speed: 4.53 samples/sec	Train-RPNAcc=0.981101,	RPNLogLoss=0.056722,	RPNL1Loss=0.025413,	RCNNAcc=0.814198,	RCNNLogLoss=1.227721,	RCNNL1Loss=0.414144,	
+Epoch[0] Batch [1700]	Speed: 4.54 samples/sec	Train-RPNAcc=0.981731,	RPNLogLoss=0.054962,	RPNL1Loss=0.024815,	RCNNAcc=0.814815,	RCNNLogLoss=1.216642,	RCNNL1Loss=0.411598,	
+Epoch[0] Batch [1800]	Speed: 4.52 samples/sec	Train-RPNAcc=0.982312,	RPNLogLoss=0.053440,	RPNL1Loss=0.024298,	RCNNAcc=0.815120,	RCNNLogLoss=1.207148,	RCNNL1Loss=0.409237,	
+Epoch[0] Batch [1900]	Speed: 4.49 samples/sec	Train-RPNAcc=0.982953,	RPNLogLoss=0.051862,	RPNL1Loss=0.02383('Called with argument:', Namespace(cfg='experiments/faster_rcnn/cfgs/resnet_v1_101_food122_attri_rcnn_end2end_v3.yaml', frequent=100))
+{'CLASS_AGNOSTIC': False,
+ 'MXNET_VERSION': 'mxnet',
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': False,
+          'HAS_RPN': True,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 0,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 0,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'max_per_image': 300,
+          'test_epoch': 6},
+ 'TRAIN': {'ALTERNATE': {'RCNN_BATCH_IMAGES': 0,
+                         'RPN_BATCH_IMAGES': 0,
+                         'rfcn1_epoch': 0,
+                         'rfcn1_lr': 0,
+                         'rfcn1_lr_step': '',
+                         'rfcn2_epoch': 0,
+                         'rfcn2_lr': 0,
+                         'rfcn2_lr_step': '',
+                         'rpn1_epoch': 0,
+                         'rpn1_lr': 0,
+                         'rpn1_lr_step': '',
+                         'rpn2_epoch': 0,
+                         'rpn2_lr': 0,
+                         'rpn2_lr_step': '',
+                         'rpn3_epoch': 0,
+                         'rpn3_lr': 0,
+                         'rpn3_lr_step': ''},
+           'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 1,
+           'BATCH_ROIS': 128,
+           'BATCH_ROIS_OHEM': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': True,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.1,
+           'CXX_PROPOSAL': False,
+           'ENABLE_OHEM': False,
+           'END2END': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'FLIP': True,
+           'RESUME': False,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 0,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 300,
+           'RPN_PRE_NMS_TOP_N': 6000,
+           'SHUFFLE': True,
+           'begin_epoch': 0,
+           'end_epoch': 7,
+           'lr': 0.0005,
+           'lr_factor': 0.1,
+           'lr_step': '4.83',
+           'model_prefix': 'rcnn_food',
+           'momentum': 0.9,
+           'warmup': True,
+           'warmup_lr': 5e-05,
+           'warmup_step': 1000,
+           'wd': 0.0005},
+ 'dataset': {'NUM_ATTRI': 115,
+             'NUM_CLASSES': 123,
+             'dataset': 'Food',
+             'dataset_path': '../dataset',
+             'image_set': '122_trainval',
+             'proposal': 'rpn',
+             'root_path': './data',
+             'test_image_set': '122_test'},
+ 'default': {'frequent': 100, 'kvstore': 'device'},
+ 'gpus': '3,4',
+ 'network': {'ANCHOR_RATIOS': [0.5, 1, 2],
+             'ANCHOR_SCALES': [8, 16, 32],
+             'FIXED_PARAMS': ['conv1',
+                              'bn_conv1',
+                              'res2',
+                              'bn2',
+                              'gamma',
+                              'beta'],
+             'FIXED_PARAMS_SHARED': ['conv1',
+                                     'bn_conv1',
+                                     'res2',
+                                     'bn2',
+                                     'res3',
+                                     'bn3',
+                                     'res4',
+                                     'bn4',
+                                     'gamma',
+                                     'beta'],
+             'IMAGE_STRIDE': 0,
+             'NUM_ANCHORS': 9,
+             'PIXEL_MEANS': array([ 103.06,  115.9 ,  123.15]),
+             'RCNN_FEAT_STRIDE': 16,
+             'RPN_FEAT_STRIDE': 16,
+             'pretrained': './model/pretrained_model/resnet_v1_101',
+             'pretrained_epoch': 0},
+ 'output_path': './output/rcnn/food122',
+ 'symbol': 'resnet_v1_101_rcnn_attri_v3'}
+num_images 10465
+food_122_trainval gt roidb loaded from ./data/cache/food_122_trainval_gt_roidb.pkl
+append flipped images to roidb
+filtered 0 roidb entries: 20930 -> 20930
+providing maximum shape [('data', (1, 3, 600, 1000)), ('gt_boxes', (1, 100, 5)), ('attri', (1, 100, 115))] [('label', (1, 21546)), ('bbox_target', (1, 36, 38, 63)), ('bbox_weight', (1, 36, 38, 63))]
+{'attri': (1L, 2L, 115L),
+ 'bbox_target': (1L, 36L, 35L, 63L),
+ 'bbox_weight': (1L, 36L, 35L, 63L),
+ 'data': (1L, 3L, 562L, 1000L),
+ 'gt_boxes': (1L, 2L, 5L),
+ 'im_info': (1L, 3L),
+ 'label': (1L, 19845L)}
+('lr', 0.0005, 'lr_epoch_diff', [4.83], 'lr_iters', [50545])
+Epoch[0] Batch [100]	Speed: 7.15 samples/sec	Train-RPNAcc=0.897877,	RPNLogLoss=0.260272,	RPNL1Loss=0.038770,	RCNNAcc=0.802058,	RCNNLogLoss=2.490975,	RCNNL1Loss=0.278063,	
+Epoch[0] Batch [200]	Speed: 7.18 samples/sec	Train-RPNAcc=0.921710,	RPNLogLoss=0.191357,	RPNL1Loss=0.036326,	RCNNAcc=0.834208,	RCNNLogLoss=1.740894,	RCNNL1Loss=0.294054,	
+Epoch[0] Batch [300]	Speed: 7.41 samples/sec	Train-RPNAcc=0.938720,	RPNLogLoss=0.155197,	RPNL1Loss=0.035449,	RCNNAcc=0.836651,	RCNNLogLoss=1.518259,	RCNNL1Loss=0.319812,	
+Epoch[0] Batch [400]	Speed: 7.13 samples/sec	Train-RPNAcc=0.950446,	RPNLogLoss=0.130786,	RPNL1Loss=0.035283,	RCNNAcc=0.833629,	RCNNLogLoss=1.431498,	RCNNL1Loss=0.350382,	
+Epoch[0] Batch [500]	Speed: 6.96 samples/sec	Train-RPNAcc=0.958513,	RPNLogLoss=0.112124,	RPNL1Loss=0.034164,	RCNNAcc=0.829458,	RCNNLogLoss=1.384909,	RCNNL1Loss=0.374808,	
+Epoch[0] Batch [600]	Speed: 7.10 samples/sec	Train-RPNAcc=0.963882,	RPNLogLoss=0.099398,	RPNL1Loss=0.033560,	RCNNAcc=0.824953,	RCNNLogLoss=1.361894,	RCNNL1Loss=0.393042,	
+Epoch[0] Batch [700]	Speed: 6.94 samples/sec	Train-RPNAcc=0.967619,	RPNLogLoss=0.090202,	RPNL1Loss=0.032320,	RCNNAcc=0.823728,	RCNNLogLoss=1.332704,	RCNNL1Loss=0.398244,	
+Epoch[0] Batch [800]	Speed: 7.04 samples/sec	Train-RPNAcc=0.970603,	RPNLogLoss=0.082622,	RPNL1Loss=0.031203,	RCNNAcc=0.821112,	RCNNLogLoss=1.319529,	RCNNL1Loss=0.404971,	
+Epoch[0] Batch [900]	Speed: 7.13 samples/sec	Train-RPNAcc=0.972867,	RPNLogLoss=0.077295,	RPNL1Loss=0.030302,	RCNNAcc=0.820352,	RCNNLogLoss=1.299617,	RCNNL1Loss=0.406493,	
+Epoch[0] Batch [1000]	Speed: 7.01 samples/sec	Train-RPNAcc=0.974728,	RPNLogLoss=0.072524,	RPNL1Loss=0.029352,	RCNNAcc=0.818904,	RCNNLogLoss=1.288013,	RCNNL1Loss=0.408797,	
+Epoch[0] Batch [1100]	Speed: 7.25 samples/sec	Train-RPNAcc=0.976130,	RPNLogLoss=0.069152,	RPNL1Loss=0.029210,	RCNNAcc=0.819330,	RCNNLogLoss=1.274742,	RCNNL1Loss=0.409676,	
+Epoch[0] Batch [1200]	Speed: 7.44 samples/sec	Train-RPNAcc=0.977454,	RPNLogLoss=0.065760,	RPNL1Loss=0.028437,	RCNNAcc=0.820384,	RCNNLogLoss=1.255153,	RCNNL1Loss=0.405951,	
+Epoch[0] Batch [1300]	Speed: 7.60 samples/sec	Train-RPNAcc=0.978592,	RPNLogLoss=0.062802,	RPNL1Loss=0.027372,	RCNNAcc=0.822766,	RCNNLogLoss=1.228312,	RCNNL1Loss=0.396405,	
+Epoch[0] Batch [1400]	Speed: 7.33 samples/sec	Train-RPNAcc=0.979676,	RPNLogLoss=0.060000,	RPNL1Loss=0.026350,	RCNNAcc=0.824556,	RCNNLogLoss=1.205240,	RCNNL1Loss=0.385852,	
+Epoch[0] Batch [1500]	Speed: 7.44 samples/sec	Train-RPNAcc=0.980669,	RPNLogLoss=0.057365,	RPNL1Loss=0.025481,	RCNNAcc=0.826878,	RCNNLogLoss=1.179621,	RCNNL1Loss=0.373304,	
+Epoch[0] Batch [1600]	Speed: 7.16 samples/sec	Train-RPNAcc=0.981565,	RPNLogLoss=0.054935,	RPNL1Loss=0.024487,	RCNNAcc=0.830214,	RCNNLogLoss=1.149786,	RCNNL1Loss=0.359222,	
+Epoch[0] Batch [1700]	Speed: 7.16 samples/sec	Train-RPNAcc=0.982329,	RPNLogLoss=0.052843,	RPNL1Loss=0.023624,	RCNNAcc=0.831866,	RCNNLogLoss=1.130871,	RCNNL1Loss=0.348030,	
+Epoch[0] Batch [1800]	Speed: 7.39 samples/sec	Train-RPNAcc=0.982952,	RPNLogLoss=0.051013,	RPNL1Loss=0.022822,	RCNNAcc=0.834235,	RCNNLogLoss=1.108626,	RCNNL1Loss=0.335884,	
+Epoch[0] Batch [1900]	Speed: 7.45 samples/sec	Train-RPNAcc=0.983610,	RPNLogLoss=0.049151,	RPNL1Loss=0.022032,	RCNNAcc=0.836733,	RCNNLogLoss=1.085632,	RCNNL1Loss=0.323456,	
+Epoch[0] Batch [2000]	Speed: 7.20 samples/sec	Train-RPNAcc=0.984168,	RPNLogLoss=0.047605,	RPNL1Loss=0.021363,	RCNNAcc=0.838712,	RCNNLogLoss=1.067014,	RCNNL1Loss=0.312581,	
+Epoch[0] Batch [2100]	Speed: 7.62 samples/sec	Train-RPNAcc=0.984751,	RPNLogLoss=0.045926,	RPNL1Loss=0.020796,	RCNNAcc=0.840247,	RCNNLogLoss=1.050041,	RCNNL1Loss=0.302619,	
+Epoch[0] Batch [2200]	Speed: 7.59 samples/sec	Train-RPNAcc=0.985266,	RPNLogLoss=0.044469,	RPNL1Loss=0.020233,	RCNNAcc=0.842618,	RCNNLogLoss=1.028824,	RCNNL1Loss=0.292441,	
+Epoch[0] Batch [2300]	Speed: 7.20 samples/sec	Train-RPNAcc=0.985718,	RPNLogLoss=0.043118,	RPNL1Loss=0.019644,	RCNNAcc=0.844840,	RCNNLogLoss=1.008386,	RCNNL1Loss=0.282850,	
+Epoch[0] Batch [2400]	Speed: 7.22 samples/sec	Train-RPNAcc=0.986133,	RPNLogLoss=0.041980,	RPNL1Loss=0.019109,	RCNNAcc=0.846735,	RCNNLogLoss=0.990149,	RCNNL1Loss=0.274094,	
+Epoch[0] Batch [2500]	Speed: 7.61 samples/sec	Train-RPNAcc=0.986508,	RPNLogLoss=0.040898,	RPNL1Loss=0.018646,	RCNNAcc=0.848414,	RCNNLogLoss=0.973482,	RCNNL1Loss=0.265981,	
+Epoch[0] Batch [2600]	Speed: 7.12 samples/sec	Train-RPNAcc=0.986898,	RPNLogLoss=0.039756,	RPNL1Loss=0.018221,	RCNNAcc=0.849424,	RCNNLogLoss=0.960662,	RCNNL1Loss=0.259274,	
+Epoch[0] Batch [2700]	Speed: 7.31 samples/sec	Train-RPNAcc=0.987220,	RPNLogLoss=0.038811,	RPNL1Loss=0.017788,	RCNNAcc=0.850604,	RCNNLogLoss=0.947347,	RCNNL1Loss=0.252606,	
+Epoch[0] Batch [2800]	Speed: 7.45 samples/sec	Train-RPNAcc=0.987516,	RPNLogLoss=0.037996,	RPNL1Loss=0.017407,	RCNNAcc=0.851536,	RCNNLogLoss=0.934795,	RCNNL1Loss=0.246550,	
+Epoch[0] Batch [2900]	Speed: 7.14 samples/sec	Train-RPNAcc=0.987813,	RPNLogLoss=0.037142,	RPNL1Loss=0.017029,	RCNNAcc=0.852528,	RCNNLogLoss=0.922084,	RCNNL1Loss=0.240767,	
+Epoch[0] Batch [3000]	Speed: 7.44 samples/sec	Train-RPNAcc=0.988077,	RPNLogLoss=0.036341,	RPNL1Loss=0.016669,	RCNNAcc=0.854109,	RCNNLogLoss=0.907269,	RCNNL1Loss=0.234769,	
+Epoch[0] Batch [3100]	Speed: 7.14 samples/sec	Train-RPNAcc=0.988288,	RPNLogLoss=0.035925,	RPNL1Loss=0.016366,	RCNNAcc=0.855252,	RCNNLogLoss=0.894766,	RCNNL1Loss=0.229526,	
+Epoch[0] Batch [3200]	Speed: 7.32 samples/sec	Train-RPNAcc=0.988537,	RPNLogLoss=0.035207,	RPNL1Loss=0.016037,	RCNNAcc=0.855696,	RCNNLogLoss=0.886434,	RCNNL1Loss=0.225390,	
+Epoch[0] Batch [3300]	Speed: 7.45 samples/sec	Train-RPNAcc=0.988781,	RPNLogLoss=0.034494,	RPNL1Loss=0.015734,	RCNNAcc=0.856531,	RCNNLogLoss=0.875899,	RCNNL1Loss=0.220931,	
+Epoch[0] Batch [3400]	Speed: 7.12 samples/sec	Train-RPNAcc=0.988969,	RPNLogLoss=0.033916,	RPNL1Loss=0.015470,	RCNNAcc=0.857556,	RCNNLogLoss=0.864598,	RCNNL1Loss=0.216643,	
+Epoch[0] Batch [3500]	Speed: 7.46 samples/sec	Train-RPNAcc=0.989196,	RPNLogLoss=0.033257,	RPNL1Loss=0.015224,	RCNNAcc=0.858229,	RCNNLogLoss=0.854883,	RCNNL1Loss=0.212738,	
+Epoch[0] Batch [3600]	Speed: 7.61 samples/sec	Train-RPNAcc=0.989409,	RPNLogLoss=0.032634,	RPNL1Loss=0.014941,	RCNNAcc=0.859055,	RCNNLogLoss=0.844586,	RCNNL1Loss=0.208759,	
+Epoch[0] Batch [3700]	Speed: 7.19 samples/sec	Train-RPNAcc=0.989615,	RPNLogLoss=0.032016,	RPNL1Loss=0.014711,	RCNNAcc=0.859498,	RCNNLogLoss=0.836307,	RCNNL1Loss=0.205315,	
+Epoch[0] Batch [3800]	Speed: 7.33 samples/sec	Train-RPNAcc=0.989803,	RPNLogLoss=0.031469,	RPNL1Loss=0.014471,	RCNNAcc=0.859947,	RCNNLogLoss=0.828247,	RCNNL1Loss=0.202164,	
+Epoch[0] Batch [3900]	Speed: 7.31 samples/sec	Train-RPNAcc=0.989960,	RPNLogLoss=0.031020,	RPNL1Loss=0.014246,	RCNNAcc=0.860605,	RCNNLogLoss=0.819351,	RCNNL1Loss=0.198980,	
+Epoch[0] Batch [4000]	Speed: 7.20 samples/sec	Train-RPNAcc=0.990130,	RPNLogLoss=0.030524,	RPNL1Loss=0.014043,	RCNNAcc=0.860702,	RCNNLogLoss=0.812970,	RCNNL1Loss=0.196522,	
+Epoch[0] Batch [4100]	Speed: 7.29 samples/sec	Train-RPNAcc=0.990300,	RPNLogLoss=0.030020,	RPNL1Loss=0.013849,	RCNNAcc=0.860848,	RCNNLogLoss=0.806787,	RCNNL1Loss=0.194031,	
+Epoch[0] Batch [4200]	Speed: 7.50 samples/sec	Train-RPNAcc=0.990454,	RPNLogLoss=0.029581,	RPNL1Loss=0.013653,	RCNNAcc=0.861235,	RCNNLogLoss=0.799575,	RCNNL1Loss=0.191206,	
+Epoch[0] Batch [4300]	Speed: 7.21 samples/sec	Train-RPNAcc=0.990612,	RPNLogLoss=0.029105,	RPNL1Loss=0.013458,	RCNNAcc=0.861807,	RCNNLogLoss=0.791621,	RCNNL1Loss=0.188710,	
+Epoch[0] Batch [4400]	Speed: 7.54 samples/sec	Train-RPNAcc=0.990776,	RPNLogLoss=0.028608,	RPNL1Loss=0.013322,	RCNNAcc=0.862311,	RCNNLogLoss=0.783856,	RCNNL1Loss=0.186105,	
+Epoch[0] Batch [4500]	Speed: 7.31 samples/sec	Train-RPNAcc=0.990906,	RPNLogLoss=0.028226,	RPNL1Loss=0.013159,	RCNNAcc=0.862701,	RCNNLogLoss=0.777139,	RCNNL1Loss=0.183672,	
+Epoch[0] Batch [4600]	Speed: 7.45 samples/sec	Train-RPNAcc=0.991011,	RPNLogLoss=0.028021,	RPNL1Loss=0.013133,	RCNNAcc=0.862930,	RCNNLogLoss=0.770943,	RCNNL1Loss=0.181621,	
+Epoch[0] Batch [4700]	Speed: 7.40 samples/sec	Train-RPNAcc=0.991134,	RPNLogLoss=0.027676,	RPNL1Loss=0.012990,	RCNNAcc=0.862996,	RCNNLogLoss=0.765694,	RCNNL1Loss=0.179652,	
+Epoch[0] Batch [4800]	Speed: 7.41 samples/sec	Train-RPNAcc=0.991276,	RPNLogLoss=0.027258,	RPNL1Loss=0.012842,	RCNNAcc=0.863764,	RCNNLogLoss=0.757715,	RCNNL1Loss=0.177040,	
+Epoch[0] Batch [4900]	Speed: 7.23 samples/sec	Train-RPNAcc=0.991407,	RPNLogLoss=0.026857,	RPNL1Loss=0.012702,	RCNNAcc=0.864333,	RCNNLogLoss=0.750646,	RCNNL1Loss=0.174730,	
+Epoch[0] Batch [5000]	Speed: 7.16 samples/sec	Train-RPNAcc=0.991513,	RPNLogLoss=0.026528,	RPNL1Loss=0.012564,	RCNNAcc=0.864790,	RCNNLogLoss=0.744166,	RCNNL1Loss=0.172477,	
+Epoch[0] Batch [5100]	Speed: 7.32 samples/sec	Train-RPNAcc=0.991626,	RPNLogLoss=0.026216,	RPNL1Loss=0.012441,	RCNNAcc=0.865448,	RCNNLogLoss=0.737102,	RCNNL1Loss=0.170219,	
+Epoch[0] Batch [5200]	Speed: 7.26 samples/sec	Train-RPNAcc=0.991739,	RPNLogLoss=0.025892,	RPNL1Loss=0.012303,	RCNNAcc=0.865795,	RCNNLogLoss=0.731246,	RCNNL1Loss=0.168330,	
+Epoch[0] Batch [5300]	Speed: 7.55 samples/sec	Train-RPNAcc=0.991848,	RPNLogLoss=0.025570,	RPNL1Loss=0.012176,	RCNNAcc=0.866306,	RCNNLogLoss=0.724912,	RCNNL1Loss=0.166354,	
+Epoch[0] Batch [5400]	Speed: 6.99 samples/sec	Train-RPNAcc=0.991949,	RPNLogLoss=0.025284,	RPNL1Loss=0.012067,	RCNNAcc=0.866708,	RCNNLogLoss=0.718584,	RCNNL1Loss=0.164510,	
+Epoch[0] Batch [5500]	Speed: 7.27 samples/sec	Train-RPNAcc=0.992039,	RPNLogLoss=0.025022,	RPNL1Loss=0.011966,	RCNNAcc=0.866766,	RCNNLogLoss=0.714012,	RCNNL1Loss=0.163126,	
+Epoch[0] Batch [5600]	Speed: 7.28 samples/sec	Train-RPNAcc=0.992133,	RPNLogLoss=0.024757,	RPNL1Loss=0.011853,	RCNNAcc=0.867036,	RCNNLogLoss=0.708826,	RCNNL1Loss=0.161676,	
+Epoch[0] Batch [5700]	Speed: 7.10 samples/sec	Train-RPNAcc=0.992236,	RPNLogLoss=0.024448,	RPNL1Loss=0.011744,	RCNNAcc=0.867101,	RCNNLogLoss=0.704590,	RCNNL1Loss=0.160284,	
+Epoch[0] Batch [5800]	Speed: 7.35 samples/sec	Train-RPNAcc=0.992335,	RPNLogLoss=0.024161,	RPNL1Loss=0.011635,	RCNNAcc=0.867160,	RCNNLogLoss=0.700426,	RCNNL1Loss=0.158997,	
+Epoch[0] Batch [5900]	Speed: 7.55 samples/sec	Train-RPNAcc=0.992425,	RPNLogLoss=0.023893,	RPNL1Loss=0.011529,	RCNNAcc=0.867374,	RCNNLogLoss=0.695817,	RCNNL1Loss=0.157619,	
+Epoch[0] Batch [6000]	Speed: 7.41 samples/sec	Train-RPNAcc=0.992515,	RPNLogLoss=0.023630,	RPNL1Loss=0.011437,	RCNNAcc=0.867667,	RCNNLogLoss=0.691252,	RCNNL1Loss=0.156252,	
+Epoch[0] Batch [6100]	Speed: 7.31 samples/sec	Train-RPNAcc=0.992599,	RPNLogLoss=0.023370,	RPNL1Loss=0.011331,	RCNNAcc=0.867911,	RCNNLogLoss=0.686675,	RCNNL1Loss=0.154778,	
+Epoch[0] Batch [6200]	Speed: 7.57 samples/sec	Train-RPNAcc=0.992679,	RPNLogLoss=0.023127,	RPNL1Loss=0.011230,	RCNNAcc=0.868297,	RCNNLogLoss=0.681603,	RCNNL1Loss=0.153314,	
+Epoch[0] Batch [6300]	Speed: 7.37 samples/sec	Train-RPNAcc=0.992751,	RPNLogLoss=0.022909,	RPNL1Loss=0.011145,	RCNNAcc=0.868788,	RCNNLogLoss=0.676125,	RCNNL1Loss=0.151882,	
+Epoch[0] Batch [6400]	Speed: 7.34 samples/sec	Train-RPNAcc=0.992814,	RPNLogLoss=0.022706,	RPNL1Loss=0.011057,	RCNNAcc=0.869019,	RCNNLogLoss=0.671942,	RCNNL1Loss=0.150920,	
+Epoch[0] Batch [6500]	Speed: 7.35 samples/sec	Train-RPNAcc=0.992879,	RPNLogLoss=0.022510,	RPNL1Loss=0.010971,	RCNNAcc=0.869408,	RCNNLogLoss=0.667265,	RCNNL1Loss=0.149733,	
+Epoch[0] Batch [6600]	Speed: 7.09 samples/sec	Train-RPNAcc=0.992946,	RPNLogLoss=0.022330,	RPNL1Loss=0.010882,	RCNNAcc=0.869478,	RCNNLogLoss=0.663740,	RCNNL1Loss=0.148625,	
+Epoch[0] Batch [6700]	Speed: 7.57 samples/sec	Train-RPNAcc=0.993012,	RPNLogLoss=0.022129,	RPNL1Loss=0.010796,	RCNNAcc=0.869682,	RCNNLogLoss=0.659686,	RCNNL1Loss=0.147733,	
+Epoch[0] Batch [6800]	Speed: 7.29 samples/sec	Train-RPNAcc=0.993077,	RPNLogLoss=0.021925,	RPNL1Loss=0.010719,	RCNNAcc=0.869913,	RCNNLogLoss=0.655692,	RCNNL1Loss=0.146635,	
+Epoch[0] Batch [6900]	Speed: 7.50 samples/sec	Train-RPNAcc=0.993147,	RPNLogLoss=0.021711,	RPNL1Loss=0.010651,	RCNNAcc=0.870129,	RCNNLogLoss=0.651762,	RCNNL1Loss=0.145715,	
+Epoch[0] Batch [7000]	Speed: 7.46 samples/sec	Train-RPNAcc=0.993214,	RPNLogLoss=0.021517,	RPNL1Loss=0.010571,	RCNNAcc=0.870298,	RCNNLogLoss=0.648101,	RCNNL1Loss=0.144768,	
+Epoch[0] Batch [7100]	Speed: 7.19 samples/sec	Train-RPNAcc=0.993276,	RPNLogLoss=0.021326,	RPNL1Loss=0.010497,	RCNNAcc=0.870632,	RCNNLogLoss=0.643782,	RCNNL1Loss=0.143723,	
+Epoch[0] Batch [7200]	Speed: 7.35 samples/sec	Train-RPNAcc=0.993338,	RPNLogLoss=0.021154,	RPNL1Loss=0.010423,	RCNNAcc=0.870462,	RCNNLogLoss=0.641815,	RCNNL1Loss=0.142958,	
+Epoch[0] Batch [7300]	Speed: 7.43 samples/sec	Train-RPNAcc=0.993395,	RPNLogLoss=0.020990,	RPNL1Loss=0.010352,	RCNNAcc=0.870229,	RCNNLogLoss=0.640216,	RCNNL1Loss=0.142437,	
+Epoch[0] Batch [7400]	Speed: 7.31 samples/sec	Train-RPNAcc=0.993451,	RPNLogLoss=0.020812,	RPNL1Loss=0.010279,	RCNNAcc=0.870060,	RCNNLogLoss=0.638412,	RCNNL1Loss=0.141927,	
+Epoch[0] Batch [7500]	Speed: 7.35 samples/sec	Train-RPNAcc=0.993511,	RPNLogLoss=0.020636,	RPNL1Loss=0.010219,	RCNNAcc=0.870129,	RCNNLogLoss=0.635868,	RCNNL1Loss=0.141291,	
+Epoch[0] Batch [7600]	Speed: 7.51 samples/sec	Train-RPNAcc=0.993562,	RPNLogLoss=0.020471,	RPNL1Loss=0.010160,	RCNNAcc=0.870427,	RCNNLogLoss=0.632224,	RCNNL1Loss=0.140264,	
+Epoch[0] Batch [7700]	Speed: 7.60 samples/sec	Train-RPNAcc=0.993616,	RPNLogLoss=0.020308,	RPNL1Loss=0.010100,	RCNNAcc=0.870563,	RCNNLogLoss=0.629091,	RCNNL1Loss=0.139503,	
+Epoch[0] Batch [7800]	Speed: 7.13 samples/sec	Train-RPNAcc=0.993672,	RPNLogLoss=0.020141,	RPNL1Loss=0.010040,	RCNNAcc=0.870658,	RCNNLogLoss=0.626309,	RCNNL1Loss=0.138962,	
+Epoch[0] Batch [7900]	Speed: 7.47 samples/sec	Train-RPNAcc=0.993713,	RPNLogLoss=0.020019,	RPNL1Loss=0.009985,	RCNNAcc=0.870422,	RCNNLogLoss=0.624800,	RCNNL1Loss=0.138532,	
+Epoch[0] Batch [8000]	Speed: 7.18 samples/sec	Train-RPNAcc=0.993746,	RPNLogLoss=0.019989,	RPNL1Loss=0.009970,	RCNNAcc=0.870078,	RCNNLogLoss=0.624119,	RCNNL1Loss=0.138300,	
+Epoch[0] Batch [8100]	Speed: 7.40 samples/sec	Train-RPNAcc=0.993800,	RPNLogLoss=0.019837,	RPNL1Loss=0.009924,	RCNNAcc=0.869641,	RCNNLogLoss=0.623798,	RCNNL1Loss=0.138111,	
+Epoch[0] Batch [8200]	Speed: 7.51 samples/sec	Train-RPNAcc=0.993840,	RPNLogLoss=0.019734,	RPNL1Loss=0.009883,	RCNNAcc=0.869070,	RCNNLogLoss=0.623590,	RCNNL1Loss=0.138129,	
+Epoch[0] Batch [8300]	Speed: 7.45 samples/sec	Train-RPNAcc=0.993878,	RPNLogLoss=0.019628,	RPNL1Loss=0.009826,	RCNNAcc=0.868833,	RCNNLogLoss=0.622232,	RCNNL1Loss=0.138003,	
+Epoch[0] Batch [8400]	Speed: 7.46 samples/sec	Train-RPNAcc=0.993920,	RPNLogLoss=0.019504,	RPNL1Loss=0.009774,	RCNNAcc=0.868489,	RCNNLogLoss=0.621402,	RCNNL1Loss=0.137821,	
+Epoch[0] Batch [8500]	Speed: 7.45 samples/sec	Train-RPNAcc=0.993969,	RPNLogLoss=0.019357,	RPNL1Loss=0.009725,	RCNNAcc=0.868184,	RCNNLogLoss=0.620155,	RCNNL1Loss=0.137730,	
+Epoch[0] Batch [8600]	Speed: 7.63 samples/sec	Train-RPNAcc=0.994013,	RPNLogLoss=0.019225,	RPNL1Loss=0.009676,	RCNNAcc=0.867831,	RCNNLogLoss=0.619364,	RCNNL1Loss=0.137577,	
+Epoch[0] Batch [8700]	Speed: 7.49 samples/sec	Train-RPNAcc=0.994046,	RPNLogLoss=0.019123,	RPNL1Loss=0.009631,	RCNNAcc=0.867612,	RCNNLogLoss=0.617892,	RCNNL1Loss=0.137338,	
+Epoch[0] Batch [8800]	Speed: 7.21 samples/sec	Train-RPNAcc=0.994089,	RPNLogLoss=0.019004,	RPNL1Loss=0.009581,	RCNNAcc=0.867358,	RCNNLogLoss=0.616694,	RCNNL1Loss=0.137101,	
+Epoch[0] Batch [8900]	Speed: 7.44 samples/sec	Train-RPNAcc=0.994131,	RPNLogLoss=0.018875,	RPNL1Loss=0.009531,	RCNNAcc=0.867185,	RCNNLogLoss=0.615425,	RCNNL1Loss=0.136844,	
+Epoch[0] Batch [9000]	Speed: 7.43 samples/sec	Train-RPNAcc=0.994171,	RPNLogLoss=0.018753,	RPNL1Loss=0.009477,	RCNNAcc=0.867065,	RCNNLogLoss=0.613801,	RCNNL1Loss=0.136695,	
+Epoch[0] Batch [9100]	Speed: 7.37 samples/sec	Train-RPNAcc=0.994210,	RPNLogLoss=0.018638,	RPNL1Loss=0.009436,	RCNNAcc=0.866847,	RCNNLogLoss=0.612583,	RCNNL1Loss=0.136623,	
+Epoch[0] Batch [9200]	Speed: 7.35 samples/sec	Train-RPNAcc=0.994245,	RPNLogLoss=0.018536,	RPNL1Loss=0.009393,	RCNNAcc=0.866730,	RCNNLogLoss=0.610972,	RCNNL1Loss=0.136333,	
+Epoch[0] Batch [9300]	Speed: 7.31 samples/sec	Train-RPNAcc=0.994274,	RPNLogLoss=0.018462,	RPNL1Loss=0.009361,	RCNNAcc=0.866618,	RCNNLogLoss=0.609538,	RCNNL1Loss=0.136106,	
+Epoch[0] Batch [9400]	Speed: 7.44 samples/sec	Train-RPNAcc=0.994315,	RPNLogLoss=0.018341,	RPNL1Loss=0.009321,	RCNNAcc=0.866511,	RCNNLogLoss=0.608166,	RCNNL1Loss=0.135970,	
+Epoch[0] Batch [9500]	Speed: 7.22 samples/sec	Train-RPNAcc=0.994352,	RPNLogLoss=0.018228,	RPNL1Loss=0.009276,	RCNNAcc=0.866345,	RCNNLogLoss=0.607048,	RCNNL1Loss=0.135785,	
+Epoch[0] Batch [9600]	Speed: 7.28 samples/sec	Train-RPNAcc=0.994391,	RPNLogLoss=0.018113,	RPNL1Loss=0.009234,	RCNNAcc=0.866261,	RCNNLogLoss=0.605624,	RCNNL1Loss=0.135342,	
+Epoch[0] Batch [9700]	Speed: 7.54 samples/sec	Train-RPNAcc=0.994422,	RPNLogLoss=0.018042,	RPNL1Loss=0.009195,	RCNNAcc=0.866281,	RCNNLogLoss=0.603805,	RCNNL1Loss=0.135018,	
+Epoch[0] Batch [9800]	Speed: 7.41 samples/sec	Train-RPNAcc=0.994452,	RPNLogLoss=0.017955,	RPNL1Loss=0.009158,	RCNNAcc=0.866333,	RCNNLogLoss=0.601958,	RCNNL1Loss=0.134880,	
+Epoch[0] Batch [9900]	Speed: 7.37 samples/sec	Train-RPNAcc=0.994492,	RPNLogLoss=0.017840,	RPNL1Loss=0.009113,	RCNNAcc=0.866385,	RCNNLogLoss=0.599826,	RCNNL1Loss=0.134728,	
+Epoch[0] Batch [10000]	Speed: 7.37 samples/sec	Train-RPNAcc=0.994524,	RPNLogLoss=0.017743,	RPNL1Loss=0.009070,	RCNNAcc=0.866358,	RCNNLogLoss=0.598190,	RCNNL1Loss=0.134439,	
+Epoch[0] Batch [10100]	Speed: 7.43 samples/sec	Train-RPNAcc=0.994544,	RPNLogLoss=0.017721,	RPNL1Loss=0.009060,	RCNNAcc=0.866460,	RCNNLogLoss=0.596261,	RCNNL1Loss=0.134090,	
+Epoch[0] Batch [10200]	Speed: 7.37 samples/sec	Train-RPNAcc=0.994575,	RPNLogLoss=0.017632,	RPNL1Loss=0.009017,	RCNNAcc=0.866499,	RCNNLogLoss=0.594426,	RCNNL1Loss=0.133718,	
+Epoch[0] Batch [10300]	Speed: 7.34 samples/sec	Train-RPNAcc=0.994601,	RPNLogLoss=0.017558,	RPNL1Loss=0.008976,	RCNNAcc=0.866621,	RCNNLogLoss=0.592581,	RCNNL1Loss=0.133336,	
+Epoch[0] Batch [10400]	Speed: 7.65 samples/sec	Train-RPNAcc=0.994633,	RPNLogLoss=0.017467,	RPNL1Loss=0.008935,	RCNNAcc=0.866641,	RCNNLogLoss=0.590804,	RCNNL1Loss=0.132857,	
+Epoch[1] Batch [100]	Speed: 7.38 samples/sec	Train-RPNAcc=0.997447,	RPNLogLoss=0.009696,	RPNL1Loss=0.005185,	RCNNAcc=0.877553,	RCNNLogLoss=0.392239,	RCNNL1Loss=0.093698,	
+Epoch[1] Batch [200]	Speed: 7.45 samples/sec	Train-RPNAcc=0.998037,	RPNLogLoss=0.007426,	RPNL1Loss=0.005120,	RCNNAcc=0.877799,	RCNNLogLoss=0.383213,	RCNNL1Loss=0.094364,	
+Epoch[1] Batch [300]	Speed: 7.39 samples/sec	Train-RPNAcc=0.997937,	RPNLogLoss=0.007371,	RPNL1Loss=0.004837,	RCNNAcc=0.876687,	RCNNLogLoss=0.387662,	RCNNL1Loss=0.093761,	
+Epoch[1] Batch [400]	Speed: 7.46 samples/sec	Train-RPNAcc=0.997867,	RPNLogLoss=0.007458,	RPNL1Loss=0.004707,	RCNNAcc=0.877104,	RCNNLogLoss=0.387699,	RCNNL1Loss=0.093273,	
+Epoch[1] Batch [500]	Speed: 7.37 samples/sec	Train-RPNAcc=0.997801,	RPNLogLoss=0.007564,	RPNL1Loss=0.004622,	RCNNAcc=0.878852,	RCNNLogLoss=0.383367,	RCNNL1Loss=0.092068,	
+Epoch[1] Batch [600]	Speed: 7.30 samples/sec	Train-RPNAcc=0.997800,	RPNLogLoss=0.007776,	RPNL1Loss=0.004660,	RCNNAcc=0.879127,	RCNNLogLoss=0.381254,	RCNNL1Loss=0.092252,	
+Epoch[1] Batch [700]	Speed: 7.50 samples/sec	Train-RPNAcc=0.997852,	RPNLogLoss=0.007709,	RPNL1Loss=0.004727,	RCNNAcc=0.879129,	RCNNLogLoss=0.380265,	RCNNL1Loss=0.090992,	
+Epoch[1] Batch [800]	Speed: 7.40 samples/sec	Train-RPNAcc=0.997745,	RPNLogLoss=0.008412,	RPNL1Loss=0.004845,	RCNNAcc=0.878799,	RCNNLogLoss=0.382226,	RCNNL1Loss=0.091719,	
+Epoch[1] Batch [900]	Speed: 7.66 samples/sec	Train-RPNAcc=0.997789,	RPNLogLoss=0.008207,	RPNL1Loss=0.004812,	RCNNAcc=0.878958,	RCNNLogLoss=0.381898,	RCNNL1Loss=0.092069,	
+Epoch[1] Batch [1000]	Speed: 7.24 samples/sec	Train-RPNAcc=0.997760,	RPNLogLoss=0.008251,	RPNL1Loss=0.004788,	RCNNAcc=0.879663,	RCNNLogLoss=0.378329,	RCNNL1Loss=0.090621,	
+Epoch[1] Batch [1100]	Speed: 7.32 samples/sec	Train-RPNAcc=0.997784,	RPNLogLoss=0.008123,	RPNL1Loss=0.004825,	RCNNAcc=0.880006,	RCNNLogLoss=0.376673,	RCNNL1Loss=0.090966,	
+Epoch[1] Batch [1200]	Speed: 7.32 samples/sec	Train-RPNAcc=0.997819,	RPNLogLoss=0.007966,	RPNL1Loss=0.004800,	RCNNAcc=0.879293,	RCNNLogLoss=0.377279,	RCNNL1Loss=0.090337,	
+Epoch[1] Batch [1300]	Speed: 7.40 samples/sec	Train-RPNAcc=0.997777,	RPNLogLoss=0.008051,	RPNL1Loss=0.004790,	RCNNAcc=0.878969,	RCNNLogLoss=0.378420,	RCNNL1Loss=0.089862,	
+Epoch[1] Batch [1400]	Speed: 7.23 samples/sec	Train-RPNAcc=0.997800,	RPNLogLoss=0.007978,	RPNL1Loss=0.004763,	RCNNAcc=0.879522,	RCNNLogLoss=0.376021,	RCNNL1Loss=0.089417,	
+Epoch[1] Batch [1500]	Speed: 7.50 samples/sec	Train-RPNAcc=0.997811,	RPNLogLoss=0.007979,	RPNL1Loss=0.004756,	RCNNAcc=0.880452,	RCNNLogLoss=0.372911,	RCNNL1Loss=0.088475,	
+Epoch[1] Batch [1600]	Speed: 7.28 samples/sec	Train-RPNAcc=0.997837,	RPNLogLoss=0.007860,	RPNL1Loss=0.004717,	RCNNAcc=0.881149,	RCNNLogLoss=0.370687,	RCNNL1Loss=0.088165,	
+Epoch[1] Batch [1700]	Speed: 7.65 samples/sec	Train-RPNAcc=0.997869,	RPNLogLoss=0.007738,	RPNL1Loss=0.004700,	RCNNAcc=0.881331,	RCNNLogLoss=0.370230,	RCNNL1Loss=0.087714,	
+Epoch[1] Batch [1800]	Speed: 7.44 samples/sec	Train-RPNAcc=0.997904,	RPNLogLoss=0.007618,	RPNL1Loss=0.004709,	RCNNAcc=0.883376,	RCNNLogLoss=0.363152,	RCNNL1Loss=0.085824,	
+Epoch[1] Batch [1900]	Speed: 7.28 samples/sec	Train-RPNAcc=0.997866,	RPNLogLoss=0.007819,	RPNL1Loss=0.004694,	RCNNAcc=0.883762,	RCNNLogLoss=0.360992,	RCNNL1Loss=0.085331,	
+Epoch[1] Batch [2000]	Speed: 7.54 samples/sec	Train-RPNAcc=0.997856,	RPNLogLoss=0.007902,	RPNL1Loss=0.004750,	RCNNAcc=0.884306,	RCNNLogLoss=0.358346,	RCNNL1Loss=0.085311,	
+Epoch[1] Batch [2100]	Speed: 7.34 samples/sec	Train-RPNAcc=0.997867,	RPNLogLoss=0.007882,	RPNL1Loss=0.004719,	RCNNAcc=0.885363,	RCNNLogLoss=0.354327,	RCNNL1Loss=0.085372,	
+Epoch[1] Batch [2200]	Speed: 7.42 samples/sec	Train-RPNAcc=0.997841,	RPNLogLoss=0.008097,	RPNL1Loss=0.004736,	RCNNAcc=0.886130,	RCNNLogLoss=0.351518,	RCNNL1Loss=0.084914,	
+Epoch[1] Batch [2300]	Speed: 7.62 samples/sec	Train-RPNAcc=0.997868,	RPNLogLoss=0.008037,	RPNL1Loss=0.004727,	RCNNAcc=0.887199,	RCNNLogLoss=0.347457,	RCNNL1Loss=0.084400,	
+Epoch[1] Batch [2400]	Speed: 7.37 samples/sec	Train-RPNAcc=0.997896,	RPNLogLoss=0.007963,	RPNL1Loss=0.004726,	RCNNAcc=0.888085,	RCNNLogLoss=0.344623,	RCNNL1Loss=0.083324,	
+Epoch[1] Batch [2500]	Speed: 7.57 samples/sec	Train-RPNAcc=0.997916,	RPNLogLoss=0.007888,	RPNL1Loss=0.004702,	RCNNAcc=0.889491,	RCNNLogLoss=0.340270,	RCNNL1Loss=0.082320,	
+Epoch[1] Batch [2600]	Speed: 7.58 samples/sec	Train-RPNAcc=0.997929,	RPNLogLoss=0.007800,	RPNL1Loss=0.004677,	RCNNAcc=0.891466,	RCNNLogLoss=0.333719,	RCNNL1Loss=0.080670,	
+Epoch[1] Batch [2700]	Speed: 7.44 samples/sec	Train-RPNAcc=0.997929,	RPNLogLoss=0.007774,	RPNL1Loss=0.004659,	RCNNAcc=0.892897,	RCNNLogLoss=0.328731,	RCNNL1Loss=0.079486,	
+Epoch[1] Batch [2800]	Speed: 7.33 samples/sec	Train-RPNAcc=0.997930,	RPNLogLoss=0.007757,	RPNL1Loss=0.004644,	RCNNAcc=0.894321,	RCNNLogLoss=0.323612,	RCNNL1Loss=0.078332,	
+Epoch[1] Batch [2900]	Speed: 7.40 samples/sec	Train-RPNAcc=0.997909,	RPNLogLoss=0.007790,	RPNL1Loss=0.004641,	RCNNAcc=0.895339,	RCNNLogLoss=0.319920,	RCNNL1Loss=0.077206,	
+Epoch[1] Batch [3000]	Speed: 7.45 samples/sec	Train-RPNAcc=0.997925,	RPNLogLoss=0.007718,	RPNL1Loss=0.004637,	RCNNAcc=0.896322,	RCNNLogLoss=0.316361,	RCNNL1Loss=0.076262,	
+Epoch[1] Batch [3100]	Speed: 7.34 samples/sec	Train-RPNAcc=0.997937,	RPNLogLoss=0.007673,	RPNL1Loss=0.004609,	RCNNAcc=0.897515,	RCNNLogLoss=0.312444,	RCNNL1Loss=0.075453,	
+Epoch[1] Batch [3200]	Speed: 7.42 samples/sec	Train-RPNAcc=0.997944,	RPNLogLoss=0.007653,	RPNL1Loss=0.004587,	RCNNAcc=0.898777,	RCNNLogLoss=0.308660,	RCNNL1Loss=0.074445,	
+Epoch[1] Batch [3300]	Speed: 7.22 samples/sec	Train-RPNAcc=0.997952,	RPNLogLoss=0.007661,	RPNL1Loss=0.004570,	RCNNAcc=0.899536,	RCNNLogLoss=0.305872,	RCNNL1Loss=0.073805,	
+Epoch[1] Batch [3400]	Speed: 7.58 samples/sec	Train-RPNAcc=0.997958,	RPNLogLoss=0.007616,	RPNL1Loss=0.004555,	RCNNAcc=0.899519,	RCNNLogLoss=0.305792,	RCNNL1Loss=0.073676,	
+Epoch[1] Batch [3500]	Speed: 7.37 samples/sec	Train-RPNAcc=0.997969,	RPNLogLoss=0.007568,	RPNL1Loss=0.004546,	RCNNAcc=0.899741,	RCNNLogLoss=0.305245,	RCNNL1Loss=0.073738,	
+Epoch[1] Batch [3600]	Speed: 7.54 samples/sec	Train-RPNAcc=0.997988,	RPNLogLoss=0.007515,	RPNL1Loss=0.004557,	RCNNAcc=0.900168,	RCNNLogLoss=0.303660,	RCNNL1Loss=0.073557,	
+Epoch[1] Batch [3700]	Speed: 7.40 samples/sec	Train-RPNAcc=0.997986,	RPNLogLoss=0.007512,	RPNL1Loss=0.004558,	RCNNAcc=0.899993,	RCNNLogLoss=0.304102,	RCNNL1Loss=0.073721,	
+Epoch[1] Batch [3800]	Speed: 7.34 samples/sec	Train-RPNAcc=0.997999,	RPNLogLoss=0.007463,	RPNL1Loss=0.004545,	RCNNAcc=0.900264,	RCNNLogLoss=0.302963,	RCNNL1Loss=0.073382,	
+Epoch[1] Batch [3900]	Speed: 7.54 samples/sec	Train-RPNAcc=0.998006,	RPNLogLoss=0.007429,	RPNL1Loss=0.004538,	RCNNAcc=0.900402,	RCNNLogLoss=0.302246,	RCNNL1Loss=0.073016,	
+Epoch[1] Batch [4000]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998004,	RPNLogLoss=0.007426,	RPNL1Loss=0.004527,	RCNNAcc=0.900311,	RCNNLogLoss=0.302508,	RCNNL1Loss=0.073198,	
+Epoch[1] Batch [4100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998005,	RPNLogLoss=0.007402,	RPNL1Loss=0.004514,	RCNNAcc=0.900815,	RCNNLogLoss=0.300926,	RCNNL1Loss=0.072867,	
+Epoch[1] Batch [4200]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998002,	RPNLogLoss=0.007426,	RPNL1Loss=0.004503,	RCNNAcc=0.900900,	RCNNLogLoss=0.300504,	RCNNL1Loss=0.072707,	
+Epoch[1] Batch [4300]	Speed: 7.49 samples/sec	Train-RPNAcc=0.998005,	RPNLogLoss=0.007414,	RPNL1Loss=0.004480,	RCNNAcc=0.900696,	RCNNLogLoss=0.301176,	RCNNL1Loss=0.072755,	
+Epoch[1] Batch [4400]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998009,	RPNLogLoss=0.007443,	RPNL1Loss=0.004482,	RCNNAcc=0.900889,	RCNNLogLoss=0.300556,	RCNNL1Loss=0.072837,	
+Epoch[1] Batch [4500]	Speed: 7.40 samples/sec	Train-RPNAcc=0.997997,	RPNLogLoss=0.007473,	RPNL1Loss=0.004479,	RCNNAcc=0.900995,	RCNNLogLoss=0.300217,	RCNNL1Loss=0.072880,	
+Epoch[1] Batch [4600]	Speed: 7.49 samples/sec	Train-RPNAcc=0.997998,	RPNLogLoss=0.007480,	RPNL1Loss=0.004465,	RCNNAcc=0.900962,	RCNNLogLoss=0.300498,	RCNNL1Loss=0.072882,	
+Epoch[1] Batch [4700]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998002,	RPNLogLoss=0.007452,	RPNL1Loss=0.004451,	RCNNAcc=0.901553,	RCNNLogLoss=0.298694,	RCNNL1Loss=0.072273,	
+Epoch[1] Batch [4800]	Speed: 7.49 samples/sec	Train-RPNAcc=0.998008,	RPNLogLoss=0.007435,	RPNL1Loss=0.004439,	RCNNAcc=0.902073,	RCNNLogLoss=0.296996,	RCNNL1Loss=0.071689,	
+Epoch[1] Batch [4900]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998013,	RPNLogLoss=0.007415,	RPNL1Loss=0.004426,	RCNNAcc=0.902325,	RCNNLogLoss=0.296027,	RCNNL1Loss=0.071386,	
+Epoch[1] Batch [5000]	Speed: 7.65 samples/sec	Train-RPNAcc=0.998016,	RPNLogLoss=0.007389,	RPNL1Loss=0.004419,	RCNNAcc=0.902621,	RCNNLogLoss=0.294913,	RCNNL1Loss=0.071011,	
+Epoch[1] Batch [5100]	Speed: 7.64 samples/sec	Train-RPNAcc=0.998029,	RPNLogLoss=0.007343,	RPNL1Loss=0.004414,	RCNNAcc=0.903271,	RCNNLogLoss=0.292789,	RCNNL1Loss=0.070403,	
+Epoch[1] Batch [5200]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998034,	RPNLogLoss=0.007334,	RPNL1Loss=0.004411,	RCNNAcc=0.903840,	RCNNLogLoss=0.291017,	RCNNL1Loss=0.069913,	
+Epoch[1] Batch [5300]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998033,	RPNLogLoss=0.007324,	RPNL1Loss=0.004398,	RCNNAcc=0.904070,	RCNNLogLoss=0.290109,	RCNNL1Loss=0.069710,	
+Epoch[1] Batch [5400]	Speed: 7.25 samples/sec	Train-RPNAcc=0.998039,	RPNLogLoss=0.007297,	RPNL1Loss=0.004391,	RCNNAcc=0.904288,	RCNNLogLoss=0.289257,	RCNNL1Loss=0.069383,	
+Epoch[1] Batch [5500]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998053,	RPNLogLoss=0.007246,	RPNL1Loss=0.004394,	RCNNAcc=0.904780,	RCNNLogLoss=0.287691,	RCNNL1Loss=0.068899,	
+Epoch[1] Batch [5600]	Speed: 7.24 samples/sec	Train-RPNAcc=0.998066,	RPNLogLoss=0.007189,	RPNL1Loss=0.004391,	RCNNAcc=0.905304,	RCNNLogLoss=0.286056,	RCNNL1Loss=0.068529,	
+Epoch[1] Batch [5700]	Speed: 7.43 samples/sec	Train-RPNAcc=0.998071,	RPNLogLoss=0.007176,	RPNL1Loss=0.004383,	RCNNAcc=0.905540,	RCNNLogLoss=0.285004,	RCNNL1Loss=0.068285,	
+Epoch[1] Batch [5800]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998072,	RPNLogLoss=0.007160,	RPNL1Loss=0.004369,	RCNNAcc=0.905604,	RCNNLogLoss=0.284664,	RCNNL1Loss=0.068083,	
+Epoch[1] Batch [5900]	Speed: 7.57 samples/sec	Train-RPNAcc=0.998084,	RPNLogLoss=0.007110,	RPNL1Loss=0.004364,	RCNNAcc=0.905568,	RCNNLogLoss=0.284581,	RCNNL1Loss=0.067965,	
+Epoch[1] Batch [6000]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998067,	RPNLogLoss=0.007203,	RPNL1Loss=0.004374,	RCNNAcc=0.905591,	RCNNLogLoss=0.284701,	RCNNL1Loss=0.068033,	
+Epoch[1] Batch [6100]	Speed: 7.18 samples/sec	Train-RPNAcc=0.998052,	RPNLogLoss=0.007278,	RPNL1Loss=0.004404,	RCNNAcc=0.905580,	RCNNLogLoss=0.284583,	RCNNL1Loss=0.068030,	
+Epoch[1] Batch [6200]	Speed: 7.23 samples/sec	Train-RPNAcc=0.998063,	RPNLogLoss=0.007245,	RPNL1Loss=0.004389,	RCNNAcc=0.905739,	RCNNLogLoss=0.284048,	RCNNL1Loss=0.067885,	
+Epoch[1] Batch [6300]	Speed: 7.51 samples/sec	Train-RPNAcc=0.998075,	RPNLogLoss=0.007205,	RPNL1Loss=0.004383,	RCNNAcc=0.905906,	RCNNLogLoss=0.283514,	RCNNL1Loss=0.067854,	
+Epoch[1] Batch [6400]	Speed: 7.53 samples/sec	Train-RPNAcc=0.998082,	RPNLogLoss=0.007178,	RPNL1Loss=0.004380,	RCNNAcc=0.906172,	RCNNLogLoss=0.282733,	RCNNL1Loss=0.067689,	
+Epoch[1] Batch [6500]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998078,	RPNLogLoss=0.007193,	RPNL1Loss=0.004372,	RCNNAcc=0.906647,	RCNNLogLoss=0.281126,	RCNNL1Loss=0.067333,	
+Epoch[1] Batch [6600]	Speed: 7.56 samples/sec	Train-RPNAcc=0.998083,	RPNLogLoss=0.007174,	RPNL1Loss=0.004362,	RCNNAcc=0.907099,	RCNNLogLoss=0.279661,	RCNNL1Loss=0.067101,	
+Epoch[1] Batch [6700]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998089,	RPNLogLoss=0.007151,	RPNL1Loss=0.004351,	RCNNAcc=0.907530,	RCNNLogLoss=0.278191,	RCNNL1Loss=0.066747,	
+Epoch[1] Batch [6800]	Speed: 7.15 samples/sec	Train-RPNAcc=0.998085,	RPNLogLoss=0.007150,	RPNL1Loss=0.004339,	RCNNAcc=0.907976,	RCNNLogLoss=0.276730,	RCNNL1Loss=0.066455,	
+Epoch[1] Batch [6900]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998086,	RPNLogLoss=0.007139,	RPNL1Loss=0.004329,	RCNNAcc=0.908275,	RCNNLogLoss=0.275593,	RCNNL1Loss=0.066184,	
+Epoch[1] Batch [7000]	Speed: 7.23 samples/sec	Train-RPNAcc=0.998089,	RPNLogLoss=0.007125,	RPNL1Loss=0.004325,	RCNNAcc=0.908543,	RCNNLogLoss=0.274626,	RCNNL1Loss=0.066044,	
+Epoch[1] Batch [7100]	Speed: 7.36 samples/sec	Train-RPNAcc=0.998085,	RPNLogLoss=0.007143,	RPNL1Loss=0.004317,	RCNNAcc=0.908489,	RCNNLogLoss=0.274782,	RCNNL1Loss=0.066078,	
+Epoch[1] Batch [7200]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998092,	RPNLogLoss=0.007126,	RPNL1Loss=0.004304,	RCNNAcc=0.908585,	RCNNLogLoss=0.274359,	RCNNL1Loss=0.065964,	
+Epoch[1] Batch [7300]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998097,	RPNLogLoss=0.007099,	RPNL1Loss=0.004303,	RCNNAcc=0.908785,	RCNNLogLoss=0.273657,	RCNNL1Loss=0.065866,	
+Epoch[1] Batch [7400]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998107,	RPNLogLoss=0.007073,	RPNL1Loss=0.004292,	RCNNAcc=0.909053,	RCNNLogLoss=0.272986,	RCNNL1Loss=0.065690,	
+Epoch[1] Batch [7500]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998110,	RPNLogLoss=0.007060,	RPNL1Loss=0.004288,	RCNNAcc=0.909375,	RCNNLogLoss=0.271880,	RCNNL1Loss=0.065446,	
+Epoch[1] Batch [7600]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998116,	RPNLogLoss=0.007037,	RPNL1Loss=0.004280,	RCNNAcc=0.909550,	RCNNLogLoss=0.271221,	RCNNL1Loss=0.065269,	
+Epoch[1] Batch [7700]	Speed: 7.55 samples/sec	Train-RPNAcc=0.998114,	RPNLogLoss=0.007040,	RPNL1Loss=0.004273,	RCNNAcc=0.909824,	RCNNLogLoss=0.270257,	RCNNL1Loss=0.065087,	
+Epoch[1] Batch [7800]	Speed: 7.18 samples/sec	Train-RPNAcc=0.998112,	RPNLogLoss=0.007037,	RPNL1Loss=0.004261,	RCNNAcc=0.910059,	RCNNLogLoss=0.269609,	RCNNL1Loss=0.065000,	
+Epoch[1] Batch [7900]	Speed: 7.43 samples/sec	Train-RPNAcc=0.998117,	RPNLogLoss=0.007012,	RPNL1Loss=0.004260,	RCNNAcc=0.910282,	RCNNLogLoss=0.268831,	RCNNL1Loss=0.064798,	
+Epoch[1] Batch [8000]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998125,	RPNLogLoss=0.006983,	RPNL1Loss=0.004255,	RCNNAcc=0.910631,	RCNNLogLoss=0.267828,	RCNNL1Loss=0.064491,	
+Epoch[1] Batch [8100]	Speed: 7.60 samples/sec	Train-RPNAcc=0.998132,	RPNLogLoss=0.006955,	RPNL1Loss=0.004241,	RCNNAcc=0.911037,	RCNNLogLoss=0.266518,	RCNNL1Loss=0.064130,	
+Epoch[1] Batch [8200]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998137,	RPNLogLoss=0.006930,	RPNL1Loss=0.004230,	RCNNAcc=0.911546,	RCNNLogLoss=0.264874,	RCNNL1Loss=0.063735,	
+Epoch[1] Batch [8300]	Speed: 7.21 samples/sec	Train-RPNAcc=0.998145,	RPNLogLoss=0.006905,	RPNL1Loss=0.004220,	RCNNAcc=0.912056,	RCNNLogLoss=0.263246,	RCNNL1Loss=0.063297,	
+Epoch[1] Batch [8400]	Speed: 7.55 samples/sec	Train-RPNAcc=0.998150,	RPNLogLoss=0.006889,	RPNL1Loss=0.004207,	RCNNAcc=0.912432,	RCNNLogLoss=0.262058,	RCNNL1Loss=0.062914,	
+Epoch[1] Batch [8500]	Speed: 7.21 samples/sec	Train-RPNAcc=0.998156,	RPNLogLoss=0.006868,	RPNL1Loss=0.004205,	RCNNAcc=0.912809,	RCNNLogLoss=0.260842,	RCNNL1Loss=0.062609,	
+Epoch[1] Batch [8600]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998163,	RPNLogLoss=0.006842,	RPNL1Loss=0.004193,	RCNNAcc=0.913211,	RCNNLogLoss=0.259561,	RCNNL1Loss=0.062243,	
+Epoch[1] Batch [8700]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998169,	RPNLogLoss=0.006826,	RPNL1Loss=0.004181,	RCNNAcc=0.913648,	RCNNLogLoss=0.258213,	RCNNL1Loss=0.061854,	
+Epoch[1] Batch [8800]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998166,	RPNLogLoss=0.006844,	RPNL1Loss=0.004175,	RCNNAcc=0.914098,	RCNNLogLoss=0.256796,	RCNNL1Loss=0.061469,	
+Epoch[1] Batch [8900]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998167,	RPNLogLoss=0.006842,	RPNL1Loss=0.004166,	RCNNAcc=0.914351,	RCNNLogLoss=0.255854,	RCNNL1Loss=0.061211,	
+Epoch[1] Batch [9000]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998174,	RPNLogLoss=0.006818,	RPNL1Loss=0.004159,	RCNNAcc=0.914492,	RCNNLogLoss=0.255296,	RCNNL1Loss=0.061085,	
+Epoch[1] Batch [9100]	Speed: 7.24 samples/sec	Train-RPNAcc=0.998182,	RPNLogLoss=0.006790,	RPNL1Loss=0.004148,	RCNNAcc=0.914735,	RCNNLogLoss=0.254464,	RCNNL1Loss=0.060891,	
+Epoch[1] Batch [9200]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998187,	RPNLogLoss=0.006784,	RPNL1Loss=0.004137,	RCNNAcc=0.914989,	RCNNLogLoss=0.253614,	RCNNL1Loss=0.060664,	
+Epoch[1] Batch [9300]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998181,	RPNLogLoss=0.006793,	RPNL1Loss=0.004128,	RCNNAcc=0.915251,	RCNNLogLoss=0.252854,	RCNNL1Loss=0.060518,	
+Epoch[1] Batch [9400]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998183,	RPNLogLoss=0.006783,	RPNL1Loss=0.004124,	RCNNAcc=0.915340,	RCNNLogLoss=0.252412,	RCNNL1Loss=0.060426,	
+Epoch[1] Batch [9500]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998189,	RPNLogLoss=0.006766,	RPNL1Loss=0.004119,	RCNNAcc=0.915541,	RCNNLogLoss=0.251787,	RCNNL1Loss=0.060223,	
+Epoch[1] Batch [9600]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998188,	RPNLogLoss=0.006766,	RPNL1Loss=0.004112,	RCNNAcc=0.915820,	RCNNLogLoss=0.250868,	RCNNL1Loss=0.060037,	
+Epoch[1] Batch [9700]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998194,	RPNLogLoss=0.006743,	RPNL1Loss=0.004104,	RCNNAcc=0.915872,	RCNNLogLoss=0.250574,	RCNNL1Loss=0.059994,	
+Epoch[1] Batch [9800]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998200,	RPNLogLoss=0.006721,	RPNL1Loss=0.004092,	RCNNAcc=0.915978,	RCNNLogLoss=0.250170,	RCNNL1Loss=0.059945,	
+Epoch[1] Batch [9900]	Speed: 7.45 samples/sec	Train-RPNAcc=0.998200,	RPNLogLoss=0.006718,	RPNL1Loss=0.004086,	RCNNAcc=0.916121,	RCNNLogLoss=0.249674,	RCNNL1Loss=0.059879,	
+Epoch[1] Batch [10000]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998201,	RPNLogLoss=0.006722,	RPNL1Loss=0.004082,	RCNNAcc=0.916163,	RCNNLogLoss=0.249534,	RCNNL1Loss=0.059828,	
+Epoch[1] Batch [10100]	Speed: 7.20 samples/sec	Train-RPNAcc=0.998204,	RPNLogLoss=0.006705,	RPNL1Loss=0.004077,	RCNNAcc=0.916301,	RCNNLogLoss=0.249117,	RCNNL1Loss=0.059748,	
+Epoch[1] Batch [10200]	Speed: 7.26 samples/sec	Train-RPNAcc=0.998207,	RPNLogLoss=0.006698,	RPNL1Loss=0.004068,	RCNNAcc=0.916465,	RCNNLogLoss=0.248560,	RCNNL1Loss=0.059675,	
+Epoch[1] Batch [10300]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998209,	RPNLogLoss=0.006688,	RPNL1Loss=0.004061,	RCNNAcc=0.916597,	RCNNLogLoss=0.248135,	RCNNL1Loss=0.059567,	
+Epoch[1] Batch [10400]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998214,	RPNLogLoss=0.006670,	RPNL1Loss=0.004052,	RCNNAcc=0.916711,	RCNNLogLoss=0.247715,	RCNNL1Loss=0.059455,	
+Epoch[2] Batch [100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998588,	RPNLogLoss=0.005221,	RPNL1Loss=0.003610,	RCNNAcc=0.936572,	RCNNLogLoss=0.177827,	RCNNL1Loss=0.044352,	
+Epoch[2] Batch [200]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998630,	RPNLogLoss=0.005067,	RPNL1Loss=0.003444,	RCNNAcc=0.935401,	RCNNLogLoss=0.179673,	RCNNL1Loss=0.045679,	
+Epoch[2] Batch [300]	Speed: 7.58 samples/sec	Train-RPNAcc=0.998748,	RPNLogLoss=0.004801,	RPNL1Loss=0.003424,	RCNNAcc=0.937487,	RCNNLogLoss=0.173555,	RCNNL1Loss=0.042971,	
+Epoch[2] Batch [400]	Speed: 7.20 samples/sec	Train-RPNAcc=0.998636,	RPNLogLoss=0.005206,	RPNL1Loss=0.003571,	RCNNAcc=0.938533,	RCNNLogLoss=0.170661,	RCNNL1Loss=0.040987,	
+Epoch[2] Batch [500]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998690,	RPNLogLoss=0.005021,	RPNL1Loss=0.003527,	RCNNAcc=0.938210,	RCNNLogLoss=0.171618,	RCNNL1Loss=0.042534,	
+Epoch[2] Batch [600]	Speed: 7.43 samples/sec	Train-RPNAcc=0.998629,	RPNLogLoss=0.005385,	RPNL1Loss=0.003488,	RCNNAcc=0.939846,	RCNNLogLoss=0.167264,	RCNNL1Loss=0.041953,	
+Epoch[2] Batch [700]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998573,	RPNLogLoss=0.005512,	RPNL1Loss=0.003438,	RCNNAcc=0.941724,	RCNNLogLoss=0.161937,	RCNNL1Loss=0.040620,	
+Epoch[2] Batch [800]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998625,	RPNLogLoss=0.005297,	RPNL1Loss=0.003418,	RCNNAcc=0.942899,	RCNNLogLoss=0.157737,	RCNNL1Loss=0.039696,	
+Epoch[2] Batch [900]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998608,	RPNLogLoss=0.005299,	RPNL1Loss=0.003397,	RCNNAcc=0.943453,	RCNNLogLoss=0.156290,	RCNNL1Loss=0.038804,	
+Epoch[2] Batch [1000]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998587,	RPNLogLoss=0.005370,	RPNL1Loss=0.003411,	RCNNAcc=0.944150,	RCNNLogLoss=0.154435,	RCNNL1Loss=0.038620,	
+Epoch[2] Batch [1100]	Speed: 7.36 samples/sec	Train-RPNAcc=0.998583,	RPNLogLoss=0.005365,	RPNL1Loss=0.003376,	RCNNAcc=0.944809,	RCNNLogLoss=0.152964,	RCNNL1Loss=0.038522,	
+Epoch[2] Batch [1200]	Speed: 7.18 samples/sec	Train-RPNAcc=0.998595,	RPNLogLoss=0.005304,	RPNL1Loss=0.003322,	RCNNAcc=0.945628,	RCNNLogLoss=0.150477,	RCNNL1Loss=0.037654,	
+Epoch[2] Batch [1300]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998614,	RPNLogLoss=0.005253,	RPNL1Loss=0.003335,	RCNNAcc=0.946306,	RCNNLogLoss=0.148910,	RCNNL1Loss=0.037264,	
+Epoch[2] Batch [1400]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998617,	RPNLogLoss=0.005238,	RPNL1Loss=0.003330,	RCNNAcc=0.946787,	RCNNLogLoss=0.147995,	RCNNL1Loss=0.036880,	
+Epoch[2] Batch [1500]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998605,	RPNLogLoss=0.005240,	RPNL1Loss=0.003323,	RCNNAcc=0.947181,	RCNNLogLoss=0.146683,	RCNNL1Loss=0.036490,	
+Epoch[2] Batch [1600]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998607,	RPNLogLoss=0.005230,	RPNL1Loss=0.003309,	RCNNAcc=0.947150,	RCNNLogLoss=0.146543,	RCNNL1Loss=0.036333,	
+Epoch[2] Batch [1700]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998628,	RPNLogLoss=0.005176,	RPNL1Loss=0.003309,	RCNNAcc=0.947377,	RCNNLogLoss=0.145917,	RCNNL1Loss=0.036339,	
+Epoch[2] Batch [1800]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998640,	RPNLogLoss=0.005129,	RPNL1Loss=0.003304,	RCNNAcc=0.946865,	RCNNLogLoss=0.147487,	RCNNL1Loss=0.036763,	
+Epoch[2] Batch [1900]	Speed: 7.43 samples/sec	Train-RPNAcc=0.998626,	RPNLogLoss=0.005162,	RPNL1Loss=0.003276,	RCNNAcc=0.947495,	RCNNLogLoss=0.145753,	RCNNL1Loss=0.036161,	
+Epoch[2] Batch [2000]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998632,	RPNLogLoss=0.005146,	RPNL1Loss=0.003264,	RCNNAcc=0.947997,	RCNNLogLoss=0.144561,	RCNNL1Loss=0.035932,	
+Epoch[2] Batch [2100]	Speed: 7.54 samples/sec	Train-RPNAcc=0.998635,	RPNLogLoss=0.005129,	RPNL1Loss=0.003250,	RCNNAcc=0.948350,	RCNNLogLoss=0.143617,	RCNNL1Loss=0.035588,	
+Epoch[2] Batch [2200]	Speed: 7.60 samples/sec	Train-RPNAcc=0.998637,	RPNLogLoss=0.005113,	RPNL1Loss=0.003237,	RCNNAcc=0.948606,	RCNNLogLoss=0.142940,	RCNNL1Loss=0.035170,	
+Epoch[2] Batch [2300]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998632,	RPNLogLoss=0.005133,	RPNL1Loss=0.003220,	RCNNAcc=0.948742,	RCNNLogLoss=0.142354,	RCNNL1Loss=0.034954,	
+Epoch[2] Batch [2400]	Speed: 7.66 samples/sec	Train-RPNAcc=0.998627,	RPNLogLoss=0.005143,	RPNL1Loss=0.003214,	RCNNAcc=0.948768,	RCNNLogLoss=0.142160,	RCNNL1Loss=0.035165,	
+Epoch[2] Batch [2500]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998637,	RPNLogLoss=0.005106,	RPNL1Loss=0.003215,	RCNNAcc=0.948919,	RCNNLogLoss=0.141741,	RCNNL1Loss=0.034892,	
+Epoch[2] Batch [2600]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998640,	RPNLogLoss=0.005104,	RPNL1Loss=0.003232,	RCNNAcc=0.948807,	RCNNLogLoss=0.142266,	RCNNL1Loss=0.035063,	
+Epoch[2] Batch [2700]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998638,	RPNLogLoss=0.005119,	RPNL1Loss=0.003242,	RCNNAcc=0.948854,	RCNNLogLoss=0.142182,	RCNNL1Loss=0.035053,	
+Epoch[2] Batch [2800]	Speed: 7.65 samples/sec	Train-RPNAcc=0.998628,	RPNLogLoss=0.005165,	RPNL1Loss=0.003255,	RCNNAcc=0.949040,	RCNNLogLoss=0.141789,	RCNNL1Loss=0.034936,	
+Epoch[2] Batch [2900]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998631,	RPNLogLoss=0.005150,	RPNL1Loss=0.003246,	RCNNAcc=0.949335,	RCNNLogLoss=0.140758,	RCNNL1Loss=0.034649,	
+Epoch[2] Batch [3000]	Speed: 7.23 samples/sec	Train-RPNAcc=0.998638,	RPNLogLoss=0.005130,	RPNL1Loss=0.003244,	RCNNAcc=0.949556,	RCNNLogLoss=0.139992,	RCNNL1Loss=0.034307,	
+Epoch[2] Batch [3100]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998623,	RPNLogLoss=0.005236,	RPNL1Loss=0.003243,	RCNNAcc=0.949569,	RCNNLogLoss=0.140033,	RCNNL1Loss=0.034253,	
+Epoch[2] Batch [3200]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998626,	RPNLogLoss=0.005217,	RPNL1Loss=0.003233,	RCNNAcc=0.949619,	RCNNLogLoss=0.139916,	RCNNL1Loss=0.034428,	
+Epoch[2] Batch [3300]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998625,	RPNLogLoss=0.005204,	RPNL1Loss=0.003231,	RCNNAcc=0.949923,	RCNNLogLoss=0.139316,	RCNNL1Loss=0.034176,	
+Epoch[2] Batch [3400]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998599,	RPNLogLoss=0.005327,	RPNL1Loss=0.003226,	RCNNAcc=0.949783,	RCNNLogLoss=0.139851,	RCNNL1Loss=0.034256,	
+Epoch[2] Batch [3500]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998603,	RPNLogLoss=0.005304,	RPNL1Loss=0.003222,	RCNNAcc=0.949633,	RCNNLogLoss=0.140380,	RCNNL1Loss=0.034514,	
+Epoch[2] Batch [3600]	Speed: 7.53 samples/sec	Train-RPNAcc=0.998606,	RPNLogLoss=0.005289,	RPNL1Loss=0.003212,	RCNNAcc=0.949653,	RCNNLogLoss=0.140178,	RCNNL1Loss=0.034540,	
+Epoch[2] Batch [3700]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998602,	RPNLogLoss=0.005293,	RPNL1Loss=0.003210,	RCNNAcc=0.949422,	RCNNLogLoss=0.141267,	RCNNL1Loss=0.034692,	
+Epoch[2] Batch [3800]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998597,	RPNLogLoss=0.005344,	RPNL1Loss=0.003213,	RCNNAcc=0.949249,	RCNNLogLoss=0.141856,	RCNNL1Loss=0.034722,	
+Epoch[2] Batch [3900]	Speed: 7.60 samples/sec	Train-RPNAcc=0.998597,	RPNLogLoss=0.005330,	RPNL1Loss=0.003205,	RCNNAcc=0.949367,	RCNNLogLoss=0.141661,	RCNNL1Loss=0.034617,	
+Epoch[2] Batch [4000]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998596,	RPNLogLoss=0.005330,	RPNL1Loss=0.003196,	RCNNAcc=0.949597,	RCNNLogLoss=0.140807,	RCNNL1Loss=0.034403,	
+Epoch[2] Batch [4100]	Speed: 7.23 samples/sec	Train-RPNAcc=0.998605,	RPNLogLoss=0.005296,	RPNL1Loss=0.003192,	RCNNAcc=0.949797,	RCNNLogLoss=0.140118,	RCNNL1Loss=0.034164,	
+Epoch[2] Batch [4200]	Speed: 7.45 samples/sec	Train-RPNAcc=0.998612,	RPNLogLoss=0.005266,	RPNL1Loss=0.003184,	RCNNAcc=0.950033,	RCNNLogLoss=0.139434,	RCNNL1Loss=0.033932,	
+Epoch[2] Batch [4300]	Speed: 7.59 samples/sec	Train-RPNAcc=0.998622,	RPNLogLoss=0.005230,	RPNL1Loss=0.003178,	RCNNAcc=0.950189,	RCNNLogLoss=0.138952,	RCNNL1Loss=0.033766,	
+Epoch[2] Batch [4400]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998633,	RPNLogLoss=0.005188,	RPNL1Loss=0.003169,	RCNNAcc=0.950334,	RCNNLogLoss=0.138601,	RCNNL1Loss=0.033614,	
+Epoch[2] Batch [4500]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998630,	RPNLogLoss=0.005197,	RPNL1Loss=0.003171,	RCNNAcc=0.950414,	RCNNLogLoss=0.138617,	RCNNL1Loss=0.033508,	
+Epoch[2] Batch [4600]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998627,	RPNLogLoss=0.005190,	RPNL1Loss=0.003173,	RCNNAcc=0.950627,	RCNNLogLoss=0.138149,	RCNNL1Loss=0.033347,	
+Epoch[2] Batch [4700]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998629,	RPNLogLoss=0.005179,	RPNL1Loss=0.003170,	RCNNAcc=0.950719,	RCNNLogLoss=0.137814,	RCNNL1Loss=0.033221,	
+Epoch[2] Batch [4800]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998640,	RPNLogLoss=0.005141,	RPNL1Loss=0.003174,	RCNNAcc=0.950799,	RCNNLogLoss=0.137497,	RCNNL1Loss=0.033192,	
+Epoch[2] Batch [4900]	Speed: 7.50 samples/sec	Train-RPNAcc=0.998647,	RPNLogLoss=0.005111,	RPNL1Loss=0.003171,	RCNNAcc=0.950779,	RCNNLogLoss=0.137622,	RCNNL1Loss=0.033263,	
+Epoch[2] Batch [5000]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005153,	RPNL1Loss=0.003161,	RCNNAcc=0.950852,	RCNNLogLoss=0.137446,	RCNNL1Loss=0.033174,	
+Epoch[2] Batch [5100]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998646,	RPNLogLoss=0.005148,	RPNL1Loss=0.003152,	RCNNAcc=0.950766,	RCNNLogLoss=0.137900,	RCNNL1Loss=0.033186,	
+Epoch[2] Batch [5200]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998644,	RPNLogLoss=0.005144,	RPNL1Loss=0.003142,	RCNNAcc=0.950761,	RCNNLogLoss=0.137838,	RCNNL1Loss=0.033115,	
+Epoch[2] Batch [5300]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005134,	RPNL1Loss=0.003135,	RCNNAcc=0.950751,	RCNNLogLoss=0.137836,	RCNNL1Loss=0.033014,	
+Epoch[2] Batch [5400]	Speed: 7.49 samples/sec	Train-RPNAcc=0.998641,	RPNLogLoss=0.005135,	RPNL1Loss=0.003135,	RCNNAcc=0.950810,	RCNNLogLoss=0.137594,	RCNNL1Loss=0.032874,	
+Epoch[2] Batch [5500]	Speed: 7.50 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005127,	RPNL1Loss=0.003126,	RCNNAcc=0.950868,	RCNNLogLoss=0.137485,	RCNNL1Loss=0.032818,	
+Epoch[2] Batch [5600]	Speed: 7.21 samples/sec	Train-RPNAcc=0.998650,	RPNLogLoss=0.005101,	RPNL1Loss=0.003121,	RCNNAcc=0.950902,	RCNNLogLoss=0.137324,	RCNNL1Loss=0.032756,	
+Epoch[2] Batch [5700]	Speed: 7.19 samples/sec	Train-RPNAcc=0.998631,	RPNLogLoss=0.005238,	RPNL1Loss=0.003133,	RCNNAcc=0.950805,	RCNNLogLoss=0.137709,	RCNNL1Loss=0.032825,	
+Epoch[2] Batch [5800]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998638,	RPNLogLoss=0.005221,	RPNL1Loss=0.003125,	RCNNAcc=0.950565,	RCNNLogLoss=0.138851,	RCNNL1Loss=0.033146,	
+Epoch[2] Batch [5900]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005209,	RPNL1Loss=0.003121,	RCNNAcc=0.950234,	RCNNLogLoss=0.140332,	RCNNL1Loss=0.033475,	
+Epoch[2] Batch [6000]	Speed: 7.50 samples/sec	Train-RPNAcc=0.998642,	RPNLogLoss=0.005212,	RPNL1Loss=0.003113,	RCNNAcc=0.950106,	RCNNLogLoss=0.141007,	RCNNL1Loss=0.033589,	
+Epoch[2] Batch [6100]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998636,	RPNLogLoss=0.005236,	RPNL1Loss=0.003111,	RCNNAcc=0.949774,	RCNNLogLoss=0.142625,	RCNNL1Loss=0.033908,	
+Epoch[2] Batch [6200]	Speed: 7.28 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005215,	RPNL1Loss=0.003116,	RCNNAcc=0.949516,	RCNNLogLoss=0.143588,	RCNNL1Loss=0.034169,	
+Epoch[2] Batch [6300]	Speed: 7.63 samples/sec	Train-RPNAcc=0.998641,	RPNLogLoss=0.005213,	RPNL1Loss=0.003118,	RCNNAcc=0.949219,	RCNNLogLoss=0.144585,	RCNNL1Loss=0.034346,	
+Epoch[2] Batch [6400]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998632,	RPNLogLoss=0.005224,	RPNL1Loss=0.003112,	RCNNAcc=0.948991,	RCNNLogLoss=0.145474,	RCNNL1Loss=0.034531,	
+Epoch[2] Batch [6500]	Speed: 7.25 samples/sec	Train-RPNAcc=0.998626,	RPNLogLoss=0.005236,	RPNL1Loss=0.003110,	RCNNAcc=0.948769,	RCNNLogLoss=0.146577,	RCNNL1Loss=0.034743,	
+Epoch[2] Batch [6600]	Speed: 7.27 samples/sec	Train-RPNAcc=0.998629,	RPNLogLoss=0.005226,	RPNL1Loss=0.003107,	RCNNAcc=0.948497,	RCNNLogLoss=0.147486,	RCNNL1Loss=0.034904,	
+Epoch[2] Batch [6700]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998633,	RPNLogLoss=0.005209,	RPNL1Loss=0.003104,	RCNNAcc=0.948269,	RCNNLogLoss=0.148299,	RCNNL1Loss=0.034967,	
+Epoch[2] Batch [6800]	Speed: 7.51 samples/sec	Train-RPNAcc=0.998628,	RPNLogLoss=0.005223,	RPNL1Loss=0.003105,	RCNNAcc=0.948142,	RCNNLogLoss=0.148790,	RCNNL1Loss=0.035094,	
+Epoch[2] Batch [6900]	Speed: 7.49 samples/sec	Train-RPNAcc=0.998633,	RPNLogLoss=0.005197,	RPNL1Loss=0.003105,	RCNNAcc=0.947958,	RCNNLogLoss=0.149717,	RCNNL1Loss=0.035331,	
+Epoch[2] Batch [7000]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998633,	RPNLogLoss=0.005197,	RPNL1Loss=0.003105,	RCNNAcc=0.947827,	RCNNLogLoss=0.150277,	RCNNL1Loss=0.035454,	
+Epoch[2] Batch [7100]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998631,	RPNLogLoss=0.005197,	RPNL1Loss=0.003109,	RCNNAcc=0.947644,	RCNNLogLoss=0.151049,	RCNNL1Loss=0.035786,	
+Epoch[2] Batch [7200]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998635,	RPNLogLoss=0.005189,	RPNL1Loss=0.003117,	RCNNAcc=0.947224,	RCNNLogLoss=0.152360,	RCNNL1Loss=0.036120,	
+Epoch[2] Batch [7300]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998634,	RPNLogLoss=0.005189,	RPNL1Loss=0.003112,	RCNNAcc=0.947103,	RCNNLogLoss=0.152798,	RCNNL1Loss=0.036218,	
+Epoch[2] Batch [7400]	Speed: 7.51 samples/sec	Train-RPNAcc=0.998633,	RPNLogLoss=0.005182,	RPNL1Loss=0.003110,	RCNNAcc=0.947061,	RCNNLogLoss=0.153072,	RCNNL1Loss=0.036407,	
+Epoch[2] Batch [7500]	Speed: 7.43 samples/sec	Train-RPNAcc=0.998635,	RPNLogLoss=0.005172,	RPNL1Loss=0.003106,	RCNNAcc=0.946982,	RCNNLogLoss=0.153452,	RCNNL1Loss=0.036561,	
+Epoch[2] Batch [7600]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998638,	RPNLogLoss=0.005154,	RPNL1Loss=0.003104,	RCNNAcc=0.946917,	RCNNLogLoss=0.153610,	RCNNL1Loss=0.036680,	
+Epoch[2] Batch [7700]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005143,	RPNL1Loss=0.003104,	RCNNAcc=0.946789,	RCNNLogLoss=0.154067,	RCNNL1Loss=0.036774,	
+Epoch[2] Batch [7800]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005136,	RPNL1Loss=0.003099,	RCNNAcc=0.946674,	RCNNLogLoss=0.154548,	RCNNL1Loss=0.036857,	
+Epoch[2] Batch [7900]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998640,	RPNLogLoss=0.005139,	RPNL1Loss=0.003103,	RCNNAcc=0.946551,	RCNNLogLoss=0.154870,	RCNNL1Loss=0.036978,	
+Epoch[2] Batch [8000]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005127,	RPNL1Loss=0.003103,	RCNNAcc=0.946521,	RCNNLogLoss=0.155027,	RCNNL1Loss=0.037031,	
+Epoch[2] Batch [8100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998641,	RPNLogLoss=0.005130,	RPNL1Loss=0.003099,	RCNNAcc=0.946503,	RCNNLogLoss=0.155095,	RCNNL1Loss=0.037110,	
+Epoch[2] Batch [8200]	Speed: 7.36 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005123,	RPNL1Loss=0.003101,	RCNNAcc=0.946477,	RCNNLogLoss=0.155113,	RCNNL1Loss=0.037125,	
+Epoch[2] Batch [8300]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998648,	RPNLogLoss=0.005108,	RPNL1Loss=0.003100,	RCNNAcc=0.946556,	RCNNLogLoss=0.154844,	RCNNL1Loss=0.037064,	
+Epoch[2] Batch [8400]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005122,	RPNL1Loss=0.003097,	RCNNAcc=0.946489,	RCNNLogLoss=0.155099,	RCNNL1Loss=0.037093,	
+Epoch[2] Batch [8500]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998645,	RPNLogLoss=0.005119,	RPNL1Loss=0.003096,	RCNNAcc=0.946417,	RCNNLogLoss=0.155298,	RCNNL1Loss=0.037101,	
+Epoch[2] Batch [8600]	Speed: 7.28 samples/sec	Train-RPNAcc=0.998642,	RPNLogLoss=0.005129,	RPNL1Loss=0.003096,	RCNNAcc=0.946320,	RCNNLogLoss=0.155540,	RCNNL1Loss=0.037188,	
+Epoch[2] Batch [8700]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998649,	RPNLogLoss=0.005103,	RPNL1Loss=0.003097,	RCNNAcc=0.946235,	RCNNLogLoss=0.155786,	RCNNL1Loss=0.037316,	
+Epoch[2] Batch [8800]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998644,	RPNLogLoss=0.005130,	RPNL1Loss=0.003097,	RCNNAcc=0.946253,	RCNNLogLoss=0.155783,	RCNNL1Loss=0.037373,	
+Epoch[2] Batch [8900]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998647,	RPNLogLoss=0.005121,	RPNL1Loss=0.003096,	RCNNAcc=0.946181,	RCNNLogLoss=0.156174,	RCNNL1Loss=0.037452,	
+Epoch[2] Batch [9000]	Speed: 7.53 samples/sec	Train-RPNAcc=0.998648,	RPNLogLoss=0.005121,	RPNL1Loss=0.003095,	RCNNAcc=0.946094,	RCNNLogLoss=0.156418,	RCNNL1Loss=0.037522,	
+Epoch[2] Batch [9100]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998647,	RPNLogLoss=0.005120,	RPNL1Loss=0.003090,	RCNNAcc=0.946067,	RCNNLogLoss=0.156526,	RCNNL1Loss=0.037568,	
+Epoch[2] Batch [9200]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998650,	RPNLogLoss=0.005107,	RPNL1Loss=0.003085,	RCNNAcc=0.946168,	RCNNLogLoss=0.156176,	RCNNL1Loss=0.037537,	
+Epoch[2] Batch [9300]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998649,	RPNLogLoss=0.005105,	RPNL1Loss=0.003087,	RCNNAcc=0.946189,	RCNNLogLoss=0.156102,	RCNNL1Loss=0.037517,	
+Epoch[2] Batch [9400]	Speed: 7.56 samples/sec	Train-RPNAcc=0.998645,	RPNLogLoss=0.005117,	RPNL1Loss=0.003089,	RCNNAcc=0.946120,	RCNNLogLoss=0.156246,	RCNNL1Loss=0.037535,	
+Epoch[2] Batch [9500]	Speed: 7.54 samples/sec	Train-RPNAcc=0.998648,	RPNLogLoss=0.005108,	RPNL1Loss=0.003083,	RCNNAcc=0.946098,	RCNNLogLoss=0.156221,	RCNNL1Loss=0.037544,	
+Epoch[2] Batch [9600]	Speed: 7.36 samples/sec	Train-RPNAcc=0.998654,	RPNLogLoss=0.005089,	RPNL1Loss=0.003083,	RCNNAcc=0.946043,	RCNNLogLoss=0.156283,	RCNNL1Loss=0.037566,	
+Epoch[2] Batch [9700]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998643,	RPNLogLoss=0.005163,	RPNL1Loss=0.003108,	RCNNAcc=0.946051,	RCNNLogLoss=0.156249,	RCNNL1Loss=0.037543,	
+Epoch[2] Batch [9800]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998642,	RPNLogLoss=0.005169,	RPNL1Loss=0.003110,	RCNNAcc=0.946112,	RCNNLogLoss=0.156030,	RCNNL1Loss=0.037522,	
+Epoch[2] Batch [9900]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998632,	RPNLogLoss=0.005213,	RPNL1Loss=0.003116,	RCNNAcc=0.946042,	RCNNLogLoss=0.156263,	RCNNL1Loss=0.037599,	
+Epoch[2] Batch [10000]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998622,	RPNLogLoss=0.005247,	RPNL1Loss=0.003126,	RCNNAcc=0.945978,	RCNNLogLoss=0.156554,	RCNNL1Loss=0.037693,	
+Epoch[2] Batch [10100]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998626,	RPNLogLoss=0.005235,	RPNL1Loss=0.003123,	RCNNAcc=0.946026,	RCNNLogLoss=0.156346,	RCNNL1Loss=0.037655,	
+Epoch[2] Batch [10200]	Speed: 7.17 samples/sec	Train-RPNAcc=0.998630,	RPNLogLoss=0.005220,	RPNL1Loss=0.003118,	RCNNAcc=0.946112,	RCNNLogLoss=0.155943,	RCNNL1Loss=0.037581,	
+Epoch[2] Batch [10300]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998624,	RPNLogLoss=0.005231,	RPNL1Loss=0.003114,	RCNNAcc=0.946150,	RCNNLogLoss=0.155820,	RCNNL1Loss=0.037511,	
+Epoch[2] Batch [10400]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998627,	RPNLogLoss=0.005223,	RPNL1Loss=0.003115,	RCNNAcc=0.946200,	RCNNLogLoss=0.155579,	RCNNL1Loss=0.037475,	
+Epoch[3] Batch [100]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999362,	RPNLogLoss=0.002916,	RPNL1Loss=0.002820,	RCNNAcc=0.959042,	RCNNLogLoss=0.110997,	RCNNL1Loss=0.026074,	
+Epoch[3] Batch [200]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999038,	RPNLogLoss=0.003885,	RPNL1Loss=0.002943,	RCNNAcc=0.960782,	RCNNLogLoss=0.108552,	RCNNL1Loss=0.024733,	
+Epoch[3] Batch [300]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998910,	RPNLogLoss=0.004146,	RPNL1Loss=0.002851,	RCNNAcc=0.961911,	RCNNLogLoss=0.103621,	RCNNL1Loss=0.023294,	
+Epoch[3] Batch [400]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998953,	RPNLogLoss=0.004048,	RPNL1Loss=0.002791,	RCNNAcc=0.963431,	RCNNLogLoss=0.099393,	RCNNL1Loss=0.021446,	
+Epoch[3] Batch [500]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998975,	RPNLogLoss=0.003929,	RPNL1Loss=0.002739,	RCNNAcc=0.965358,	RCNNLogLoss=0.093599,	RCNNL1Loss=0.019503,	
+Epoch[3] Batch [600]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999022,	RPNLogLoss=0.003778,	RPNL1Loss=0.002783,	RCNNAcc=0.965786,	RCNNLogLoss=0.091829,	RCNNL1Loss=0.018856,	
+Epoch[3] Batch [700]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999030,	RPNLogLoss=0.003750,	RPNL1Loss=0.002736,	RCNNAcc=0.966376,	RCNNLogLoss=0.089861,	RCNNL1Loss=0.018001,	
+Epoch[3] Batch [800]	Speed: 7.47 samples/sec	Train-RPNAcc=0.999078,	RPNLogLoss=0.003565,	RPNL1Loss=0.002739,	RCNNAcc=0.965897,	RCNNLogLoss=0.090863,	RCNNL1Loss=0.018210,	
+Epoch[3] Batch [900]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999046,	RPNLogLoss=0.003655,	RPNL1Loss=0.002730,	RCNNAcc=0.966157,	RCNNLogLoss=0.090048,	RCNNL1Loss=0.018108,	
+Epoch[3] Batch [1000]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999065,	RPNLogLoss=0.003578,	RPNL1Loss=0.002735,	RCNNAcc=0.966081,	RCNNLogLoss=0.089679,	RCNNL1Loss=0.018015,	
+Epoch[3] Batch [1100]	Speed: 7.65 samples/sec	Train-RPNAcc=0.999065,	RPNLogLoss=0.003525,	RPNL1Loss=0.002726,	RCNNAcc=0.966110,	RCNNLogLoss=0.089335,	RCNNL1Loss=0.018256,	
+Epoch[3] Batch [1200]	Speed: 7.53 samples/sec	Train-RPNAcc=0.999062,	RPNLogLoss=0.003543,	RPNL1Loss=0.002712,	RCNNAcc=0.966291,	RCNNLogLoss=0.088534,	RCNNL1Loss=0.018005,	
+Epoch[3] Batch [1300]	Speed: 7.55 samples/sec	Train-RPNAcc=0.999057,	RPNLogLoss=0.003514,	RPNL1Loss=0.002721,	RCNNAcc=0.966426,	RCNNLogLoss=0.087800,	RCNNL1Loss=0.017834,	
+Epoch[3] Batch [1400]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999031,	RPNLogLoss=0.003565,	RPNL1Loss=0.002714,	RCNNAcc=0.966556,	RCNNLogLoss=0.087067,	RCNNL1Loss=0.017646,	
+Epoch[3] Batch [1500]	Speed: 7.46 samples/sec	Train-RPNAcc=0.999038,	RPNLogLoss=0.003537,	RPNL1Loss=0.002710,	RCNNAcc=0.966228,	RCNNLogLoss=0.087713,	RCNNL1Loss=0.017718,	
+Epoch[3] Batch [1600]	Speed: 7.66 samples/sec	Train-RPNAcc=0.999033,	RPNLogLoss=0.003543,	RPNL1Loss=0.002688,	RCNNAcc=0.966181,	RCNNLogLoss=0.087969,	RCNNL1Loss=0.017754,	
+Epoch[3] Batch [1700]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999030,	RPNLogLoss=0.003563,	RPNL1Loss=0.002664,	RCNNAcc=0.966474,	RCNNLogLoss=0.087099,	RCNNL1Loss=0.017537,	
+Epoch[3] Batch [1800]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999006,	RPNLogLoss=0.003619,	RPNL1Loss=0.002658,	RCNNAcc=0.966442,	RCNNLogLoss=0.087039,	RCNNL1Loss=0.017315,	
+Epoch[3] Batch [1900]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999022,	RPNLogLoss=0.003600,	RPNL1Loss=0.002665,	RCNNAcc=0.966494,	RCNNLogLoss=0.086970,	RCNNL1Loss=0.017196,	
+Epoch[3] Batch [2000]	Speed: 7.52 samples/sec	Train-RPNAcc=0.999022,	RPNLogLoss=0.003603,	RPNL1Loss=0.002668,	RCNNAcc=0.966657,	RCNNLogLoss=0.086513,	RCNNL1Loss=0.017089,	
+Epoch[3] Batch [2100]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999019,	RPNLogLoss=0.003612,	RPNL1Loss=0.002664,	RCNNAcc=0.966798,	RCNNLogLoss=0.086239,	RCNNL1Loss=0.017023,	
+Epoch[3] Batch [2200]	Speed: 7.61 samples/sec	Train-RPNAcc=0.999019,	RPNLogLoss=0.003622,	RPNL1Loss=0.002659,	RCNNAcc=0.966785,	RCNNLogLoss=0.086194,	RCNNL1Loss=0.016957,	
+Epoch[3] Batch [2300]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998959,	RPNLogLoss=0.003885,	RPNL1Loss=0.002674,	RCNNAcc=0.966827,	RCNNLogLoss=0.086263,	RCNNL1Loss=0.017066,	
+Epoch[3] Batch [2400]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998957,	RPNLogLoss=0.003873,	RPNL1Loss=0.002684,	RCNNAcc=0.966594,	RCNNLogLoss=0.086973,	RCNNL1Loss=0.017275,	
+Epoch[3] Batch [2500]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998918,	RPNLogLoss=0.004077,	RPNL1Loss=0.002753,	RCNNAcc=0.966145,	RCNNLogLoss=0.088345,	RCNNL1Loss=0.017498,	
+Epoch[3] Batch [2600]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998920,	RPNLogLoss=0.004061,	RPNL1Loss=0.002758,	RCNNAcc=0.965441,	RCNNLogLoss=0.091744,	RCNNL1Loss=0.018351,	
+Epoch[3] Batch [2700]	Speed: 7.51 samples/sec	Train-RPNAcc=0.998904,	RPNLogLoss=0.004095,	RPNL1Loss=0.002754,	RCNNAcc=0.965124,	RCNNLogLoss=0.093008,	RCNNL1Loss=0.018747,	
+Epoch[3] Batch [2800]	Speed: 7.36 samples/sec	Train-RPNAcc=0.998901,	RPNLogLoss=0.004109,	RPNL1Loss=0.002739,	RCNNAcc=0.964654,	RCNNLogLoss=0.094561,	RCNNL1Loss=0.019230,	
+Epoch[3] Batch [2900]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998899,	RPNLogLoss=0.004103,	RPNL1Loss=0.002731,	RCNNAcc=0.964412,	RCNNLogLoss=0.095750,	RCNNL1Loss=0.019737,	
+Epoch[3] Batch [3000]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998909,	RPNLogLoss=0.004078,	RPNL1Loss=0.002718,	RCNNAcc=0.964218,	RCNNLogLoss=0.096693,	RCNNL1Loss=0.019889,	
+Epoch[3] Batch [3100]	Speed: 7.63 samples/sec	Train-RPNAcc=0.998897,	RPNLogLoss=0.004116,	RPNL1Loss=0.002716,	RCNNAcc=0.964093,	RCNNLogLoss=0.097028,	RCNNL1Loss=0.020020,	
+Epoch[3] Batch [3200]	Speed: 7.54 samples/sec	Train-RPNAcc=0.998900,	RPNLogLoss=0.004098,	RPNL1Loss=0.002706,	RCNNAcc=0.964130,	RCNNLogLoss=0.096904,	RCNNL1Loss=0.020139,	
+Epoch[3] Batch [3300]	Speed: 7.26 samples/sec	Train-RPNAcc=0.998887,	RPNLogLoss=0.004120,	RPNL1Loss=0.002692,	RCNNAcc=0.963804,	RCNNLogLoss=0.098005,	RCNNL1Loss=0.020518,	
+Epoch[3] Batch [3400]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998884,	RPNLogLoss=0.004124,	RPNL1Loss=0.002693,	RCNNAcc=0.963777,	RCNNLogLoss=0.098186,	RCNNL1Loss=0.020723,	
+Epoch[3] Batch [3500]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998873,	RPNLogLoss=0.004162,	RPNL1Loss=0.002688,	RCNNAcc=0.963409,	RCNNLogLoss=0.099609,	RCNNL1Loss=0.021037,	
+Epoch[3] Batch [3600]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998876,	RPNLogLoss=0.004147,	RPNL1Loss=0.002696,	RCNNAcc=0.962976,	RCNNLogLoss=0.101169,	RCNNL1Loss=0.021370,	
+Epoch[3] Batch [3700]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998878,	RPNLogLoss=0.004146,	RPNL1Loss=0.002698,	RCNNAcc=0.962897,	RCNNLogLoss=0.101337,	RCNNL1Loss=0.021472,	
+Epoch[3] Batch [3800]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998881,	RPNLogLoss=0.004131,	RPNL1Loss=0.002701,	RCNNAcc=0.962931,	RCNNLogLoss=0.101208,	RCNNL1Loss=0.021531,	
+Epoch[3] Batch [3900]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998878,	RPNLogLoss=0.004134,	RPNL1Loss=0.002695,	RCNNAcc=0.962861,	RCNNLogLoss=0.101498,	RCNNL1Loss=0.021560,	
+Epoch[3] Batch [4000]	Speed: 7.26 samples/sec	Train-RPNAcc=0.998874,	RPNLogLoss=0.004151,	RPNL1Loss=0.002697,	RCNNAcc=0.962754,	RCNNLogLoss=0.101862,	RCNNL1Loss=0.021710,	
+Epoch[3] Batch [4100]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998867,	RPNLogLoss=0.004178,	RPNL1Loss=0.002693,	RCNNAcc=0.962567,	RCNNLogLoss=0.102314,	RCNNL1Loss=0.021881,	
+Epoch[3] Batch [4200]	Speed: 7.25 samples/sec	Train-RPNAcc=0.998873,	RPNLogLoss=0.004161,	RPNL1Loss=0.002684,	RCNNAcc=0.962378,	RCNNLogLoss=0.102889,	RCNNL1Loss=0.022037,	
+Epoch[3] Batch [4300]	Speed: 7.19 samples/sec	Train-RPNAcc=0.998882,	RPNLogLoss=0.004134,	RPNL1Loss=0.002684,	RCNNAcc=0.962329,	RCNNLogLoss=0.103000,	RCNNL1Loss=0.022044,	
+Epoch[3] Batch [4400]	Speed: 7.53 samples/sec	Train-RPNAcc=0.998880,	RPNLogLoss=0.004145,	RPNL1Loss=0.002689,	RCNNAcc=0.962356,	RCNNLogLoss=0.102769,	RCNNL1Loss=0.022027,	
+Epoch[3] Batch [4500]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998882,	RPNLogLoss=0.004134,	RPNL1Loss=0.002687,	RCNNAcc=0.962312,	RCNNLogLoss=0.102833,	RCNNL1Loss=0.022103,	
+Epoch[3] Batch [4600]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998882,	RPNLogLoss=0.004141,	RPNL1Loss=0.002686,	RCNNAcc=0.962113,	RCNNLogLoss=0.103387,	RCNNL1Loss=0.022268,	
+Epoch[3] Batch [4700]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998888,	RPNLogLoss=0.004133,	RPNL1Loss=0.002685,	RCNNAcc=0.962058,	RCNNLogLoss=0.103541,	RCNNL1Loss=0.022386,	
+Epoch[3] Batch [4800]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998888,	RPNLogLoss=0.004138,	RPNL1Loss=0.002680,	RCNNAcc=0.961975,	RCNNLogLoss=0.103758,	RCNNL1Loss=0.022455,	
+Epoch[3] Batch [4900]	Speed: 7.26 samples/sec	Train-RPNAcc=0.998877,	RPNLogLoss=0.004201,	RPNL1Loss=0.002698,	RCNNAcc=0.961679,	RCNNLogLoss=0.104727,	RCNNL1Loss=0.022819,	
+Epoch[3] Batch [5000]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998877,	RPNLogLoss=0.004207,	RPNL1Loss=0.002691,	RCNNAcc=0.961622,	RCNNLogLoss=0.104864,	RCNNL1Loss=0.022864,	
+Epoch[3] Batch [5100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998873,	RPNLogLoss=0.004209,	RPNL1Loss=0.002693,	RCNNAcc=0.961467,	RCNNLogLoss=0.105135,	RCNNL1Loss=0.022969,	
+Epoch[3] Batch [5200]	Speed: 7.20 samples/sec	Train-RPNAcc=0.998878,	RPNLogLoss=0.004203,	RPNL1Loss=0.002688,	RCNNAcc=0.961499,	RCNNLogLoss=0.105118,	RCNNL1Loss=0.022986,	
+Epoch[3] Batch [5300]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998873,	RPNLogLoss=0.004213,	RPNL1Loss=0.002700,	RCNNAcc=0.961531,	RCNNLogLoss=0.104957,	RCNNL1Loss=0.023007,	
+Epoch[3] Batch [5400]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998878,	RPNLogLoss=0.004194,	RPNL1Loss=0.002698,	RCNNAcc=0.961270,	RCNNLogLoss=0.105616,	RCNNL1Loss=0.023287,	
+Epoch[3] Batch [5500]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998880,	RPNLogLoss=0.004188,	RPNL1Loss=0.002695,	RCNNAcc=0.961329,	RCNNLogLoss=0.105418,	RCNNL1Loss=0.023408,	
+Epoch[3] Batch [5600]	Speed: 7.60 samples/sec	Train-RPNAcc=0.998880,	RPNLogLoss=0.004183,	RPNL1Loss=0.002695,	RCNNAcc=0.961263,	RCNNLogLoss=0.105557,	RCNNL1Loss=0.023544,	
+Epoch[3] Batch [5700]	Speed: 7.58 samples/sec	Train-RPNAcc=0.998881,	RPNLogLoss=0.004174,	RPNL1Loss=0.002692,	RCNNAcc=0.961225,	RCNNLogLoss=0.105656,	RCNNL1Loss=0.023650,	
+Epoch[3] Batch [5800]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998876,	RPNLogLoss=0.004206,	RPNL1Loss=0.002696,	RCNNAcc=0.961119,	RCNNLogLoss=0.105863,	RCNNL1Loss=0.023712,	
+Epoch[3] Batch [5900]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998877,	RPNLogLoss=0.004196,	RPNL1Loss=0.002691,	RCNNAcc=0.961059,	RCNNLogLoss=0.106105,	RCNNL1Loss=0.023753,	
+Epoch[3] Batch [6000]	Speed: 7.43 samples/sec	Train-RPNAcc=0.998877,	RPNLogLoss=0.004192,	RPNL1Loss=0.002689,	RCNNAcc=0.961047,	RCNNLogLoss=0.106155,	RCNNL1Loss=0.023776,	
+Epoch[3] Batch [6100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998880,	RPNLogLoss=0.004179,	RPNL1Loss=0.002693,	RCNNAcc=0.960994,	RCNNLogLoss=0.106271,	RCNNL1Loss=0.023871,	
+Epoch[3] Batch [6200]	Speed: 7.55 samples/sec	Train-RPNAcc=0.998888,	RPNLogLoss=0.004146,	RPNL1Loss=0.002691,	RCNNAcc=0.960938,	RCNNLogLoss=0.106332,	RCNNL1Loss=0.023934,	
+Epoch[3] Batch [6300]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998898,	RPNLogLoss=0.004114,	RPNL1Loss=0.002686,	RCNNAcc=0.960864,	RCNNLogLoss=0.106432,	RCNNL1Loss=0.024025,	
+Epoch[3] Batch [6400]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998903,	RPNLogLoss=0.004095,	RPNL1Loss=0.002687,	RCNNAcc=0.960766,	RCNNLogLoss=0.106660,	RCNNL1Loss=0.024226,	
+Epoch[3] Batch [6500]	Speed: 7.34 samples/sec	Train-RPNAcc=0.998904,	RPNLogLoss=0.004092,	RPNL1Loss=0.002684,	RCNNAcc=0.960727,	RCNNLogLoss=0.106727,	RCNNL1Loss=0.024320,	
+Epoch[3] Batch [6600]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998890,	RPNLogLoss=0.004179,	RPNL1Loss=0.002690,	RCNNAcc=0.960633,	RCNNLogLoss=0.107095,	RCNNL1Loss=0.024594,	
+Epoch[3] Batch [6700]	Speed: 7.57 samples/sec	Train-RPNAcc=0.998888,	RPNLogLoss=0.004186,	RPNL1Loss=0.002688,	RCNNAcc=0.960455,	RCNNLogLoss=0.107519,	RCNNL1Loss=0.024832,	
+Epoch[3] Batch [6800]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998885,	RPNLogLoss=0.004194,	RPNL1Loss=0.002683,	RCNNAcc=0.960400,	RCNNLogLoss=0.107840,	RCNNL1Loss=0.025007,	
+Epoch[3] Batch [6900]	Speed: 7.53 samples/sec	Train-RPNAcc=0.998879,	RPNLogLoss=0.004207,	RPNL1Loss=0.002680,	RCNNAcc=0.960442,	RCNNLogLoss=0.107799,	RCNNL1Loss=0.024977,	
+Epoch[3] Batch [7000]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998883,	RPNLogLoss=0.004197,	RPNL1Loss=0.002682,	RCNNAcc=0.960523,	RCNNLogLoss=0.107562,	RCNNL1Loss=0.024966,	
+Epoch[3] Batch [7100]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998884,	RPNLogLoss=0.004194,	RPNL1Loss=0.002680,	RCNNAcc=0.960521,	RCNNLogLoss=0.107512,	RCNNL1Loss=0.024973,	
+Epoch[3] Batch [7200]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998881,	RPNLogLoss=0.004197,	RPNL1Loss=0.002681,	RCNNAcc=0.960496,	RCNNLogLoss=0.107610,	RCNNL1Loss=0.024941,	
+Epoch[3] Batch [7300]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998882,	RPNLogLoss=0.004197,	RPNL1Loss=0.002681,	RCNNAcc=0.960452,	RCNNLogLoss=0.107777,	RCNNL1Loss=0.024993,	
+Epoch[3] Batch [7400]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998887,	RPNLogLoss=0.004180,	RPNL1Loss=0.002676,	RCNNAcc=0.960450,	RCNNLogLoss=0.107707,	RCNNL1Loss=0.025004,	
+Epoch[3] Batch [7500]	Speed: 7.49 samples/sec	Train-RPNAcc=0.998881,	RPNLogLoss=0.004206,	RPNL1Loss=0.002678,	RCNNAcc=0.960524,	RCNNLogLoss=0.107502,	RCNNL1Loss=0.024965,	
+Epoch[3] Batch [7600]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998885,	RPNLogLoss=0.004195,	RPNL1Loss=0.002678,	RCNNAcc=0.960591,	RCNNLogLoss=0.107305,	RCNNL1Loss=0.024915,	
+Epoch[3] Batch [7700]	Speed: 7.27 samples/sec	Train-RPNAcc=0.998882,	RPNLogLoss=0.004197,	RPNL1Loss=0.002678,	RCNNAcc=0.960627,	RCNNLogLoss=0.107244,	RCNNL1Loss=0.024934,	
+Epoch[3] Batch [7800]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998876,	RPNLogLoss=0.004210,	RPNL1Loss=0.002674,	RCNNAcc=0.960693,	RCNNLogLoss=0.107070,	RCNNL1Loss=0.024898,	
+Epoch[3] Batch [7900]	Speed: 7.40 samples/sec	Train-RPNAcc=0.998862,	RPNLogLoss=0.004261,	RPNL1Loss=0.002688,	RCNNAcc=0.960791,	RCNNLogLoss=0.106786,	RCNNL1Loss=0.024798,	
+Epoch[3] Batch [8000]	Speed: 7.22 samples/sec	Train-RPNAcc=0.998868,	RPNLogLoss=0.004251,	RPNL1Loss=0.002688,	RCNNAcc=0.960733,	RCNNLogLoss=0.106980,	RCNNL1Loss=0.024944,	
+Epoch[3] Batch [8100]	Speed: 7.49 samples/sec	Train-RPNAcc=0.998875,	RPNLogLoss=0.004224,	RPNL1Loss=0.002682,	RCNNAcc=0.960682,	RCNNLogLoss=0.107082,	RCNNL1Loss=0.024965,	
+Epoch[3] Batch [8200]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998873,	RPNLogLoss=0.004226,	RPNL1Loss=0.002678,	RCNNAcc=0.960648,	RCNNLogLoss=0.107137,	RCNNL1Loss=0.025013,	
+Epoch[3] Batch [8300]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998874,	RPNLogLoss=0.004218,	RPNL1Loss=0.002677,	RCNNAcc=0.960611,	RCNNLogLoss=0.107272,	RCNNL1Loss=0.025060,	
+Epoch[3] Batch [8400]	Speed: 7.32 samples/sec	Train-RPNAcc=0.998869,	RPNLogLoss=0.004238,	RPNL1Loss=0.002676,	RCNNAcc=0.960558,	RCNNLogLoss=0.107571,	RCNNL1Loss=0.025120,	
+Epoch[3] Batch [8500]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998871,	RPNLogLoss=0.004231,	RPNL1Loss=0.002678,	RCNNAcc=0.960485,	RCNNLogLoss=0.107753,	RCNNL1Loss=0.025140,	
+Epoch[3] Batch [8600]	Speed: 7.65 samples/sec	Train-RPNAcc=0.998871,	RPNLogLoss=0.004222,	RPNL1Loss=0.002677,	RCNNAcc=0.960430,	RCNNLogLoss=0.107973,	RCNNL1Loss=0.025176,	
+Epoch[3] Batch [8700]	Speed: 7.41 samples/sec	Train-RPNAcc=0.998874,	RPNLogLoss=0.004216,	RPNL1Loss=0.002676,	RCNNAcc=0.960355,	RCNNLogLoss=0.108247,	RCNNL1Loss=0.025254,	
+Epoch[3] Batch [8800]	Speed: 7.50 samples/sec	Train-RPNAcc=0.998878,	RPNLogLoss=0.004201,	RPNL1Loss=0.002673,	RCNNAcc=0.960359,	RCNNLogLoss=0.108377,	RCNNL1Loss=0.025273,	
+Epoch[3] Batch [8900]	Speed: 7.50 samples/sec	Train-RPNAcc=0.998878,	RPNLogLoss=0.004197,	RPNL1Loss=0.002676,	RCNNAcc=0.960317,	RCNNLogLoss=0.108524,	RCNNL1Loss=0.025307,	
+Epoch[3] Batch [9000]	Speed: 7.24 samples/sec	Train-RPNAcc=0.998882,	RPNLogLoss=0.004181,	RPNL1Loss=0.002673,	RCNNAcc=0.960223,	RCNNLogLoss=0.108848,	RCNNL1Loss=0.025398,	
+Epoch[3] Batch [9100]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998874,	RPNLogLoss=0.004230,	RPNL1Loss=0.002686,	RCNNAcc=0.960137,	RCNNLogLoss=0.109105,	RCNNL1Loss=0.025450,	
+Epoch[3] Batch [9200]	Speed: 7.39 samples/sec	Train-RPNAcc=0.998865,	RPNLogLoss=0.004255,	RPNL1Loss=0.002690,	RCNNAcc=0.960130,	RCNNLogLoss=0.109265,	RCNNL1Loss=0.025535,	
+Epoch[3] Batch [9300]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998865,	RPNLogLoss=0.004257,	RPNL1Loss=0.002688,	RCNNAcc=0.960081,	RCNNLogLoss=0.109388,	RCNNL1Loss=0.025560,	
+Epoch[3] Batch [9400]	Speed: 7.51 samples/sec	Train-RPNAcc=0.998867,	RPNLogLoss=0.004259,	RPNL1Loss=0.002688,	RCNNAcc=0.960055,	RCNNLogLoss=0.109440,	RCNNL1Loss=0.025614,	
+Epoch[3] Batch [9500]	Speed: 7.29 samples/sec	Train-RPNAcc=0.998862,	RPNLogLoss=0.004275,	RPNL1Loss=0.002689,	RCNNAcc=0.960054,	RCNNLogLoss=0.109454,	RCNNL1Loss=0.025610,	
+Epoch[3] Batch [9600]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998867,	RPNLogLoss=0.004263,	RPNL1Loss=0.002687,	RCNNAcc=0.960115,	RCNNLogLoss=0.109233,	RCNNL1Loss=0.025545,	
+Epoch[3] Batch [9700]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998868,	RPNLogLoss=0.004259,	RPNL1Loss=0.002685,	RCNNAcc=0.960203,	RCNNLogLoss=0.108938,	RCNNL1Loss=0.025432,	
+Epoch[3] Batch [9800]	Speed: 7.31 samples/sec	Train-RPNAcc=0.998868,	RPNLogLoss=0.004258,	RPNL1Loss=0.002682,	RCNNAcc=0.960238,	RCNNLogLoss=0.108815,	RCNNL1Loss=0.025382,	
+Epoch[3] Batch [9900]	Speed: 7.57 samples/sec	Train-RPNAcc=0.998871,	RPNLogLoss=0.004246,	RPNL1Loss=0.002677,	RCNNAcc=0.960344,	RCNNLogLoss=0.108470,	RCNNL1Loss=0.025288,	
+Epoch[3] Batch [10000]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998872,	RPNLogLoss=0.004242,	RPNL1Loss=0.002683,	RCNNAcc=0.960395,	RCNNLogLoss=0.108304,	RCNNL1Loss=0.025255,	
+Epoch[3] Batch [10100]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998874,	RPNLogLoss=0.004237,	RPNL1Loss=0.002686,	RCNNAcc=0.960450,	RCNNLogLoss=0.108088,	RCNNL1Loss=0.025195,	
+Epoch[3] Batch [10200]	Speed: 7.30 samples/sec	Train-RPNAcc=0.998874,	RPNLogLoss=0.004235,	RPNL1Loss=0.002685,	RCNNAcc=0.960542,	RCNNLogLoss=0.107837,	RCNNL1Loss=0.025136,	
+Epoch[3] Batch [10300]	Speed: 7.27 samples/sec	Train-RPNAcc=0.998875,	RPNLogLoss=0.004227,	RPNL1Loss=0.002684,	RCNNAcc=0.960578,	RCNNLogLoss=0.107704,	RCNNL1Loss=0.025088,	
+Epoch[3] Batch [10400]	Speed: 7.46 samples/sec	Train-RPNAcc=0.998871,	RPNLogLoss=0.004234,	RPNL1Loss=0.002682,	RCNNAcc=0.960652,	RCNNLogLoss=0.107478,	RCNNL1Loss=0.025019,	
+Epoch[4] Batch [100]	Speed: 7.41 samples/sec	Train-RPNAcc=0.999149,	RPNLogLoss=0.002938,	RPNL1Loss=0.002184,	RCNNAcc=0.969214,	RCNNLogLoss=0.078963,	RCNNL1Loss=0.016845,	
+Epoch[4] Batch [200]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999019,	RPNLogLoss=0.003416,	RPNL1Loss=0.002196,	RCNNAcc=0.969061,	RCNNLogLoss=0.078627,	RCNNL1Loss=0.016770,	
+Epoch[4] Batch [300]	Speed: 7.48 samples/sec	Train-RPNAcc=0.998962,	RPNLogLoss=0.003597,	RPNL1Loss=0.002231,	RCNNAcc=0.967919,	RCNNLogLoss=0.081581,	RCNNL1Loss=0.017274,	
+Epoch[4] Batch [400]	Speed: 7.28 samples/sec	Train-RPNAcc=0.998943,	RPNLogLoss=0.003697,	RPNL1Loss=0.002257,	RCNNAcc=0.968399,	RCNNLogLoss=0.082310,	RCNNL1Loss=0.017502,	
+Epoch[4] Batch [500]	Speed: 7.52 samples/sec	Train-RPNAcc=0.998975,	RPNLogLoss=0.003611,	RPNL1Loss=0.002307,	RCNNAcc=0.968407,	RCNNLogLoss=0.081862,	RCNNL1Loss=0.017424,	
+Epoch[4] Batch [600]	Speed: 7.47 samples/sec	Train-RPNAcc=0.998967,	RPNLogLoss=0.003612,	RPNL1Loss=0.002295,	RCNNAcc=0.968542,	RCNNLogLoss=0.081943,	RCNNL1Loss=0.017399,	
+Epoch[4] Batch [700]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999008,	RPNLogLoss=0.003516,	RPNL1Loss=0.002307,	RCNNAcc=0.968544,	RCNNLogLoss=0.081542,	RCNNL1Loss=0.016947,	
+Epoch[4] Batch [800]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999022,	RPNLogLoss=0.003496,	RPNL1Loss=0.002303,	RCNNAcc=0.968243,	RCNNLogLoss=0.081956,	RCNNL1Loss=0.016808,	
+Epoch[4] Batch [900]	Speed: 7.47 samples/sec	Train-RPNAcc=0.999025,	RPNLogLoss=0.003541,	RPNL1Loss=0.002330,	RCNNAcc=0.968798,	RCNNLogLoss=0.080440,	RCNNL1Loss=0.016605,	
+Epoch[4] Batch [1000]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999050,	RPNLogLoss=0.003474,	RPNL1Loss=0.002317,	RCNNAcc=0.968894,	RCNNLogLoss=0.079793,	RCNNL1Loss=0.016458,	
+Epoch[4] Batch [1100]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999037,	RPNLogLoss=0.003500,	RPNL1Loss=0.002327,	RCNNAcc=0.969332,	RCNNLogLoss=0.078587,	RCNNL1Loss=0.016212,	
+Epoch[4] Batch [1200]	Speed: 7.46 samples/sec	Train-RPNAcc=0.999005,	RPNLogLoss=0.003595,	RPNL1Loss=0.002324,	RCNNAcc=0.969131,	RCNNLogLoss=0.078990,	RCNNL1Loss=0.016118,	
+Epoch[4] Batch [1300]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999021,	RPNLogLoss=0.003532,	RPNL1Loss=0.002322,	RCNNAcc=0.969287,	RCNNLogLoss=0.078415,	RCNNL1Loss=0.015807,	
+Epoch[4] Batch [1400]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999031,	RPNLogLoss=0.003485,	RPNL1Loss=0.002325,	RCNNAcc=0.969508,	RCNNLogLoss=0.077752,	RCNNL1Loss=0.015599,	
+Epoch[4] Batch [1500]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999063,	RPNLogLoss=0.003405,	RPNL1Loss=0.002312,	RCNNAcc=0.969687,	RCNNLogLoss=0.077250,	RCNNL1Loss=0.015402,	
+Epoch[4] Batch [1600]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999069,	RPNLogLoss=0.003364,	RPNL1Loss=0.002291,	RCNNAcc=0.969714,	RCNNLogLoss=0.077244,	RCNNL1Loss=0.015353,	
+Epoch[4] Batch [1700]	Speed: 7.57 samples/sec	Train-RPNAcc=0.999046,	RPNLogLoss=0.003431,	RPNL1Loss=0.002298,	RCNNAcc=0.969740,	RCNNLogLoss=0.077220,	RCNNL1Loss=0.015399,	
+Epoch[4] Batch [1800]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999029,	RPNLogLoss=0.003490,	RPNL1Loss=0.002317,	RCNNAcc=0.969509,	RCNNLogLoss=0.078031,	RCNNL1Loss=0.015579,	
+Epoch[4] Batch [1900]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999032,	RPNLogLoss=0.003473,	RPNL1Loss=0.002311,	RCNNAcc=0.969738,	RCNNLogLoss=0.077430,	RCNNL1Loss=0.015457,	
+Epoch[4] Batch [2000]	Speed: 7.19 samples/sec	Train-RPNAcc=0.999037,	RPNLogLoss=0.003444,	RPNL1Loss=0.002320,	RCNNAcc=0.969937,	RCNNLogLoss=0.076841,	RCNNL1Loss=0.015297,	
+Epoch[4] Batch [2100]	Speed: 7.47 samples/sec	Train-RPNAcc=0.999044,	RPNLogLoss=0.003434,	RPNL1Loss=0.002317,	RCNNAcc=0.969903,	RCNNLogLoss=0.077186,	RCNNL1Loss=0.015343,	
+Epoch[4] Batch [2200]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999019,	RPNLogLoss=0.003519,	RPNL1Loss=0.002336,	RCNNAcc=0.969861,	RCNNLogLoss=0.077628,	RCNNL1Loss=0.015421,	
+Epoch[4] Batch [2300]	Speed: 7.52 samples/sec	Train-RPNAcc=0.999026,	RPNLogLoss=0.003509,	RPNL1Loss=0.002349,	RCNNAcc=0.969971,	RCNNLogLoss=0.077646,	RCNNL1Loss=0.015418,	
+Epoch[4] Batch [2400]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999029,	RPNLogLoss=0.003510,	RPNL1Loss=0.002351,	RCNNAcc=0.970032,	RCNNLogLoss=0.077481,	RCNNL1Loss=0.015449,	
+Epoch[4] Batch [2500]	Speed: 7.49 samples/sec	Train-RPNAcc=0.999036,	RPNLogLoss=0.003497,	RPNL1Loss=0.002356,	RCNNAcc=0.970035,	RCNNLogLoss=0.077360,	RCNNL1Loss=0.015425,	
+Epoch[4] Batch [2600]	Speed: 7.64 samples/sec	Train-RPNAcc=0.998983,	RPNLogLoss=0.003694,	RPNL1Loss=0.002364,	RCNNAcc=0.970006,	RCNNLogLoss=0.077391,	RCNNL1Loss=0.015360,	
+Epoch[4] Batch [2700]	Speed: 7.38 samples/sec	Train-RPNAcc=0.998980,	RPNLogLoss=0.003715,	RPNL1Loss=0.002357,	RCNNAcc=0.969880,	RCNNLogLoss=0.077954,	RCNNL1Loss=0.015512,	
+Epoch[4] Batch [2800]	Speed: 7.56 samples/sec	Train-RPNAcc=0.998983,	RPNLogLoss=0.003707,	RPNL1Loss=0.002354,	RCNNAcc=0.969825,	RCNNLogLoss=0.078246,	RCNNL1Loss=0.015512,	
+Epoch[4] Batch [2900]	Speed: 7.20 samples/sec	Train-RPNAcc=0.998985,	RPNLogLoss=0.003697,	RPNL1Loss=0.002350,	RCNNAcc=0.969880,	RCNNLogLoss=0.078162,	RCNNL1Loss=0.015457,	
+Epoch[4] Batch [3000]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999000,	RPNLogLoss=0.003656,	RPNL1Loss=0.002358,	RCNNAcc=0.969948,	RCNNLogLoss=0.077917,	RCNNL1Loss=0.015398,	
+Epoch[4] Batch [3100]	Speed: 7.40 samples/sec	Train-RPNAcc=0.999002,	RPNLogLoss=0.003643,	RPNL1Loss=0.002343,	RCNNAcc=0.970127,	RCNNLogLoss=0.077391,	RCNNL1Loss=0.015302,	
+Epoch[4] Batch [3200]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999012,	RPNLogLoss=0.003616,	RPNL1Loss=0.002340,	RCNNAcc=0.970148,	RCNNLogLoss=0.077428,	RCNNL1Loss=0.015231,	
+Epoch[4] Batch [3300]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999013,	RPNLogLoss=0.003606,	RPNL1Loss=0.002341,	RCNNAcc=0.970123,	RCNNLogLoss=0.077426,	RCNNL1Loss=0.015184,	
+Epoch[4] Batch [3400]	Speed: 7.40 samples/sec	Train-RPNAcc=0.999018,	RPNLogLoss=0.003595,	RPNL1Loss=0.002339,	RCNNAcc=0.970118,	RCNNLogLoss=0.077401,	RCNNL1Loss=0.015109,	
+Epoch[4] Batch [3500]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999003,	RPNLogLoss=0.003636,	RPNL1Loss=0.002343,	RCNNAcc=0.970059,	RCNNLogLoss=0.077491,	RCNNL1Loss=0.015156,	
+Epoch[4] Batch [3600]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999000,	RPNLogLoss=0.003636,	RPNL1Loss=0.002340,	RCNNAcc=0.970052,	RCNNLogLoss=0.077528,	RCNNL1Loss=0.015121,	
+Epoch[4] Batch [3700]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999001,	RPNLogLoss=0.003635,	RPNL1Loss=0.002332,	RCNNAcc=0.970121,	RCNNLogLoss=0.077263,	RCNNL1Loss=0.015056,	
+Epoch[4] Batch [3800]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999000,	RPNLogLoss=0.003630,	RPNL1Loss=0.002332,	RCNNAcc=0.970133,	RCNNLogLoss=0.077196,	RCNNL1Loss=0.015025,	
+Epoch[4] Batch [3900]	Speed: 7.55 samples/sec	Train-RPNAcc=0.998993,	RPNLogLoss=0.003623,	RPNL1Loss=0.002326,	RCNNAcc=0.970090,	RCNNLogLoss=0.077226,	RCNNL1Loss=0.015017,	
+Epoch[4] Batch [4000]	Speed: 7.16 samples/sec	Train-RPNAcc=0.999004,	RPNLogLoss=0.003598,	RPNL1Loss=0.002320,	RCNNAcc=0.970124,	RCNNLogLoss=0.077099,	RCNNL1Loss=0.014994,	
+Epoch[4] Batch [4100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999012,	RPNLogLoss=0.003569,	RPNL1Loss=0.002320,	RCNNAcc=0.970148,	RCNNLogLoss=0.076928,	RCNNL1Loss=0.014914,	
+Epoch[4] Batch [4200]	Speed: 7.54 samples/sec	Train-RPNAcc=0.999013,	RPNLogLoss=0.003570,	RPNL1Loss=0.002330,	RCNNAcc=0.970132,	RCNNLogLoss=0.077069,	RCNNL1Loss=0.014997,	
+Epoch[4] Batch [4300]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999017,	RPNLogLoss=0.003559,	RPNL1Loss=0.002323,	RCNNAcc=0.970150,	RCNNLogLoss=0.077021,	RCNNL1Loss=0.015040,	
+Epoch[4] Batch [4400]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999012,	RPNLogLoss=0.003569,	RPNL1Loss=0.002324,	RCNNAcc=0.970221,	RCNNLogLoss=0.076838,	RCNNL1Loss=0.015019,	
+Epoch[4] Batch [4500]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999012,	RPNLogLoss=0.003560,	RPNL1Loss=0.002333,	RCNNAcc=0.970154,	RCNNLogLoss=0.077003,	RCNNL1Loss=0.015072,	
+Epoch[4] Batch [4600]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999023,	RPNLogLoss=0.003524,	RPNL1Loss=0.002333,	RCNNAcc=0.970180,	RCNNLogLoss=0.076981,	RCNNL1Loss=0.015041,	
+Epoch[4] Batch [4700]	Speed: 7.41 samples/sec	Train-RPNAcc=0.999031,	RPNLogLoss=0.003502,	RPNL1Loss=0.002333,	RCNNAcc=0.970223,	RCNNLogLoss=0.076795,	RCNNL1Loss=0.015005,	
+Epoch[4] Batch [4800]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999026,	RPNLogLoss=0.003530,	RPNL1Loss=0.002333,	RCNNAcc=0.970258,	RCNNLogLoss=0.076707,	RCNNL1Loss=0.015009,	
+Epoch[4] Batch [4900]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999002,	RPNLogLoss=0.003660,	RPNL1Loss=0.002359,	RCNNAcc=0.970064,	RCNNLogLoss=0.077313,	RCNNL1Loss=0.015179,	
+Epoch[4] Batch [5000]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999010,	RPNLogLoss=0.003644,	RPNL1Loss=0.002358,	RCNNAcc=0.969798,	RCNNLogLoss=0.078614,	RCNNL1Loss=0.015482,	
+Epoch[4] Batch [5100]	Speed: 7.41 samples/sec	Train-RPNAcc=0.999003,	RPNLogLoss=0.003662,	RPNL1Loss=0.002360,	RCNNAcc=0.969615,	RCNNLogLoss=0.079309,	RCNNL1Loss=0.015755,	
+Epoch[4] Batch [5200]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999005,	RPNLogLoss=0.003649,	RPNL1Loss=0.002356,	RCNNAcc=0.969441,	RCNNLogLoss=0.080014,	RCNNL1Loss=0.015912,	
+Epoch[4] Batch [5300]	Speed: 7.25 samples/sec	Train-RPNAcc=0.998997,	RPNLogLoss=0.003667,	RPNL1Loss=0.002358,	RCNNAcc=0.969278,	RCNNLogLoss=0.080666,	RCNNL1Loss=0.016007,	
+Epoch[4] Batch [5400]	Speed: 7.33 samples/sec	Train-RPNAcc=0.998989,	RPNLogLoss=0.003700,	RPNL1Loss=0.002362,	RCNNAcc=0.969245,	RCNNLogLoss=0.080746,	RCNNL1Loss=0.016033,	
+Epoch[4] Batch [5500]	Speed: 7.42 samples/sec	Train-RPNAcc=0.998993,	RPNLogLoss=0.003689,	RPNL1Loss=0.002359,	RCNNAcc=0.969187,	RCNNLogLoss=0.080891,	RCNNL1Loss=0.016101,	
+Epoch[4] Batch [5600]	Speed: 7.44 samples/sec	Train-RPNAcc=0.998998,	RPNLogLoss=0.003671,	RPNL1Loss=0.002354,	RCNNAcc=0.969187,	RCNNLogLoss=0.081016,	RCNNL1Loss=0.016137,	
+Epoch[4] Batch [5700]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999000,	RPNLogLoss=0.003659,	RPNL1Loss=0.002352,	RCNNAcc=0.969212,	RCNNLogLoss=0.081011,	RCNNL1Loss=0.016142,	
+Epoch[4] Batch [5800]	Speed: 7.35 samples/sec	Train-RPNAcc=0.998995,	RPNLogLoss=0.003672,	RPNL1Loss=0.002351,	RCNNAcc=0.969219,	RCNNLogLoss=0.080994,	RCNNL1Loss=0.016155,	
+Epoch[4] Batch [5900]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998996,	RPNLogLoss=0.003668,	RPNL1Loss=0.002351,	RCNNAcc=0.969222,	RCNNLogLoss=0.081007,	RCNNL1Loss=0.016214,	
+Epoch[4] Batch [6000]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998996,	RPNLogLoss=0.003673,	RPNL1Loss=0.002349,	RCNNAcc=0.969203,	RCNNLogLoss=0.081024,	RCNNL1Loss=0.016286,	
+Epoch[4] Batch [6100]	Speed: 7.37 samples/sec	Train-RPNAcc=0.998992,	RPNLogLoss=0.003682,	RPNL1Loss=0.002348,	RCNNAcc=0.969166,	RCNNLogLoss=0.081119,	RCNNL1Loss=0.016374,	
+Epoch[4] Batch [6200]	Speed: 7.50 samples/sec	Train-RPNAcc=0.998993,	RPNLogLoss=0.003670,	RPNL1Loss=0.002349,	RCNNAcc=0.969130,	RCNNLogLoss=0.081273,	RCNNL1Loss=0.016441,	
+Epoch[4] Batch [6300]	Speed: 7.28 samples/sec	Train-RPNAcc=0.998998,	RPNLogLoss=0.003659,	RPNL1Loss=0.002347,	RCNNAcc=0.969098,	RCNNLogLoss=0.081373,	RCNNL1Loss=0.016478,	
+Epoch[4] Batch [6400]	Speed: 7.71 samples/sec	Train-RPNAcc=0.999004,	RPNLogLoss=0.003646,	RPNL1Loss=0.002345,	RCNNAcc=0.969127,	RCNNLogLoss=0.081258,	RCNNL1Loss=0.016478,	
+Epoch[4] Batch [6500]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999003,	RPNLogLoss=0.003648,	RPNL1Loss=0.002346,	RCNNAcc=0.969121,	RCNNLogLoss=0.081217,	RCNNL1Loss=0.016460,	
+Epoch[4] Batch [6600]	Speed: 7.03 samples/sec	Train-RPNAcc=0.998995,	RPNLogLoss=0.003669,	RPNL1Loss=0.002345,	RCNNAcc=0.969127,	RCNNLogLoss=0.081192,	RCNNL1Loss=0.016490,	
+Epoch[4] Batch [6700]	Speed: 7.61 samples/sec	Train-RPNAcc=0.999000,	RPNLogLoss=0.003652,	RPNL1Loss=0.002348,	RCNNAcc=0.969102,	RCNNLogLoss=0.081236,	RCNNL1Loss=0.016537,	
+Epoch[4] Batch [6800]	Speed: 7.20 samples/sec	Train-RPNAcc=0.999003,	RPNLogLoss=0.003638,	RPNL1Loss=0.002345,	RCNNAcc=0.969121,	RCNNLogLoss=0.081144,	RCNNL1Loss=0.016492,	
+Epoch[4] Batch [6900]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999007,	RPNLogLoss=0.003630,	RPNL1Loss=0.002344,	RCNNAcc=0.969136,	RCNNLogLoss=0.081061,	RCNNL1Loss=0.016440,	
+Epoch[4] Batch [7000]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999007,	RPNLogLoss=0.003628,	RPNL1Loss=0.002345,	RCNNAcc=0.969147,	RCNNLogLoss=0.081002,	RCNNL1Loss=0.016381,	
+Epoch[4] Batch [7100]	Speed: 7.53 samples/sec	Train-RPNAcc=0.999007,	RPNLogLoss=0.003626,	RPNL1Loss=0.002343,	RCNNAcc=0.969183,	RCNNLogLoss=0.080886,	RCNNL1Loss=0.016331,	
+Epoch[4] Batch [7200]	Speed: 7.19 samples/sec	Train-RPNAcc=0.999013,	RPNLogLoss=0.003611,	RPNL1Loss=0.002341,	RCNNAcc=0.969238,	RCNNLogLoss=0.080718,	RCNNL1Loss=0.016307,	
+Epoch[4] Batch [7300]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999018,	RPNLogLoss=0.003589,	RPNL1Loss=0.002335,	RCNNAcc=0.969267,	RCNNLogLoss=0.080571,	RCNNL1Loss=0.016280,	
+Epoch[4] Batch [7400]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999023,	RPNLogLoss=0.003571,	RPNL1Loss=0.002337,	RCNNAcc=0.969271,	RCNNLogLoss=0.080522,	RCNNL1Loss=0.016285,	
+Epoch[4] Batch [7500]	Speed: 7.56 samples/sec	Train-RPNAcc=0.999023,	RPNLogLoss=0.003571,	RPNL1Loss=0.002336,	RCNNAcc=0.969222,	RCNNLogLoss=0.080714,	RCNNL1Loss=0.016324,	
+Epoch[4] Batch [7600]	Speed: 7.47 samples/sec	Train-RPNAcc=0.999025,	RPNLogLoss=0.003559,	RPNL1Loss=0.002333,	RCNNAcc=0.969226,	RCNNLogLoss=0.080707,	RCNNL1Loss=0.016330,	
+Epoch[4] Batch [7700]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999026,	RPNLogLoss=0.003556,	RPNL1Loss=0.002335,	RCNNAcc=0.969144,	RCNNLogLoss=0.080939,	RCNNL1Loss=0.016382,	
+Epoch[4] Batch [7800]	Speed: 7.52 samples/sec	Train-RPNAcc=0.999025,	RPNLogLoss=0.003553,	RPNL1Loss=0.002331,	RCNNAcc=0.969111,	RCNNLogLoss=0.081058,	RCNNL1Loss=0.016380,	
+Epoch[4] Batch [7900]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999026,	RPNLogLoss=0.003547,	RPNL1Loss=0.002334,	RCNNAcc=0.969092,	RCNNLogLoss=0.081103,	RCNNL1Loss=0.016362,	
+Epoch[4] Batch [8000]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999028,	RPNLogLoss=0.003548,	RPNL1Loss=0.002331,	RCNNAcc=0.969094,	RCNNLogLoss=0.081129,	RCNNL1Loss=0.016364,	
+Epoch[4] Batch [8100]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999029,	RPNLogLoss=0.003545,	RPNL1Loss=0.002331,	RCNNAcc=0.969078,	RCNNLogLoss=0.081116,	RCNNL1Loss=0.016353,	
+Epoch[4] Batch [8200]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999032,	RPNLogLoss=0.003531,	RPNL1Loss=0.002332,	RCNNAcc=0.969097,	RCNNLogLoss=0.081100,	RCNNL1Loss=0.016349,	
+Epoch[4] Batch [8300]	Speed: 7.34 samples/sec	Train-RPNAcc=0.999030,	RPNLogLoss=0.003538,	RPNL1Loss=0.002329,	RCNNAcc=0.969069,	RCNNLogLoss=0.081196,	RCNNL1Loss=0.016363,	
+Epoch[4] Batch [8400]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999035,	RPNLogLoss=0.003523,	RPNL1Loss=0.002332,	RCNNAcc=0.969050,	RCNNLogLoss=0.081234,	RCNNL1Loss=0.016375,	
+Epoch[4] Batch [8500]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999032,	RPNLogLoss=0.003547,	RPNL1Loss=0.002339,	RCNNAcc=0.968986,	RCNNLogLoss=0.081446,	RCNNL1Loss=0.016397,	
+Epoch[4] Batch [8600]	Speed: 7.48 samples/sec	Train-RPNAcc=0.999029,	RPNLogLoss=0.003552,	RPNL1Loss=0.002335,	RCNNAcc=0.969012,	RCNNLogLoss=0.081328,	RCNNL1Loss=0.016395,	
+Epoch[4] Batch [8700]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999026,	RPNLogLoss=0.003559,	RPNL1Loss=0.002335,	RCNNAcc=0.968989,	RCNNLogLoss=0.081417,	RCNNL1Loss=0.016417,	
+Epoch[4] Batch [8800]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999031,	RPNLogLoss=0.003545,	RPNL1Loss=0.002331,	RCNNAcc=0.968914,	RCNNLogLoss=0.081613,	RCNNL1Loss=0.016465,	
+Epoch[4] Batch [8900]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999033,	RPNLogLoss=0.003543,	RPNL1Loss=0.002326,	RCNNAcc=0.968955,	RCNNLogLoss=0.081510,	RCNNL1Loss=0.016440,	
+Epoch[4] Batch [9000]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999035,	RPNLogLoss=0.003536,	RPNL1Loss=0.002322,	RCNNAcc=0.968946,	RCNNLogLoss=0.081496,	RCNNL1Loss=0.016423,	
+Epoch[4] Batch [9100]	Speed: 7.40 samples/sec	Train-RPNAcc=0.999018,	RPNLogLoss=0.003620,	RPNL1Loss=0.002331,	RCNNAcc=0.969002,	RCNNLogLoss=0.081377,	RCNNL1Loss=0.016369,	
+Epoch[4] Batch [9200]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999020,	RPNLogLoss=0.003608,	RPNL1Loss=0.002328,	RCNNAcc=0.969030,	RCNNLogLoss=0.081284,	RCNNL1Loss=0.016326,	
+Epoch[4] Batch [9300]	Speed: 7.09 samples/sec	Train-RPNAcc=0.999024,	RPNLogLoss=0.003601,	RPNL1Loss=0.002321,	RCNNAcc=0.969047,	RCNNLogLoss=0.081226,	RCNNL1Loss=0.016280,	
+Epoch[4] Batch [9400]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999026,	RPNLogLoss=0.003594,	RPNL1Loss=0.002316,	RCNNAcc=0.969117,	RCNNLogLoss=0.081045,	RCNNL1Loss=0.016220,	
+Epoch[4] Batch [9500]	Speed: 7.18 samples/sec	Train-RPNAcc=0.999027,	RPNLogLoss=0.003590,	RPNL1Loss=0.002310,	RCNNAcc=0.969152,	RCNNLogLoss=0.080946,	RCNNL1Loss=0.016163,	
+Epoch[4] Batch [9600]	Speed: 7.61 samples/sec	Train-RPNAcc=0.999027,	RPNLogLoss=0.003586,	RPNL1Loss=0.002304,	RCNNAcc=0.969197,	RCNNLogLoss=0.080799,	RCNNL1Loss=0.016110,	
+Epoch[4] Batch [9700]	Speed: 7.62 samples/sec	Train-RPNAcc=0.999031,	RPNLogLoss=0.003580,	RPNL1Loss=0.002298,	RCNNAcc=0.969232,	RCNNLogLoss=0.080697,	RCNNL1Loss=0.016047,	
+Epoch[4] Batch [9800]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999037,	RPNLogLoss=0.003564,	RPNL1Loss=0.002293,	RCNNAcc=0.969267,	RCNNLogLoss=0.080627,	RCNNL1Loss=0.015981,	
+Epoch[4] Batch [9900]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999043,	RPNLogLoss=0.003543,	RPNL1Loss=0.002285,	RCNNAcc=0.969307,	RCNNLogLoss=0.080500,	RCNNL1Loss=0.015922,	
+Epoch[4] Batch [10000]	Speed: 7.13 samples/sec	Train-RPNAcc=0.999047,	RPNLogLoss=0.003531,	RPNL1Loss=0.002282,	RCNNAcc=0.969333,	RCNNLogLoss=0.080417,	RCNNL1Loss=0.015877,	
+Epoch[4] Batch [10100]	Speed: 7.14 samples/sec	Train-RPNAcc=0.999050,	RPNLogLoss=0.003517,	RPNL1Loss=0.002278,	RCNNAcc=0.969353,	RCNNLogLoss=0.080332,	RCNNL1Loss=0.015831,	
+Epoch[4] Batch [10200]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999052,	RPNLogLoss=0.003509,	RPNL1Loss=0.002273,	RCNNAcc=0.969385,	RCNNLogLoss=0.080270,	RCNNL1Loss=0.015785,	
+Epoch[4] Batch [10300]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999043,	RPNLogLoss=0.003548,	RPNL1Loss=0.002276,	RCNNAcc=0.969395,	RCNNLogLoss=0.080247,	RCNNL1Loss=0.015755,	
+Epoch[4] Batch [10400]	Speed: 7.48 samples/sec	Train-RPNAcc=0.999043,	RPNLogLoss=0.003544,	RPNL1Loss=0.002272,	RCNNAcc=0.969400,	RCNNLogLoss=0.080201,	RCNNL1Loss=0.015714,	
+Epoch[5] Batch [100]	Speed: 7.18 samples/sec	Train-RPNAcc=0.999362,	RPNLogLoss=0.002354,	RPNL1Loss=0.001578,	RCNNAcc=0.974667,	RCNNLogLoss=0.064636,	RCNNL1Loss=0.009054,	
+Epoch[5] Batch [200]	Speed: 7.16 samples/sec	Train-RPNAcc=0.999291,	RPNLogLoss=0.002370,	RPNL1Loss=0.001497,	RCNNAcc=0.975455,	RCNNLogLoss=0.062809,	RCNNL1Loss=0.008778,	
+Epoch[5] Batch [300]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999351,	RPNLogLoss=0.002328,	RPNL1Loss=0.001516,	RCNNAcc=0.976225,	RCNNLogLoss=0.060725,	RCNNL1Loss=0.008607,	
+Epoch[5] Batch [400]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999333,	RPNLogLoss=0.002411,	RPNL1Loss=0.001586,	RCNNAcc=0.975345,	RCNNLogLoss=0.062598,	RCNNL1Loss=0.008953,	
+Epoch[5] Batch [500]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999349,	RPNLogLoss=0.002413,	RPNL1Loss=0.001638,	RCNNAcc=0.975635,	RCNNLogLoss=0.061867,	RCNNL1Loss=0.009049,	
+Epoch[5] Batch [600]	Speed: 7.40 samples/sec	Train-RPNAcc=0.999350,	RPNLogLoss=0.002393,	RPNL1Loss=0.001683,	RCNNAcc=0.975523,	RCNNLogLoss=0.062154,	RCNNL1Loss=0.009238,	
+Epoch[5] Batch [700]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999351,	RPNLogLoss=0.002403,	RPNL1Loss=0.001675,	RCNNAcc=0.975392,	RCNNLogLoss=0.062844,	RCNNL1Loss=0.009398,	
+Epoch[5] Batch [800]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999359,	RPNLogLoss=0.002374,	RPNL1Loss=0.001670,	RCNNAcc=0.975460,	RCNNLogLoss=0.062756,	RCNNL1Loss=0.009329,	
+Epoch[5] Batch [900]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999380,	RPNLogLoss=0.002322,	RPNL1Loss=0.001695,	RCNNAcc=0.975513,	RCNNLogLoss=0.062501,	RCNNL1Loss=0.009385,	
+Epoch[5] Batch [1000]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999366,	RPNLogLoss=0.002368,	RPNL1Loss=0.001683,	RCNNAcc=0.975454,	RCNNLogLoss=0.062437,	RCNNL1Loss=0.009304,	
+Epoch[5] Batch [1100]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999328,	RPNLogLoss=0.002466,	RPNL1Loss=0.001681,	RCNNAcc=0.975519,	RCNNLogLoss=0.062247,	RCNNL1Loss=0.009142,	
+Epoch[5] Batch [1200]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999335,	RPNLogLoss=0.002426,	RPNL1Loss=0.001682,	RCNNAcc=0.975421,	RCNNLogLoss=0.062318,	RCNNL1Loss=0.009182,	
+Epoch[5] Batch [1300]	Speed: 7.46 samples/sec	Train-RPNAcc=0.999341,	RPNLogLoss=0.002441,	RPNL1Loss=0.001692,	RCNNAcc=0.975470,	RCNNLogLoss=0.062206,	RCNNL1Loss=0.009227,	
+Epoch[5] Batch [1400]	Speed: 7.21 samples/sec	Train-RPNAcc=0.999327,	RPNLogLoss=0.002507,	RPNL1Loss=0.001683,	RCNNAcc=0.975545,	RCNNLogLoss=0.061855,	RCNNL1Loss=0.009097,	
+Epoch[5] Batch [1500]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999308,	RPNLogLoss=0.002548,	RPNL1Loss=0.001672,	RCNNAcc=0.975516,	RCNNLogLoss=0.061762,	RCNNL1Loss=0.009022,	
+Epoch[5] Batch [1600]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999296,	RPNLogLoss=0.002582,	RPNL1Loss=0.001675,	RCNNAcc=0.975360,	RCNNLogLoss=0.062084,	RCNNL1Loss=0.009014,	
+Epoch[5] Batch [1700]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999290,	RPNLogLoss=0.002596,	RPNL1Loss=0.001671,	RCNNAcc=0.975313,	RCNNLogLoss=0.062018,	RCNNL1Loss=0.008962,	
+Epoch[5] Batch [1800]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999270,	RPNLogLoss=0.002642,	RPNL1Loss=0.001674,	RCNNAcc=0.975419,	RCNNLogLoss=0.061671,	RCNNL1Loss=0.008913,	
+Epoch[5] Batch [1900]	Speed: 7.16 samples/sec	Train-RPNAcc=0.999249,	RPNLogLoss=0.002711,	RPNL1Loss=0.001670,	RCNNAcc=0.975512,	RCNNLogLoss=0.061436,	RCNNL1Loss=0.008892,	
+Epoch[5] Batch [2000]	Speed: 7.18 samples/sec	Train-RPNAcc=0.999257,	RPNLogLoss=0.002694,	RPNL1Loss=0.001671,	RCNNAcc=0.975571,	RCNNLogLoss=0.061361,	RCNNL1Loss=0.008878,	
+Epoch[5] Batch [2100]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999259,	RPNLogLoss=0.002693,	RPNL1Loss=0.001677,	RCNNAcc=0.975557,	RCNNLogLoss=0.061441,	RCNNL1Loss=0.008914,	
+Epoch[5] Batch [2200]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999261,	RPNLogLoss=0.002678,	RPNL1Loss=0.001670,	RCNNAcc=0.975473,	RCNNLogLoss=0.061663,	RCNNL1Loss=0.008914,	
+Epoch[5] Batch [2300]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999271,	RPNLogLoss=0.002646,	RPNL1Loss=0.001659,	RCNNAcc=0.975586,	RCNNLogLoss=0.061347,	RCNNL1Loss=0.008845,	
+Epoch[5] Batch [2400]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999283,	RPNLogLoss=0.002608,	RPNL1Loss=0.001652,	RCNNAcc=0.975619,	RCNNLogLoss=0.061287,	RCNNL1Loss=0.008787,	
+Epoch[5] Batch [2500]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999281,	RPNLogLoss=0.002628,	RPNL1Loss=0.001646,	RCNNAcc=0.975657,	RCNNLogLoss=0.061247,	RCNNL1Loss=0.008762,	
+Epoch[5] Batch [2600]	Speed: 7.56 samples/sec	Train-RPNAcc=0.999274,	RPNLogLoss=0.002641,	RPNL1Loss=0.001651,	RCNNAcc=0.975619,	RCNNLogLoss=0.061255,	RCNNL1Loss=0.008765,	
+Epoch[5] Batch [2700]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999285,	RPNLogLoss=0.002610,	RPNL1Loss=0.001648,	RCNNAcc=0.975677,	RCNNLogLoss=0.061166,	RCNNL1Loss=0.008731,	
+Epoch[5] Batch [2800]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999285,	RPNLogLoss=0.002610,	RPNL1Loss=0.001645,	RCNNAcc=0.975621,	RCNNLogLoss=0.061241,	RCNNL1Loss=0.008736,	
+Epoch[5] Batch [2900]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999237,	RPNLogLoss=0.002797,	RPNL1Loss=0.001665,	RCNNAcc=0.975559,	RCNNLogLoss=0.061483,	RCNNL1Loss=0.008769,	
+Epoch[5] Batch [3000]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999215,	RPNLogLoss=0.002914,	RPNL1Loss=0.001665,	RCNNAcc=0.975588,	RCNNLogLoss=0.061450,	RCNNL1Loss=0.008766,	
+Epoch[5] Batch [3100]	Speed: 7.47 samples/sec	Train-RPNAcc=0.999213,	RPNLogLoss=0.002930,	RPNL1Loss=0.001662,	RCNNAcc=0.975585,	RCNNLogLoss=0.061455,	RCNNL1Loss=0.008769,	
+Epoch[5] Batch [3200]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999215,	RPNLogLoss=0.002917,	RPNL1Loss=0.001667,	RCNNAcc=0.975579,	RCNNLogLoss=0.061437,	RCNNL1Loss=0.008781,	
+Epoch[5] Batch [3300]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999214,	RPNLogLoss=0.002920,	RPNL1Loss=0.001669,	RCNNAcc=0.975584,	RCNNLogLoss=0.061391,	RCNNL1Loss=0.008774,	
+Epoch[5] Batch [3400]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002880,	RPNL1Loss=0.001665,	RCNNAcc=0.975576,	RCNNLogLoss=0.061435,	RCNNL1Loss=0.008772,	
+Epoch[5] Batch [3500]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002890,	RPNL1Loss=0.001665,	RCNNAcc=0.975627,	RCNNLogLoss=0.061354,	RCNNL1Loss=0.008768,	
+Epoch[5] Batch [3600]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999226,	RPNLogLoss=0.002872,	RPNL1Loss=0.001664,	RCNNAcc=0.975599,	RCNNLogLoss=0.061413,	RCNNL1Loss=0.008785,	
+Epoch[5] Batch [3700]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999233,	RPNLogLoss=0.002848,	RPNL1Loss=0.001660,	RCNNAcc=0.975598,	RCNNLogLoss=0.061388,	RCNNL1Loss=0.008771,	
+Epoch[5] Batch [3800]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999241,	RPNLogLoss=0.002826,	RPNL1Loss=0.001666,	RCNNAcc=0.975646,	RCNNLogLoss=0.061289,	RCNNL1Loss=0.008760,	
+Epoch[5] Batch [3900]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999243,	RPNLogLoss=0.002817,	RPNL1Loss=0.001662,	RCNNAcc=0.975679,	RCNNLogLoss=0.061174,	RCNNL1Loss=0.008732,	
+Epoch[5] Batch [4000]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999244,	RPNLogLoss=0.002808,	RPNL1Loss=0.001661,	RCNNAcc=0.975649,	RCNNLogLoss=0.061196,	RCNNL1Loss=0.008726,	
+Epoch[5] Batch [4100]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999243,	RPNLogLoss=0.002816,	RPNL1Loss=0.001657,	RCNNAcc=0.975651,	RCNNLogLoss=0.061227,	RCNNL1Loss=0.008726,	
+Epoch[5] Batch [4200]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002808,	RPNL1Loss=0.001658,	RCNNAcc=0.975678,	RCNNLogLoss=0.061175,	RCNNL1Loss=0.008716,	
+Epoch[5] Batch [4300]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002801,	RPNL1Loss=0.001654,	RCNNAcc=0.975684,	RCNNLogLoss=0.061157,	RCNNL1Loss=0.008676,	
+Epoch[5] Batch [4400]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999239,	RPNLogLoss=0.002811,	RPNL1Loss=0.001656,	RCNNAcc=0.975669,	RCNNLogLoss=0.061230,	RCNNL1Loss=0.008661,	
+Epoch[5] Batch [4500]	Speed: 7.20 samples/sec	Train-RPNAcc=0.999238,	RPNLogLoss=0.002801,	RPNL1Loss=0.001656,	RCNNAcc=0.975650,	RCNNLogLoss=0.061304,	RCNNL1Loss=0.008667,	
+Epoch[5] Batch [4600]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999241,	RPNLogLoss=0.002793,	RPNL1Loss=0.001657,	RCNNAcc=0.975610,	RCNNLogLoss=0.061421,	RCNNL1Loss=0.008684,	
+Epoch[5] Batch [4700]	Speed: 7.19 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002781,	RPNL1Loss=0.001656,	RCNNAcc=0.975603,	RCNNLogLoss=0.061396,	RCNNL1Loss=0.008681,	
+Epoch[5] Batch [4800]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999242,	RPNLogLoss=0.002796,	RPNL1Loss=0.001658,	RCNNAcc=0.975631,	RCNNLogLoss=0.061317,	RCNNL1Loss=0.008667,	
+Epoch[5] Batch [4900]	Speed: 7.19 samples/sec	Train-RPNAcc=0.999245,	RPNLogLoss=0.002780,	RPNL1Loss=0.001655,	RCNNAcc=0.975677,	RCNNLogLoss=0.061240,	RCNNL1Loss=0.008648,	
+Epoch[5] Batch [5000]	Speed: 7.18 samples/sec	Train-RPNAcc=0.999243,	RPNLogLoss=0.002772,	RPNL1Loss=0.001654,	RCNNAcc=0.975681,	RCNNLogLoss=0.061292,	RCNNL1Loss=0.008646,	
+Epoch[5] Batch [5100]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999245,	RPNLogLoss=0.002769,	RPNL1Loss=0.001655,	RCNNAcc=0.975706,	RCNNLogLoss=0.061250,	RCNNL1Loss=0.008629,	
+Epoch[5] Batch [5200]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999245,	RPNLogLoss=0.002769,	RPNL1Loss=0.001655,	RCNNAcc=0.975708,	RCNNLogLoss=0.061203,	RCNNL1Loss=0.008603,	
+Epoch[5] Batch [5300]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999252,	RPNLogLoss=0.002751,	RPNL1Loss=0.001657,	RCNNAcc=0.975705,	RCNNLogLoss=0.061178,	RCNNL1Loss=0.008595,	
+Epoch[5] Batch [5400]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999254,	RPNLogLoss=0.002746,	RPNL1Loss=0.001658,	RCNNAcc=0.975697,	RCNNLogLoss=0.061276,	RCNNL1Loss=0.008595,	
+Epoch[5] Batch [5500]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002773,	RPNL1Loss=0.001664,	RCNNAcc=0.975721,	RCNNLogLoss=0.061233,	RCNNL1Loss=0.008589,	
+Epoch[5] Batch [5600]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002769,	RPNL1Loss=0.001659,	RCNNAcc=0.975753,	RCNNLogLoss=0.061152,	RCNNL1Loss=0.008578,	
+Epoch[5] Batch [5700]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999233,	RPNLogLoss=0.002819,	RPNL1Loss=0.001658,	RCNNAcc=0.975731,	RCNNLogLoss=0.061155,	RCNNL1Loss=0.008576,	
+Epoch[5] Batch [5800]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999232,	RPNLogLoss=0.002822,	RPNL1Loss=0.001657,	RCNNAcc=0.975752,	RCNNLogLoss=0.061113,	RCNNL1Loss=0.008570,	
+Epoch[5] Batch [5900]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999235,	RPNLogLoss=0.002814,	RPNL1Loss=0.001657,	RCNNAcc=0.975752,	RCNNLogLoss=0.061095,	RCNNL1Loss=0.008575,	
+Epoch[5] Batch [6000]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999236,	RPNLogLoss=0.002814,	RPNL1Loss=0.001657,	RCNNAcc=0.975771,	RCNNLogLoss=0.061039,	RCNNL1Loss=0.008565,	
+Epoch[5] Batch [6100]	Speed: 7.09 samples/sec	Train-RPNAcc=0.999232,	RPNLogLoss=0.002822,	RPNL1Loss=0.001658,	RCNNAcc=0.975792,	RCNNLogLoss=0.061013,	RCNNL1Loss=0.008559,	
+Epoch[5] Batch [6200]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999236,	RPNLogLoss=0.002812,	RPNL1Loss=0.001658,	RCNNAcc=0.975786,	RCNNLogLoss=0.060992,	RCNNL1Loss=0.008559,	
+Epoch[5] Batch [6300]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999239,	RPNLogLoss=0.002801,	RPNL1Loss=0.001659,	RCNNAcc=0.975751,	RCNNLogLoss=0.061143,	RCNNL1Loss=0.008574,	
+Epoch[5] Batch [6400]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999239,	RPNLogLoss=0.002793,	RPNL1Loss=0.001659,	RCNNAcc=0.975775,	RCNNLogLoss=0.061097,	RCNNL1Loss=0.008572,	
+Epoch[5] Batch [6500]	Speed: 7.07 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002769,	RPNL1Loss=0.001659,	RCNNAcc=0.975748,	RCNNLogLoss=0.061150,	RCNNL1Loss=0.008602,	
+Epoch[5] Batch [6600]	Speed: 7.08 samples/sec	Train-RPNAcc=0.999246,	RPNLogLoss=0.002769,	RPNL1Loss=0.001663,	RCNNAcc=0.975771,	RCNNLogLoss=0.061142,	RCNNL1Loss=0.008596,	
+Epoch[5] Batch [6700]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999247,	RPNLogLoss=0.002763,	RPNL1Loss=0.001663,	RCNNAcc=0.975808,	RCNNLogLoss=0.061037,	RCNNL1Loss=0.008587,	
+Epoch[5] Batch [6800]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999252,	RPNLogLoss=0.002750,	RPNL1Loss=0.001663,	RCNNAcc=0.975787,	RCNNLogLoss=0.061108,	RCNNL1Loss=0.008606,	
+Epoch[5] Batch [6900]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999239,	RPNLogLoss=0.002802,	RPNL1Loss=0.001668,	RCNNAcc=0.975769,	RCNNLogLoss=0.061155,	RCNNL1Loss=0.008611,	
+Epoch[5] Batch [7000]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999240,	RPNLogLoss=0.002794,	RPNL1Loss=0.001666,	RCNNAcc=0.975769,	RCNNLogLoss=0.061153,	RCNNL1Loss=0.008597,	
+Epoch[5] Batch [7100]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999239,	RPNLogLoss=0.002795,	RPNL1Loss=0.001665,	RCNNAcc=0.975779,	RCNNLogLoss=0.061109,	RCNNL1Loss=0.008583,	
+Epoch[5] Batch [7200]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999244,	RPNLogLoss=0.002782,	RPNL1Loss=0.001663,	RCNNAcc=0.975799,	RCNNLogLoss=0.061061,	RCNNL1Loss=0.008564,	
+Epoch[5] Batch [7300]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999248,	RPNLogLoss=0.002767,	RPNL1Loss=0.001663,	RCNNAcc=0.975789,	RCNNLogLoss=0.061100,	RCNNL1Loss=0.008580,	
+Epoch[5] Batch [7400]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999247,	RPNLogLoss=0.002768,	RPNL1Loss=0.001664,	RCNNAcc=0.975812,	RCNNLogLoss=0.061045,	RCNNL1Loss=0.008574,	
+Epoch[5] Batch [7500]	Speed: 7.20 samples/sec	Train-RPNAcc=0.999249,	RPNLogLoss=0.002759,	RPNL1Loss=0.001664,	RCNNAcc=0.975821,	RCNNLogLoss=0.061050,	RCNNL1Loss=0.008576,	
+Epoch[5] Batch [7600]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999243,	RPNLogLoss=0.002767,	RPNL1Loss=0.001665,	RCNNAcc=0.975819,	RCNNLogLoss=0.061067,	RCNNL1Loss=0.008578,	
+Epoch[5] Batch [7700]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999240,	RPNLogLoss=0.002774,	RPNL1Loss=0.001663,	RCNNAcc=0.975820,	RCNNLogLoss=0.061039,	RCNNL1Loss=0.008567,	
+Epoch[5] Batch [7800]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999237,	RPNLogLoss=0.002784,	RPNL1Loss=0.001663,	RCNNAcc=0.975792,	RCNNLogLoss=0.061083,	RCNNL1Loss=0.008568,	
+Epoch[5] Batch [7900]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999239,	RPNLogLoss=0.002777,	RPNL1Loss=0.001661,	RCNNAcc=0.975819,	RCNNLogLoss=0.061017,	RCNNL1Loss=0.008549,	
+Epoch[5] Batch [8000]	Speed: 7.21 samples/sec	Train-RPNAcc=0.999241,	RPNLogLoss=0.002772,	RPNL1Loss=0.001660,	RCNNAcc=0.975829,	RCNNLogLoss=0.060969,	RCNNL1Loss=0.008531,	
+Epoch[5] Batch [8100]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999241,	RPNLogLoss=0.002773,	RPNL1Loss=0.001661,	RCNNAcc=0.975818,	RCNNLogLoss=0.061028,	RCNNL1Loss=0.008547,	
+Epoch[5] Batch [8200]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999237,	RPNLogLoss=0.002785,	RPNL1Loss=0.001663,	RCNNAcc=0.975820,	RCNNLogLoss=0.061039,	RCNNL1Loss=0.008550,	
+Epoch[5] Batch [8300]	Speed: 7.61 samples/sec	Train-RPNAcc=0.999238,	RPNLogLoss=0.002783,	RPNL1Loss=0.001664,	RCNNAcc=0.975811,	RCNNLogLoss=0.061041,	RCNNL1Loss=0.008551,	
+Epoch[5] Batch [8400]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999236,	RPNLogLoss=0.002784,	RPNL1Loss=0.001664,	RCNNAcc=0.975821,	RCNNLogLoss=0.061008,	RCNNL1Loss=0.008543,	
+Epoch[5] Batch [8500]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999235,	RPNLogLoss=0.002787,	RPNL1Loss=0.001664,	RCNNAcc=0.975798,	RCNNLogLoss=0.061043,	RCNNL1Loss=0.008540,	
+Epoch[5] Batch [8600]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999229,	RPNLogLoss=0.002818,	RPNL1Loss=0.001665,	RCNNAcc=0.975801,	RCNNLogLoss=0.061009,	RCNNL1Loss=0.008528,	
+Epoch[5] Batch [8700]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999227,	RPNLogLoss=0.002823,	RPNL1Loss=0.001666,	RCNNAcc=0.975795,	RCNNLogLoss=0.061011,	RCNNL1Loss=0.008533,	
+Epoch[5] Batch [8800]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999230,	RPNLogLoss=0.002817,	RPNL1Loss=0.001666,	RCNNAcc=0.975810,	RCNNLogLoss=0.060962,	RCNNL1Loss=0.008530,	
+Epoch[5] Batch [8900]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999231,	RPNLogLoss=0.002814,	RPNL1Loss=0.001664,	RCNNAcc=0.975802,	RCNNLogLoss=0.060971,	RCNNL1Loss=0.008525,	
+Epoch[5] Batch [9000]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999234,	RPNLogLoss=0.002807,	RPNL1Loss=0.001662,	RCNNAcc=0.975793,	RCNNLogLoss=0.060996,	RCNNL1Loss=0.008525,	
+Epoch[5] Batch [9100]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999232,	RPNLogLoss=0.002812,	RPNL1Loss=0.001660,	RCNNAcc=0.975795,	RCNNLogLoss=0.060972,	RCNNL1Loss=0.008523,	
+Epoch[5] Batch [9200]	Speed: 7.34 samples/sec	Train-RPNAcc=0.999220,	RPNLogLoss=0.002854,	RPNL1Loss=0.001664,	RCNNAcc=0.975794,	RCNNLogLoss=0.060959,	RCNNL1Loss=0.008524,	
+Epoch[5] Batch [9300]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999219,	RPNLogLoss=0.002854,	RPNL1Loss=0.001665,	RCNNAcc=0.975798,	RCNNLogLoss=0.060937,	RCNNL1Loss=0.008527,	
+Epoch[5] Batch [9400]	Speed: 7.11 samples/sec	Train-RPNAcc=0.999221,	RPNLogLoss=0.002848,	RPNL1Loss=0.001665,	RCNNAcc=0.975809,	RCNNLogLoss=0.060899,	RCNNL1Loss=0.008529,	
+Epoch[5] Batch [9500]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999223,	RPNLogLoss=0.002839,	RPNL1Loss=0.001665,	RCNNAcc=0.975797,	RCNNLogLoss=0.060906,	RCNNL1Loss=0.008534,	
+Epoch[5] Batch [9600]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999224,	RPNLogLoss=0.002835,	RPNL1Loss=0.001664,	RCNNAcc=0.975803,	RCNNLogLoss=0.060890,	RCNNL1Loss=0.008530,	
+Epoch[5] Batch [9700]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002830,	RPNL1Loss=0.001663,	RCNNAcc=0.975808,	RCNNLogLoss=0.060880,	RCNNL1Loss=0.008533,	
+Epoch[5] Batch [9800]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999227,	RPNLogLoss=0.002822,	RPNL1Loss=0.001662,	RCNNAcc=0.975829,	RCNNLogLoss=0.060833,	RCNNL1Loss=0.008526,	
+Epoch[5] Batch [9900]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999230,	RPNLogLoss=0.002815,	RPNL1Loss=0.001660,	RCNNAcc=0.975831,	RCNNLogLoss=0.060852,	RCNNL1Loss=0.008525,	
+Epoch[5] Batch [10000]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002824,	RPNL1Loss=0.001661,	RCNNAcc=0.975825,	RCNNLogLoss=0.060894,	RCNNL1Loss=0.008528,	
+Epoch[5] Batch [10100]	Speed: 7.12 samples/sec	Train-RPNAcc=0.999229,	RPNLogLoss=0.002810,	RPNL1Loss=0.001661,	RCNNAcc=0.975838,	RCNNLogLoss=0.060847,	RCNNL1Loss=0.008518,	
+Epoch[5] Batch [10200]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999227,	RPNLogLoss=0.002814,	RPNL1Loss=0.001661,	RCNNAcc=0.975823,	RCNNLogLoss=0.060860,	RCNNL1Loss=0.008516,	
+Epoch[5] Batch [10300]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999231,	RPNLogLoss=0.002804,	RPNL1Loss=0.001660,	RCNNAcc=0.975826,	RCNNLogLoss=0.060847,	RCNNL1Loss=0.008524,	
+Epoch[5] Batch [10400]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999234,	RPNLogLoss=0.002793,	RPNL1Loss=0.001660,	RCNNAcc=0.975822,	RCNNLogLoss=0.060882,	RCNNL1Loss=0.008532,	
+Epoch[6] Batch [100]	Speed: 7.13 samples/sec	Train-RPNAcc=0.999439,	RPNLogLoss=0.002157,	RPNL1Loss=0.001515,	RCNNAcc=0.977413,	RCNNLogLoss=0.055535,	RCNNL1Loss=0.007149,	
+Epoch[6] Batch [200]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999349,	RPNLogLoss=0.002457,	RPNL1Loss=0.001585,	RCNNAcc=0.976543,	RCNNLogLoss=0.057367,	RCNNL1Loss=0.008064,	
+Epoch[6] Batch [300]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999397,	RPNLogLoss=0.002235,	RPNL1Loss=0.001567,	RCNNAcc=0.976562,	RCNNLogLoss=0.056661,	RCNNL1Loss=0.007864,	
+Epoch[6] Batch [400]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999372,	RPNLogLoss=0.002330,	RPNL1Loss=0.001595,	RCNNAcc=0.976183,	RCNNLogLoss=0.058178,	RCNNL1Loss=0.008120,	
+Epoch[6] Batch [500]	Speed: 7.41 samples/sec	Train-RPNAcc=0.999329,	RPNLogLoss=0.002371,	RPNL1Loss=0.001616,	RCNNAcc=0.976461,	RCNNLogLoss=0.057945,	RCNNL1Loss=0.008227,	
+Epoch[6] Batch [600]	Speed: 7.16 samples/sec	Train-RPNAcc=0.999311,	RPNLogLoss=0.002455,	RPNL1Loss=0.001585,	RCNNAcc=0.976290,	RCNNLogLoss=0.058224,	RCNNL1Loss=0.008203,	
+Epoch[6] Batch [700]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999298,	RPNLogLoss=0.002483,	RPNL1Loss=0.001574,	RCNNAcc=0.976384,	RCNNLogLoss=0.058022,	RCNNL1Loss=0.008001,	
+Epoch[6] Batch [800]	Speed: 7.46 samples/sec	Train-RPNAcc=0.999303,	RPNLogLoss=0.002506,	RPNL1Loss=0.001576,	RCNNAcc=0.976553,	RCNNLogLoss=0.057570,	RCNNL1Loss=0.007857,	
+Epoch[6] Batch [900]	Speed: 7.14 samples/sec	Train-RPNAcc=0.999328,	RPNLogLoss=0.002406,	RPNL1Loss=0.001569,	RCNNAcc=0.976532,	RCNNLogLoss=0.057543,	RCNNL1Loss=0.007819,	
+Epoch[6] Batch [1000]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999356,	RPNLogLoss=0.002326,	RPNL1Loss=0.001567,	RCNNAcc=0.976570,	RCNNLogLoss=0.057525,	RCNNL1Loss=0.007827,	
+Epoch[6] Batch [1100]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999322,	RPNLogLoss=0.002535,	RPNL1Loss=0.001572,	RCNNAcc=0.976534,	RCNNLogLoss=0.057892,	RCNNL1Loss=0.007831,	
+Epoch[6] Batch [1200]	Speed: 7.11 samples/sec	Train-RPNAcc=0.999315,	RPNLogLoss=0.002543,	RPNL1Loss=0.001571,	RCNNAcc=0.976527,	RCNNLogLoss=0.058066,	RCNNL1Loss=0.007820,	
+Epoch[6] Batch [1300]	Speed: 7.58 samples/sec	Train-RPNAcc=0.999315,	RPNLogLoss=0.002525,	RPNL1Loss=0.001574,	RCNNAcc=0.976562,	RCNNLogLoss=0.057939,	RCNNL1Loss=0.007775,	
+Epoch[6] Batch [1400]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999302,	RPNLogLoss=0.002530,	RPNL1Loss=0.001571,	RCNNAcc=0.976574,	RCNNLogLoss=0.057729,	RCNNL1Loss=0.007708,	
+Epoch[6] Batch [1500]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999299,	RPNLogLoss=0.002539,	RPNL1Loss=0.001570,	RCNNAcc=0.976687,	RCNNLogLoss=0.057478,	RCNNL1Loss=0.007658,	
+Epoch[6] Batch [1600]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999236,	RPNLogLoss=0.002724,	RPNL1Loss=0.001583,	RCNNAcc=0.976626,	RCNNLogLoss=0.057648,	RCNNL1Loss=0.007694,	
+Epoch[6] Batch [1700]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999234,	RPNLogLoss=0.002740,	RPNL1Loss=0.001586,	RCNNAcc=0.976650,	RCNNLogLoss=0.057646,	RCNNL1Loss=0.007774,	
+Epoch[6] Batch [1800]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002760,	RPNL1Loss=0.001595,	RCNNAcc=0.976580,	RCNNLogLoss=0.057761,	RCNNL1Loss=0.007779,	
+Epoch[6] Batch [1900]	Speed: 7.34 samples/sec	Train-RPNAcc=0.999223,	RPNLogLoss=0.002732,	RPNL1Loss=0.001588,	RCNNAcc=0.976571,	RCNNLogLoss=0.057817,	RCNNL1Loss=0.007787,	
+Epoch[6] Batch [2000]	Speed: 7.34 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002725,	RPNL1Loss=0.001589,	RCNNAcc=0.976639,	RCNNLogLoss=0.057602,	RCNNL1Loss=0.007735,	
+Epoch[6] Batch [2100]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999238,	RPNLogLoss=0.002695,	RPNL1Loss=0.001588,	RCNNAcc=0.976525,	RCNNLogLoss=0.057898,	RCNNL1Loss=0.007778,	
+Epoch[6] Batch [2200]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999247,	RPNLogLoss=0.002659,	RPNL1Loss=0.001580,	RCNNAcc=0.976566,	RCNNLogLoss=0.057898,	RCNNL1Loss=0.007804,	
+Epoch[6] Batch [2300]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999247,	RPNLogLoss=0.002645,	RPNL1Loss=0.001591,	RCNNAcc=0.976652,	RCNNLogLoss=0.057711,	RCNNL1Loss=0.007786,	
+Epoch[6] Batch [2400]	Speed: 7.17 samples/sec	Train-RPNAcc=0.999245,	RPNLogLoss=0.002644,	RPNL1Loss=0.001601,	RCNNAcc=0.976649,	RCNNLogLoss=0.057961,	RCNNL1Loss=0.007810,	
+Epoch[6] Batch [2500]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999245,	RPNLogLoss=0.002643,	RPNL1Loss=0.001597,	RCNNAcc=0.976728,	RCNNLogLoss=0.057766,	RCNNL1Loss=0.007781,	
+Epoch[6] Batch [2600]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999244,	RPNLogLoss=0.002652,	RPNL1Loss=0.001590,	RCNNAcc=0.976764,	RCNNLogLoss=0.057597,	RCNNL1Loss=0.007762,	
+Epoch[6] Batch [2700]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999247,	RPNLogLoss=0.002649,	RPNL1Loss=0.001605,	RCNNAcc=0.976752,	RCNNLogLoss=0.057613,	RCNNL1Loss=0.007769,	
+Epoch[6] Batch [2800]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999250,	RPNLogLoss=0.002635,	RPNL1Loss=0.001599,	RCNNAcc=0.976685,	RCNNLogLoss=0.057806,	RCNNL1Loss=0.007826,	
+Epoch[6] Batch [2900]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999245,	RPNLogLoss=0.002642,	RPNL1Loss=0.001597,	RCNNAcc=0.976651,	RCNNLogLoss=0.057861,	RCNNL1Loss=0.007843,	
+Epoch[6] Batch [3000]	Speed: 7.52 samples/sec	Train-RPNAcc=0.999252,	RPNLogLoss=0.002624,	RPNL1Loss=0.001598,	RCNNAcc=0.976660,	RCNNLogLoss=0.057820,	RCNNL1Loss=0.007825,	
+Epoch[6] Batch [3100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999235,	RPNLogLoss=0.002688,	RPNL1Loss=0.001603,	RCNNAcc=0.976704,	RCNNLogLoss=0.057849,	RCNNL1Loss=0.007815,	
+Epoch[6] Batch [3200]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999226,	RPNLogLoss=0.002729,	RPNL1Loss=0.001600,	RCNNAcc=0.976694,	RCNNLogLoss=0.057912,	RCNNL1Loss=0.007826,	
+Epoch[6] Batch [3300]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999225,	RPNLogLoss=0.002730,	RPNL1Loss=0.001598,	RCNNAcc=0.976667,	RCNNLogLoss=0.057922,	RCNNL1Loss=0.007835,	
+Epoch[6] Batch [3400]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999214,	RPNLogLoss=0.002766,	RPNL1Loss=0.001602,	RCNNAcc=0.976695,	RCNNLogLoss=0.057897,	RCNNL1Loss=0.007823,	
+Epoch[6] Batch [3500]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999221,	RPNLogLoss=0.002749,	RPNL1Loss=0.001603,	RCNNAcc=0.976663,	RCNNLogLoss=0.057898,	RCNNL1Loss=0.007821,	
+Epoch[6] Batch [3600]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999227,	RPNLogLoss=0.002732,	RPNL1Loss=0.001600,	RCNNAcc=0.976668,	RCNNLogLoss=0.057933,	RCNNL1Loss=0.007837,	
+Epoch[6] Batch [3700]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999235,	RPNLogLoss=0.002698,	RPNL1Loss=0.001602,	RCNNAcc=0.976666,	RCNNLogLoss=0.057915,	RCNNL1Loss=0.007837,	
+Epoch[6] Batch [3800]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999250,	RPNLogLoss=0.002655,	RPNL1Loss=0.001604,	RCNNAcc=0.976614,	RCNNLogLoss=0.057985,	RCNNL1Loss=0.007848,	
+Epoch[6] Batch [3900]	Speed: 7.20 samples/sec	Train-RPNAcc=0.999249,	RPNLogLoss=0.002661,	RPNL1Loss=0.001600,	RCNNAcc=0.976631,	RCNNLogLoss=0.057968,	RCNNL1Loss=0.007867,	
+Epoch[6] Batch [4000]	Speed: 7.13 samples/sec	Train-RPNAcc=0.999253,	RPNLogLoss=0.002646,	RPNL1Loss=0.001601,	RCNNAcc=0.976656,	RCNNLogLoss=0.057900,	RCNNL1Loss=0.007860,	
+Epoch[6] Batch [4100]	Speed: 7.54 samples/sec	Train-RPNAcc=0.999257,	RPNLogLoss=0.002635,	RPNL1Loss=0.001604,	RCNNAcc=0.976648,	RCNNLogLoss=0.057941,	RCNNL1Loss=0.007856,	
+Epoch[6] Batch [4200]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999260,	RPNLogLoss=0.002623,	RPNL1Loss=0.001603,	RCNNAcc=0.976657,	RCNNLogLoss=0.057932,	RCNNL1Loss=0.007865,	
+Epoch[6] Batch [4300]	Speed: 7.23 samples/sec	Train-RPNAcc=0.999258,	RPNLogLoss=0.002623,	RPNL1Loss=0.001602,	RCNNAcc=0.976701,	RCNNLogLoss=0.057823,	RCNNL1Loss=0.007844,	
+Epoch[6] Batch [4400]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999259,	RPNLogLoss=0.002614,	RPNL1Loss=0.001599,	RCNNAcc=0.976690,	RCNNLogLoss=0.057898,	RCNNL1Loss=0.007842,	
+Epoch[6] Batch [4500]	Speed: 7.14 samples/sec	Train-RPNAcc=0.999258,	RPNLogLoss=0.002622,	RPNL1Loss=0.001598,	RCNNAcc=0.976702,	RCNNLogLoss=0.057872,	RCNNL1Loss=0.007814,	
+Epoch[6] Batch [4600]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999248,	RPNLogLoss=0.002673,	RPNL1Loss=0.001597,	RCNNAcc=0.976720,	RCNNLogLoss=0.057912,	RCNNL1Loss=0.007802,	
+Epoch[6] Batch [4700]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999250,	RPNLogLoss=0.002676,	RPNL1Loss=0.001595,	RCNNAcc=0.976753,	RCNNLogLoss=0.057832,	RCNNL1Loss=0.007764,	
+Epoch[6] Batch [4800]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999252,	RPNLogLoss=0.002670,	RPNL1Loss=0.001596,	RCNNAcc=0.976760,	RCNNLogLoss=0.057778,	RCNNL1Loss=0.007742,	
+Epoch[6] Batch [4900]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999256,	RPNLogLoss=0.002667,	RPNL1Loss=0.001595,	RCNNAcc=0.976740,	RCNNLogLoss=0.057795,	RCNNL1Loss=0.007737,	
+Epoch[6] Batch [5000]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999263,	RPNLogLoss=0.002650,	RPNL1Loss=0.001594,	RCNNAcc=0.976775,	RCNNLogLoss=0.057699,	RCNNL1Loss=0.007730,	
+Epoch[6] Batch [5100]	Speed: 7.44 samples/sec	Train-RPNAcc=0.999266,	RPNLogLoss=0.002641,	RPNL1Loss=0.001591,	RCNNAcc=0.976751,	RCNNLogLoss=0.057781,	RCNNL1Loss=0.007723,	
+Epoch[6] Batch [5200]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999267,	RPNLogLoss=0.002633,	RPNL1Loss=0.001590,	RCNNAcc=0.976725,	RCNNLogLoss=0.057843,	RCNNL1Loss=0.007727,	
+Epoch[6] Batch [5300]	Speed: 7.43 samples/sec	Train-RPNAcc=0.999272,	RPNLogLoss=0.002621,	RPNL1Loss=0.001588,	RCNNAcc=0.976747,	RCNNLogLoss=0.057820,	RCNNL1Loss=0.007725,	
+Epoch[6] Batch [5400]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999269,	RPNLogLoss=0.002624,	RPNL1Loss=0.001591,	RCNNAcc=0.976756,	RCNNLogLoss=0.057793,	RCNNL1Loss=0.007723,	
+Epoch[6] Batch [5500]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999273,	RPNLogLoss=0.002619,	RPNL1Loss=0.001587,	RCNNAcc=0.976805,	RCNNLogLoss=0.057721,	RCNNL1Loss=0.007695,	
+Epoch[6] Batch [5600]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999275,	RPNLogLoss=0.002613,	RPNL1Loss=0.001586,	RCNNAcc=0.976804,	RCNNLogLoss=0.057714,	RCNNL1Loss=0.007681,	
+Epoch[6] Batch [5700]	Speed: 7.20 samples/sec	Train-RPNAcc=0.999272,	RPNLogLoss=0.002614,	RPNL1Loss=0.001587,	RCNNAcc=0.976811,	RCNNLogLoss=0.057719,	RCNNL1Loss=0.007676,	
+Epoch[6] Batch [5800]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999253,	RPNLogLoss=0.002683,	RPNL1Loss=0.001592,	RCNNAcc=0.976795,	RCNNLogLoss=0.057716,	RCNNL1Loss=0.007685,	
+Epoch[6] Batch [5900]	Speed: 7.13 samples/sec	Train-RPNAcc=0.999250,	RPNLogLoss=0.002688,	RPNL1Loss=0.001595,	RCNNAcc=0.976733,	RCNNLogLoss=0.057852,	RCNNL1Loss=0.007709,	
+Epoch[6] Batch [6000]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999254,	RPNLogLoss=0.002669,	RPNL1Loss=0.001594,	RCNNAcc=0.976758,	RCNNLogLoss=0.057778,	RCNNL1Loss=0.007691,	
+Epoch[6] Batch [6100]	Speed: 7.66 samples/sec	Train-RPNAcc=0.999255,	RPNLogLoss=0.002663,	RPNL1Loss=0.001593,	RCNNAcc=0.976734,	RCNNLogLoss=0.057815,	RCNNL1Loss=0.007703,	
+Epoch[6] Batch [6200]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999258,	RPNLogLoss=0.002656,	RPNL1Loss=0.001594,	RCNNAcc=0.976752,	RCNNLogLoss=0.057769,	RCNNL1Loss=0.007695,	
+Epoch[6] Batch [6300]	Speed: 7.08 samples/sec	Train-RPNAcc=0.999259,	RPNLogLoss=0.002641,	RPNL1Loss=0.001593,	RCNNAcc=0.976777,	RCNNLogLoss=0.057769,	RCNNL1Loss=0.007691,	
+Epoch[6] Batch [6400]	Speed: 7.26 samples/sec	Train-RPNAcc=0.999258,	RPNLogLoss=0.002645,	RPNL1Loss=0.001592,	RCNNAcc=0.976760,	RCNNLogLoss=0.057809,	RCNNL1Loss=0.007706,	
+Epoch[6] Batch [6500]	Speed: 7.38 samples/sec	Train-RPNAcc=0.999259,	RPNLogLoss=0.002643,	RPNL1Loss=0.001589,	RCNNAcc=0.976730,	RCNNLogLoss=0.057857,	RCNNL1Loss=0.007702,	
+Epoch[6] Batch [6600]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999260,	RPNLogLoss=0.002644,	RPNL1Loss=0.001592,	RCNNAcc=0.976706,	RCNNLogLoss=0.057913,	RCNNL1Loss=0.007719,	
+Epoch[6] Batch [6700]	Speed: 7.54 samples/sec	Train-RPNAcc=0.999261,	RPNLogLoss=0.002639,	RPNL1Loss=0.001594,	RCNNAcc=0.976692,	RCNNLogLoss=0.057932,	RCNNL1Loss=0.007722,	
+Epoch[6] Batch [6800]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999251,	RPNLogLoss=0.002690,	RPNL1Loss=0.001599,	RCNNAcc=0.976705,	RCNNLogLoss=0.057903,	RCNNL1Loss=0.007711,	
+Epoch[6] Batch [6900]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999254,	RPNLogLoss=0.002680,	RPNL1Loss=0.001600,	RCNNAcc=0.976710,	RCNNLogLoss=0.057898,	RCNNL1Loss=0.007713,	
+Epoch[6] Batch [7000]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999257,	RPNLogLoss=0.002676,	RPNL1Loss=0.001598,	RCNNAcc=0.976699,	RCNNLogLoss=0.057922,	RCNNL1Loss=0.007715,	
+Epoch[6] Batch [7100]	Speed: 7.21 samples/sec	Train-RPNAcc=0.999255,	RPNLogLoss=0.002679,	RPNL1Loss=0.001600,	RCNNAcc=0.976710,	RCNNLogLoss=0.057904,	RCNNL1Loss=0.007721,	
+Epoch[6] Batch [7200]	Speed: 7.40 samples/sec	Train-RPNAcc=0.999257,	RPNLogLoss=0.002675,	RPNL1Loss=0.001600,	RCNNAcc=0.976699,	RCNNLogLoss=0.057917,	RCNNL1Loss=0.007727,	
+Epoch[6] Batch [7300]	Speed: 7.27 samples/sec	Train-RPNAcc=0.999259,	RPNLogLoss=0.002673,	RPNL1Loss=0.001598,	RCNNAcc=0.976711,	RCNNLogLoss=0.057900,	RCNNL1Loss=0.007724,	
+Epoch[6] Batch [7400]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999261,	RPNLogLoss=0.002666,	RPNL1Loss=0.001598,	RCNNAcc=0.976735,	RCNNLogLoss=0.057856,	RCNNL1Loss=0.007720,	
+Epoch[6] Batch [7500]	Speed: 7.45 samples/sec	Train-RPNAcc=0.999265,	RPNLogLoss=0.002652,	RPNL1Loss=0.001595,	RCNNAcc=0.976731,	RCNNLogLoss=0.057890,	RCNNL1Loss=0.007716,	
+Epoch[6] Batch [7600]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999267,	RPNLogLoss=0.002646,	RPNL1Loss=0.001595,	RCNNAcc=0.976724,	RCNNLogLoss=0.057912,	RCNNL1Loss=0.007718,	
+Epoch[6] Batch [7700]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999263,	RPNLogLoss=0.002654,	RPNL1Loss=0.001592,	RCNNAcc=0.976730,	RCNNLogLoss=0.057895,	RCNNL1Loss=0.007714,	
+Epoch[6] Batch [7800]	Speed: 7.15 samples/sec	Train-RPNAcc=0.999265,	RPNLogLoss=0.002646,	RPNL1Loss=0.001593,	RCNNAcc=0.976751,	RCNNLogLoss=0.057862,	RCNNL1Loss=0.007701,	
+Epoch[6] Batch [7900]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999267,	RPNLogLoss=0.002642,	RPNL1Loss=0.001594,	RCNNAcc=0.976738,	RCNNLogLoss=0.057884,	RCNNL1Loss=0.007697,	
+Epoch[6] Batch [8000]	Speed: 7.29 samples/sec	Train-RPNAcc=0.999262,	RPNLogLoss=0.002664,	RPNL1Loss=0.001593,	RCNNAcc=0.976754,	RCNNLogLoss=0.057839,	RCNNL1Loss=0.007682,	
+Epoch[6] Batch [8100]	Speed: 7.37 samples/sec	Train-RPNAcc=0.999261,	RPNLogLoss=0.002673,	RPNL1Loss=0.001592,	RCNNAcc=0.976766,	RCNNLogLoss=0.057843,	RCNNL1Loss=0.007698,	
+Epoch[6] Batch [8200]	Speed: 7.34 samples/sec	Train-RPNAcc=0.999264,	RPNLogLoss=0.002664,	RPNL1Loss=0.001592,	RCNNAcc=0.976802,	RCNNLogLoss=0.057761,	RCNNL1Loss=0.007693,	
+Epoch[6] Batch [8300]	Speed: 7.17 samples/sec	Train-RPNAcc=0.999263,	RPNLogLoss=0.002664,	RPNL1Loss=0.001592,	RCNNAcc=0.976789,	RCNNLogLoss=0.057811,	RCNNL1Loss=0.007704,	
+Epoch[6] Batch [8400]	Speed: 7.25 samples/sec	Train-RPNAcc=0.999264,	RPNLogLoss=0.002658,	RPNL1Loss=0.001591,	RCNNAcc=0.976799,	RCNNLogLoss=0.057793,	RCNNL1Loss=0.007710,	
+Epoch[6] Batch [8500]	Speed: 7.30 samples/sec	Train-RPNAcc=0.999266,	RPNLogLoss=0.002654,	RPNL1Loss=0.001591,	RCNNAcc=0.976796,	RCNNLogLoss=0.057839,	RCNNL1Loss=0.007699,	
+Epoch[6] Batch [8600]	Speed: 7.18 samples/sec	Train-RPNAcc=0.999267,	RPNLogLoss=0.002653,	RPNL1Loss=0.001590,	RCNNAcc=0.976770,	RCNNLogLoss=0.057888,	RCNNL1Loss=0.007721,	
+Epoch[6] Batch [8700]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999268,	RPNLogLoss=0.002650,	RPNL1Loss=0.001589,	RCNNAcc=0.976773,	RCNNLogLoss=0.057863,	RCNNL1Loss=0.007718,	
+Epoch[6] Batch [8800]	Speed: 7.21 samples/sec	Train-RPNAcc=0.999271,	RPNLogLoss=0.002642,	RPNL1Loss=0.001589,	RCNNAcc=0.976769,	RCNNLogLoss=0.057855,	RCNNL1Loss=0.007711,	
+Epoch[6] Batch [8900]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999273,	RPNLogLoss=0.002638,	RPNL1Loss=0.001588,	RCNNAcc=0.976765,	RCNNLogLoss=0.057870,	RCNNL1Loss=0.007719,	
+Epoch[6] Batch [9000]	Speed: 7.36 samples/sec	Train-RPNAcc=0.999272,	RPNLogLoss=0.002642,	RPNL1Loss=0.001588,	RCNNAcc=0.976752,	RCNNLogLoss=0.057905,	RCNNL1Loss=0.007730,	
+Epoch[6] Batch [9100]	Speed: 7.33 samples/sec	Train-RPNAcc=0.999272,	RPNLogLoss=0.002639,	RPNL1Loss=0.001588,	RCNNAcc=0.976772,	RCNNLogLoss=0.057867,	RCNNL1Loss=0.007718,	
+Epoch[6] Batch [9200]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999270,	RPNLogLoss=0.002648,	RPNL1Loss=0.001589,	RCNNAcc=0.976773,	RCNNLogLoss=0.057874,	RCNNL1Loss=0.007720,	
+Epoch[6] Batch [9300]	Speed: 7.31 samples/sec	Train-RPNAcc=0.999272,	RPNLogLoss=0.002645,	RPNL1Loss=0.001590,	RCNNAcc=0.976754,	RCNNLogLoss=0.058024,	RCNNL1Loss=0.007740,	
+Epoch[6] Batch [9400]	Speed: 7.32 samples/sec	Train-RPNAcc=0.999276,	RPNLogLoss=0.002633,	RPNL1Loss=0.001592,	RCNNAcc=0.976784,	RCNNLogLoss=0.057968,	RCNNL1Loss=0.007739,	
+Epoch[6] Batch [9500]	Speed: 7.47 samples/sec	Train-RPNAcc=0.999280,	RPNLogLoss=0.002618,	RPNL1Loss=0.001591,	RCNNAcc=0.976755,	RCNNLogLoss=0.058009,	RCNNL1Loss=0.007742,	
+Epoch[6] Batch [9600]	Speed: 7.39 samples/sec	Train-RPNAcc=0.999282,	RPNLogLoss=0.002608,	RPNL1Loss=0.001591,	RCNNAcc=0.976772,	RCNNLogLoss=0.057960,	RCNNL1Loss=0.007734,	
+Epoch[6] Batch [9700]	Speed: 7.14 samples/sec	Train-RPNAcc=0.999277,	RPNLogLoss=0.002616,	RPNL1Loss=0.001592,	RCNNAcc=0.976761,	RCNNLogLoss=0.057987,	RCNNL1Loss=0.007737,	
+Epoch[6] Batch [9800]	Speed: 7.24 samples/sec	Train-RPNAcc=0.999277,	RPNLogLoss=0.002619,	RPNL1Loss=0.001590,	RCNNAcc=0.976760,	RCNNLogLoss=0.057990,	RCNNL1Loss=0.007729,	
+Epoch[6] Batch [9900]	Speed: 7.22 samples/sec	Train-RPNAcc=0.999278,	RPNLogLoss=0.002616,	RPNL1Loss=0.001590,	RCNNAcc=0.976746,	RCNNLogLoss=0.058020,	RCNNL1Loss=0.007731,	
+Epoch[6] Batch [10000]	Speed: 7.42 samples/sec	Train-RPNAcc=0.999279,	RPNLogLoss=0.002614,	RPNL1Loss=0.001592,	RCNNAcc=0.976763,	RCNNLogLoss=0.058023,	RCNNL1Loss=0.007740,	
+Epoch[6] Batch [10100]	Speed: 7.21 samples/sec	Train-RPNAcc=0.999281,	RPNLogLoss=0.002610,	RPNL1Loss=0.001591,	RCNNAcc=0.976774,	RCNNLogLoss=0.057987,	RCNNL1Loss=0.007735,	
+Epoch[6] Batch [10200]	Speed: 7.35 samples/sec	Train-RPNAcc=0.999268,	RPNLogLoss=0.002656,	RPNL1Loss=0.001593,	RCNNAcc=0.976759,	RCNNLogLoss=0.058053,	RCNNL1Loss=0.007740,	
+Epoch[6] Batch [10300]	Speed: 7.40 samples/sec	Train-RPNAcc=0.999268,	RPNLogLoss=0.002657,	RPNL1Loss=0.001596,	RCNNAcc=0.976756,	RCNNLogLoss=0.058045,	RCNNL1Loss=0.007754,	
+Epoch[6] Batch [10400]	Speed: 7.28 samples/sec	Train-RPNAcc=0.999270,	RPNLogLoss=0.002648,	RPNL1Loss=0.001597,	RCNNAcc=0.976760,	RCNNLogLoss=0.058027,	RCNNL1Loss=0.007759,	
+Namespace(cfg='experiments/faster_rcnn/cfgs/resnet_v1_101_food122_attri_rcnn_end2end_v3.yaml', ignore_cache=False, shuffle=False, thresh=0.001, vis=False)
+{'CLASS_AGNOSTIC': False,
+ 'MXNET_VERSION': 'mxnet',
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': False,
+          'HAS_RPN': True,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 0,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 0,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'max_per_image': 300,
+          'test_epoch': 6},
+ 'TRAIN': {'ALTERNATE': {'RCNN_BATCH_IMAGES': 0,
+                         'RPN_BATCH_IMAGES': 0,
+                         'rfcn1_epoch': 0,
+                         'rfcn1_lr': 0,
+                         'rfcn1_lr_step': '',
+                         'rfcn2_epoch': 0,
+                         'rfcn2_lr': 0,
+                         'rfcn2_lr_step': '',
+                         'rpn1_epoch': 0,
+                         'rpn1_lr': 0,
+                         'rpn1_lr_step': '',
+                         'rpn2_epoch': 0,
+                         'rpn2_lr': 0,
+                         'rpn2_lr_step': '',
+                         'rpn3_epoch': 0,
+                         'rpn3_lr': 0,
+                         'rpn3_lr_step': ''},
+           'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 1,
+           'BATCH_ROIS': 128,
+           'BATCH_ROIS_OHEM': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': True,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.1,
+           'CXX_PROPOSAL': False,
+           'ENABLE_OHEM': False,
+           'END2END': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'FLIP': True,
+           'RESUME': False,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 0,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 300,
+           'RPN_PRE_NMS_TOP_N': 6000,
+           'SHUFFLE': True,
+           'begin_epoch': 0,
+           'end_epoch': 7,
+           'lr': 0.0005,
+           'lr_factor': 0.1,
+           'lr_step': '4.83',
+           'model_prefix': 'rcnn_food',
+           'momentum': 0.9,
+           'warmup': True,
+           'warmup_lr': 5e-05,
+           'warmup_step': 1000,
+           'wd': 0.0005},
+ 'dataset': {'NUM_ATTRI': 115,
+             'NUM_CLASSES': 123,
+             'dataset': 'Food',
+             'dataset_path': '../dataset',
+             'image_set': '122_trainval',
+             'proposal': 'rpn',
+             'root_path': './data',
+             'test_image_set': '122_test'},
+ 'default': {'frequent': 100, 'kvstore': 'device'},
+ 'gpus': '3,4',
+ 'network': {'ANCHOR_RATIOS': [0.5, 1, 2],
+             'ANCHOR_SCALES': [8, 16, 32],
+             'FIXED_PARAMS': ['conv1',
+                              'bn_conv1',
+                              'res2',
+                              'bn2',
+                              'gamma',
+                              'beta'],
+             'FIXED_PARAMS_SHARED': ['conv1',
+                                     'bn_conv1',
+                                     'res2',
+                                     'bn2',
+                                     'res3',
+                                     'bn3',
+                                     'res4',
+                                     'bn4',
+                                     'gamma',
+                                     'beta'],
+             'IMAGE_STRIDE': 0,
+             'NUM_ANCHORS': 9,
+             'PIXEL_MEANS': array([ 103.06,  115.9 ,  123.15]),
+             'RCNN_FEAT_STRIDE': 16,
+             'RPN_FEAT_STRIDE': 16,
+             'pretrained': './model/pretrained_model/resnet_v1_101',
+             'pretrained_epoch': 0},
+ 'output_path': './output/rcnn/food122',
+ 'symbol': 'resnet_v1_101_rcnn_attri_v3'}
+num_images 1162
+food_122_test gt roidb loaded from ./data/cache/food_122_test_gt_roidb.pkl
+testing 2/1162 data 0.0001s net 0.1733s post 0.0168s
+testing 4/1162 data 0.0002s net 0.1420s post 0.0167s
+testing 6/1162 data 0.0114s net 0.1351s post 0.0183s
+testing 8/1162 data 0.0087s net 0.1276s post 0.0172s
+testing 10/1162 data 0.0074s net 0.1245s post 0.0162s
+testing 12/1162 data 0.0105s net 0.1187s post 0.0157s
+testing 14/1162 data 0.0154s net 0.1166s post 0.0160s
+testing 16/1162 data 0.0153s net 0.1144s post 0.0178s
+testing 18/1162 data 0.0149s net 0.1125s post 0.0176s
+testing 20/1162 data 0.0169s net 0.1110s post 0.0171s
+testing 22/1162 data 0.0183s net 0.1100s post 0.0168s
+testing 24/1162 data 0.0205s net 0.1091s post 0.0165s
+testing 26/1162 data 0.0205s net 0.1072s post 0.0162s
+testing 28/1162 data 0.0232s net 0.1057s post 0.0160s
+testing 30/1162 data 0.0246s net 0.1055s post 0.0159s
+testing 32/1162 data 0.0252s net 0.1047s post 0.0158s
+testing 34/1162 data 0.0255s net 0.1045s post 0.0158s
+testing 36/1162 data 0.0249s net 0.1038s post 0.0158s
+testing 38/1162 data 0.0251s net 0.1047s post 0.0157s
+testing 40/1162 data 0.0253s net 0.1049s post 0.0156s
+testing 42/1162 data 0.0257s net 0.1044s post 0.0157s
+testing 44/1162 data 0.0250s net 0.1039s post 0.0157s
+testing 46/1162 data 0.0241s net 0.1040s post 0.0157s
+testing 48/1162 data 0.0233s net 0.1037s post 0.0157s
+testing 50/1162 data 0.0224s net 0.1035s post 0.0155s
+testing 52/1162 data 0.0223s net 0.1034s post 0.0153s
+testing 54/1162 data 0.0214s net 0.1038s post 0.0152s
+testing 56/1162 data 0.0207s net 0.1033s post 0.0152s
+testing 58/1162 data 0.0200s net 0.1030s post 0.0153s
+testing 60/1162 data 0.0193s net 0.1028s post 0.0153s
+testing 62/1162 data 0.0198s net 0.1026s post 0.0153s
+testing 64/1162 data 0.0201s net 0.1023s post 0.0153s
+testing 66/1162 data 0.0203s net 0.1020s post 0.0152s
+testing 68/1162 data 0.0207s net 0.1018s post 0.0152s
+testing 70/1162 data 0.0208s net 0.1018s post 0.0151s
+testing 72/1162 data 0.0203s net 0.1012s post 0.0152s
+testing 74/1162 data 0.0199s net 0.1007s post 0.0151s
+testing 76/1162 data 0.0197s net 0.1002s post 0.0150s
+testing 78/1162 data 0.0195s net 0.1002s post 0.0149s
+testing 80/1162 data 0.0191s net 0.1002s post 0.0149s
+testing 82/1162 data 0.0186s net 0.0999s post 0.0150s
+testing 84/1162 data 0.0182s net 0.0997s post 0.0150s
+testing 86/1162 data 0.0178s net 0.0996s post 0.0151s
+testing 88/1162 data 0.0175s net 0.0996s post 0.0152s
+testing 90/1162 data 0.0173s net 0.0993s post 0.0153s
+testing 92/1162 data 0.0171s net 0.0992s post 0.0153s
+testing 94/1162 data 0.0167s net 0.0990s post 0.0153s
+testing 96/1162 data 0.0165s net 0.0989s post 0.0153s
+testing 98/1162 data 0.0162s net 0.0988s post 0.0152s
+testing 100/1162 data 0.0159s net 0.0987s post 0.0152s
+testing 102/1162 data 0.0156s net 0.0985s post 0.0152s
+testing 104/1162 data 0.0161s net 0.0983s post 0.0151s
+testing 106/1162 data 0.0160s net 0.0984s post 0.0151s
+testing 108/1162 data 0.0157s net 0.0982s post 0.0152s
+testing 110/1162 data 0.0159s net 0.0982s post 0.0152s
+testing 112/1162 data 0.0164s net 0.0981s post 0.0152s
+testing 114/1162 data 0.0170s net 0.0981s post 0.0152s
+testing 116/1162 data 0.0177s net 0.0981s post 0.0153s
+testing 118/1162 data 0.0183s net 0.0983s post 0.0153s
+testing 120/1162 data 0.0185s net 0.0985s post 0.0153s
+testing 122/1162 data 0.0188s net 0.0984s post 0.0153s
+testing 124/1162 data 0.0195s net 0.0983s post 0.0153s
+testing 126/1162 data 0.0196s net 0.0983s post 0.0153s
+testing 128/1162 data 0.0198s net 0.0981s post 0.0153s
+testing 130/1162 data 0.0200s net 0.0980s post 0.0153s
+testing 132/1162 data 0.0201s net 0.0979s post 0.0153s
+testing 134/1162 data 0.0201s net 0.0980s post 0.0153s
+testing 136/1162 data 0.0198s net 0.0980s post 0.0153s
+testing 138/1162 data 0.0202s net 0.0978s post 0.0153s
+testing 140/1162 data 0.0208s net 0.0978s post 0.0152s
+testing 142/1162 data 0.0209s net 0.0978s post 0.0152s
+testing 144/1162 data 0.0211s net 0.0977s post 0.0152s
+testing 146/1162 data 0.0212s net 0.0977s post 0.0153s
+testing 148/1162 data 0.0217s net 0.0976s post 0.0153s
+testing 150/1162 data 0.0218s net 0.0975s post 0.0153s
+testing 152/1162 data 0.0220s net 0.0979s post 0.0153s
+testing 154/1162 data 0.0221s net 0.0978s post 0.0153s
+testing 156/1162 data 0.0223s net 0.0978s post 0.0152s
+testing 158/1162 data 0.0225s net 0.0979s post 0.0152s
+testing 160/1162 data 0.0225s net 0.0978s post 0.0152s
+testing 162/1162 data 0.0226s net 0.0979s post 0.0152s
+testing 164/1162 data 0.0227s net 0.0978s post 0.0152s
+testing 166/1162 data 0.0228s net 0.0978s post 0.0151s
+testing 168/1162 data 0.0231s net 0.0979s post 0.0151s
+testing 170/1162 data 0.0232s net 0.0980s post 0.0151s
+testing 172/1162 data 0.0234s net 0.0979s post 0.0151s
+testing 174/1162 data 0.0235s net 0.0979s post 0.0151s
+testing 176/1162 data 0.0234s net 0.0978s post 0.0151s
+testing 178/1162 data 0.0234s net 0.0978s post 0.0151s
+testing 180/1162 data 0.0232s net 0.0978s post 0.0151s
+testing 182/1162 data 0.0230s net 0.0977s post 0.0151s
+testing 184/1162 data 0.0230s net 0.0977s post 0.0152s
+testing 186/1162 data 0.0227s net 0.0976s post 0.0152s
+testing 188/1162 data 0.0225s net 0.0975s post 0.0152s
+testing 190/1162 data 0.0224s net 0.0975s post 0.0152s
+testing 192/1162 data 0.0222s net 0.0976s post 0.0152s
+testing 194/1162 data 0.0220s net 0.0975s post 0.0152s
+testing 196/1162 data 0.0218s net 0.0975s post 0.0153s
+testing 198/1162 data 0.0216s net 0.0975s post 0.0152s
+testing 200/1162 data 0.0215s net 0.0974s post 0.0152s
+testing 202/1162 data 0.0215s net 0.0974s post 0.0153s
+testing 204/1162 data 0.0213s net 0.0973s post 0.0153s
+testing 206/1162 data 0.0212s net 0.0973s post 0.0153s
+testing 208/1162 data 0.0210s net 0.0972s post 0.0153s
+testing 210/1162 data 0.0208s net 0.0970s post 0.0153s
+testing 212/1162 data 0.0215s net 0.0969s post 0.0153s
+testing 214/1162 data 0.0217s net 0.0969s post 0.0153s
+testing 216/1162 data 0.0216s net 0.0968s post 0.0153s
+testing 218/1162 data 0.0217s net 0.0969s post 0.0153s
+testing 220/1162 data 0.0217s net 0.0969s post 0.0153s
+testing 222/1162 data 0.0218s net 0.0968s post 0.0153s
+testing 224/1162 data 0.0219s net 0.0967s post 0.0153s
+testing 226/1162 data 0.0217s net 0.0968s post 0.0153s
+testing 228/1162 data 0.0215s net 0.0968s post 0.0153s
+testing 230/1162 data 0.0214s net 0.0967s post 0.0153s
+testing 232/1162 data 0.0212s net 0.0967s post 0.0153s
+testing 234/1162 data 0.0214s net 0.0967s post 0.0153s
+testing 236/1162 data 0.0215s net 0.0967s post 0.0152s
+testing 238/1162 data 0.0216s net 0.0967s post 0.0152s
+testing 240/1162 data 0.0216s net 0.0966s post 0.0152s
+testing 242/1162 data 0.0216s net 0.0966s post 0.0152s
+testing 244/1162 data 0.0217s net 0.0967s post 0.0152s
+testing 246/1162 data 0.0218s net 0.0968s post 0.0152s
+testing 248/1162 data 0.0221s net 0.0968s post 0.0152s
+testing 250/1162 data 0.0222s net 0.0968s post 0.0152s
+testing 252/1162 data 0.0221s net 0.0968s post 0.0153s
+testing 254/1162 data 0.0221s net 0.0967s post 0.0153s
+testing 256/1162 data 0.0222s net 0.0967s post 0.0153s
+testing 258/1162 data 0.0224s net 0.0967s post 0.0153s
+testing 260/1162 data 0.0226s net 0.0967s post 0.0153s
+testing 262/1162 data 0.0227s net 0.0967s post 0.0153s
+testing 264/1162 data 0.0226s net 0.0968s post 0.0153s
+testing 266/1162 data 0.0226s net 0.0968s post 0.0153s
+testing 268/1162 data 0.0226s net 0.0968s post 0.0153s
+testing 270/1162 data 0.0225s net 0.0968s post 0.0153s
+testing 272/1162 data 0.0224s net 0.0968s post 0.0153s
+testing 274/1162 data 0.0224s net 0.0968s post 0.0153s
+testing 276/1162 data 0.0223s net 0.0968s post 0.0153s
+testing 278/1162 data 0.0221s net 0.0968s post 0.0153s
+testing 280/1162 data 0.0220s net 0.0968s post 0.0153s
+testing 282/1162 data 0.0219s net 0.0967s post 0.0153s
+testing 284/1162 data 0.0218s net 0.0968s post 0.0153s
+testing 286/1162 data 0.0216s net 0.0968s post 0.0153s
+testing 288/1162 data 0.0217s net 0.0968s post 0.0153s
+testing 290/1162 data 0.0218s net 0.0967s post 0.0153s
+testing 292/1162 data 0.0217s net 0.0967s post 0.0153s
+testing 294/1162 data 0.0217s net 0.0967s post 0.0154s
+testing 296/1162 data 0.0215s net 0.0967s post 0.0154s
+testing 298/1162 data 0.0216s net 0.0966s post 0.0154s
+testing 300/1162 data 0.0215s net 0.0967s post 0.0154s
+testing 302/1162 data 0.0213s net 0.0967s post 0.0154s
+testing 304/1162 data 0.0213s net 0.0966s post 0.0154s
+testing 306/1162 data 0.0212s net 0.0966s post 0.0154s
+testing 308/1162 data 0.0211s net 0.0966s post 0.0154s
+testing 310/1162 data 0.0209s net 0.0966s post 0.0154s
+testing 312/1162 data 0.0209s net 0.0966s post 0.0154s
+testing 314/1162 data 0.0210s net 0.0966s post 0.0154s
+testing 316/1162 data 0.0210s net 0.0968s post 0.0154s
+testing 318/1162 data 0.0211s net 0.0969s post 0.0154s
+testing 320/1162 data 0.0209s net 0.0969s post 0.0154s
+testing 322/1162 data 0.0212s net 0.0969s post 0.0155s
+testing 324/1162 data 0.0213s net 0.0969s post 0.0155s
+testing 326/1162 data 0.0214s net 0.0968s post 0.0155s
+testing 328/1162 data 0.0215s net 0.0968s post 0.0155s
+testing 330/1162 data 0.0217s net 0.0968s post 0.0155s
+testing 332/1162 data 0.0218s net 0.0967s post 0.0155s
+testing 334/1162 data 0.0219s net 0.0967s post 0.0155s
+testing 336/1162 data 0.0219s net 0.0967s post 0.0155s
+testing 338/1162 data 0.0222s net 0.0967s post 0.0155s
+testing 340/1162 data 0.0223s net 0.0967s post 0.0155s
+testing 342/1162 data 0.0224s net 0.0967s post 0.0155s
+testing 344/1162 data 0.0225s net 0.0967s post 0.0155s
+testing 346/1162 data 0.0225s net 0.0967s post 0.0155s
+testing 348/1162 data 0.0224s net 0.0967s post 0.0155s
+testing 350/1162 data 0.0224s net 0.0967s post 0.0155s
+testing 352/1162 data 0.0225s net 0.0967s post 0.0155s
+testing 354/1162 data 0.0225s net 0.0967s post 0.0155s
+testing 356/1162 data 0.0226s net 0.0968s post 0.0155s
+testing 358/1162 data 0.0227s net 0.0968s post 0.0155s
+testing 360/1162 data 0.0228s net 0.0968s post 0.0155s
+testing 362/1162 data 0.0227s net 0.0968s post 0.0155s
+testing 364/1162 data 0.0227s net 0.0968s post 0.0155s
+testing 366/1162 data 0.0227s net 0.0968s post 0.0155s
+testing 368/1162 data 0.0229s net 0.0967s post 0.0155s
+testing 370/1162 data 0.0230s net 0.0967s post 0.0155s
+testing 372/1162 data 0.0230s net 0.0967s post 0.0155s
+testing 374/1162 data 0.0230s net 0.0967s post 0.0155s
+testing 376/1162 data 0.0231s net 0.0967s post 0.0155s
+testing 378/1162 data 0.0231s net 0.0967s post 0.0155s
+testing 380/1162 data 0.0232s net 0.0967s post 0.0155s
+testing 382/1162 data 0.0231s net 0.0966s post 0.0155s
+testing 384/1162 data 0.0231s net 0.0966s post 0.0155s
+testing 386/1162 data 0.0233s net 0.0966s post 0.0155s
+testing 388/1162 data 0.0233s net 0.0967s post 0.0155s
+testing 390/1162 data 0.0234s net 0.0967s post 0.0155s
+testing 392/1162 data 0.0235s net 0.0967s post 0.0155s
+testing 394/1162 data 0.0236s net 0.0967s post 0.0155s
+testing 396/1162 data 0.0237s net 0.0966s post 0.0155s
+testing 398/1162 data 0.0238s net 0.0966s post 0.0155s
+testing 400/1162 data 0.0240s net 0.0966s post 0.0155s
+testing 402/1162 data 0.0240s net 0.0966s post 0.0155s
+testing 404/1162 data 0.0240s net 0.0966s post 0.0155s
+testing 406/1162 data 0.0241s net 0.0966s post 0.0155s
+testing 408/1162 data 0.0298s net 0.0967s post 0.0155s
+testing 410/1162 data 0.0299s net 0.0966s post 0.0155s
+testing 412/1162 data 0.0298s net 0.0966s post 0.0155s
+testing 414/1162 data 0.0298s net 0.0966s post 0.0155s
+testing 416/1162 data 0.0298s net 0.0966s post 0.0155s
+testing 418/1162 data 0.0298s net 0.0965s post 0.0155s
+testing 420/1162 data 0.0297s net 0.0965s post 0.0155s
+testing 422/1162 data 0.0296s net 0.0965s post 0.0155s
+testing 424/1162 data 0.0294s net 0.0965s post 0.0155s
+testing 426/1162 data 0.0296s net 0.0965s post 0.0155s
+testing 428/1162 data 0.0296s net 0.0965s post 0.0155s
+testing 430/1162 data 0.0295s net 0.0965s post 0.0155s
+testing 432/1162 data 0.0294s net 0.0965s post 0.0155s
+testing 434/1162 data 0.0294s net 0.0965s post 0.0155s
+testing 436/1162 data 0.0293s net 0.0965s post 0.0155s
+testing 438/1162 data 0.0293s net 0.0965s post 0.0155s
+testing 440/1162 data 0.0292s net 0.0965s post 0.0156s
+testing 442/1162 data 0.0291s net 0.0965s post 0.0156s
+testing 444/1162 data 0.0290s net 0.0965s post 0.0156s
+testing 446/1162 data 0.0291s net 0.0965s post 0.0155s
+testing 448/1162 data 0.0291s net 0.0965s post 0.0155s
+testing 450/1162 data 0.0292s net 0.0965s post 0.0155s
+testing 452/1162 data 0.0293s net 0.0965s post 0.0155s
+testing 454/1162 data 0.0293s net 0.0965s post 0.0155s
+testing 456/1162 data 0.0294s net 0.0964s post 0.0155s
+testing 458/1162 data 0.0294s net 0.0964s post 0.0155s
+testing 460/1162 data 0.0295s net 0.0964s post 0.0155s
+testing 462/1162 data 0.0295s net 0.0964s post 0.0155s
+testing 464/1162 data 0.0294s net 0.0964s post 0.0155s
+testing 466/1162 data 0.0294s net 0.0964s post 0.0155s
+testing 468/1162 data 0.0294s net 0.0964s post 0.0155s
+testing 470/1162 data 0.0294s net 0.0963s post 0.0155s
+testing 472/1162 data 0.0294s net 0.0963s post 0.0154s
+testing 474/1162 data 0.0294s net 0.0963s post 0.0155s
+testing 476/1162 data 0.0295s net 0.0963s post 0.0155s
+testing 478/1162 data 0.0296s net 0.0963s post 0.0154s
+testing 480/1162 data 0.0296s net 0.0963s post 0.0154s
+testing 482/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 484/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 486/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 488/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 490/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 492/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 494/1162 data 0.0296s net 0.0963s post 0.0154s
+testing 496/1162 data 0.0296s net 0.0963s post 0.0154s
+testing 498/1162 data 0.0296s net 0.0963s post 0.0154s
+testing 500/1162 data 0.0296s net 0.0963s post 0.0154s
+testing 502/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 504/1162 data 0.0295s net 0.0963s post 0.0154s
+testing 506/1162 data 0.0294s net 0.0963s post 0.0154s
+testing 508/1162 data 0.0292s net 0.0963s post 0.0154s
+testing 510/1162 data 0.0291s net 0.0963s post 0.0154s
+testing 512/1162 data 0.0290s net 0.0963s post 0.0154s
+testing 514/1162 data 0.0289s net 0.0963s post 0.0154s
+testing 516/1162 data 0.0288s net 0.0962s post 0.0155s
+testing 518/1162 data 0.0287s net 0.0962s post 0.0154s
+testing 520/1162 data 0.0286s net 0.0962s post 0.0154s
+testing 522/1162 data 0.0285s net 0.0962s post 0.0154s
+testing 524/1162 data 0.0284s net 0.0962s post 0.0155s
+testing 526/1162 data 0.0283s net 0.0962s post 0.0155s
+testing 528/1162 data 0.0282s net 0.0961s post 0.0155s
+testing 530/1162 data 0.0281s net 0.0961s post 0.0155s
+testing 532/1162 data 0.0280s net 0.0961s post 0.0155s
+testing 534/1162 data 0.0280s net 0.0961s post 0.0155s
+testing 536/1162 data 0.0279s net 0.0961s post 0.0155s
+testing 538/1162 data 0.0278s net 0.0961s post 0.0155s
+testing 540/1162 data 0.0277s net 0.0961s post 0.0155s
+testing 542/1162 data 0.0276s net 0.0961s post 0.0155s
+testing 544/1162 data 0.0275s net 0.0961s post 0.0155s
+testing 546/1162 data 0.0274s net 0.0961s post 0.0156s
+testing 548/1162 data 0.0273s net 0.0960s post 0.0156s
+testing 550/1162 data 0.0272s net 0.0960s post 0.0156s
+testing 552/1162 data 0.0271s net 0.0960s post 0.0156s
+testing 554/1162 data 0.0270s net 0.0960s post 0.0155s
+testing 556/1162 data 0.0270s net 0.0960s post 0.0156s
+testing 558/1162 data 0.0270s net 0.0960s post 0.0156s
+testing 560/1162 data 0.0271s net 0.0960s post 0.0156s
+testing 562/1162 data 0.0270s net 0.0959s post 0.0156s
+testing 564/1162 data 0.0270s net 0.0960s post 0.0156s
+testing 566/1162 data 0.0270s net 0.0959s post 0.0155s
+testing 568/1162 data 0.0270s net 0.0960s post 0.0156s
+testing 570/1162 data 0.0269s net 0.0960s post 0.0155s
+testing 572/1162 data 0.0270s net 0.0959s post 0.0155s
+testing 574/1162 data 0.0270s net 0.0959s post 0.0155s
+testing 576/1162 data 0.0271s net 0.0959s post 0.0155s
+testing 578/1162 data 0.0271s net 0.0959s post 0.0155s
+testing 580/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 582/1162 data 0.0270s net 0.0958s post 0.0154s
+testing 584/1162 data 0.0270s net 0.0958s post 0.0154s
+testing 586/1162 data 0.0270s net 0.0957s post 0.0154s
+testing 588/1162 data 0.0269s net 0.0957s post 0.0154s
+testing 590/1162 data 0.0269s net 0.0957s post 0.0154s
+testing 592/1162 data 0.0270s net 0.0957s post 0.0154s
+testing 594/1162 data 0.0270s net 0.0957s post 0.0155s
+testing 596/1162 data 0.0270s net 0.0957s post 0.0155s
+testing 598/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 600/1162 data 0.0268s net 0.0957s post 0.0155s
+testing 602/1162 data 0.0268s net 0.0957s post 0.0155s
+testing 604/1162 data 0.0268s net 0.0957s post 0.0154s
+testing 606/1162 data 0.0268s net 0.0957s post 0.0154s
+testing 608/1162 data 0.0268s net 0.0957s post 0.0155s
+testing 610/1162 data 0.0267s net 0.0957s post 0.0155s
+testing 612/1162 data 0.0267s net 0.0957s post 0.0155s
+testing 614/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 616/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 618/1162 data 0.0267s net 0.0957s post 0.0155s
+testing 620/1162 data 0.0268s net 0.0957s post 0.0155s
+testing 622/1162 data 0.0268s net 0.0957s post 0.0155s
+testing 624/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 626/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 628/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 630/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 632/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 634/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 636/1162 data 0.0270s net 0.0958s post 0.0155s
+testing 638/1162 data 0.0270s net 0.0958s post 0.0155s
+testing 640/1162 data 0.0270s net 0.0957s post 0.0155s
+testing 642/1162 data 0.0271s net 0.0957s post 0.0155s
+testing 644/1162 data 0.0272s net 0.0958s post 0.0155s
+testing 646/1162 data 0.0272s net 0.0958s post 0.0155s
+testing 648/1162 data 0.0272s net 0.0958s post 0.0155s
+testing 650/1162 data 0.0272s net 0.0958s post 0.0155s
+testing 652/1162 data 0.0273s net 0.0958s post 0.0155s
+testing 654/1162 data 0.0273s net 0.0958s post 0.0155s
+testing 656/1162 data 0.0273s net 0.0958s post 0.0155s
+testing 658/1162 data 0.0274s net 0.0958s post 0.0155s
+testing 660/1162 data 0.0274s net 0.0958s post 0.0155s
+testing 662/1162 data 0.0274s net 0.0958s post 0.0155s
+testing 664/1162 data 0.0274s net 0.0957s post 0.0155s
+testing 666/1162 data 0.0274s net 0.0957s post 0.0155s
+testing 668/1162 data 0.0273s net 0.0957s post 0.0155s
+testing 670/1162 data 0.0272s net 0.0957s post 0.0155s
+testing 672/1162 data 0.0272s net 0.0957s post 0.0155s
+testing 674/1162 data 0.0271s net 0.0957s post 0.0155s
+testing 676/1162 data 0.0271s net 0.0957s post 0.0156s
+testing 678/1162 data 0.0270s net 0.0957s post 0.0155s
+testing 680/1162 data 0.0269s net 0.0957s post 0.0156s
+testing 682/1162 data 0.0269s net 0.0957s post 0.0156s
+testing 684/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 686/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 688/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 690/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 692/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 694/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 696/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 698/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 700/1162 data 0.0269s net 0.0959s post 0.0156s
+testing 702/1162 data 0.0269s net 0.0959s post 0.0156s
+testing 704/1162 data 0.0269s net 0.0959s post 0.0156s
+testing 706/1162 data 0.0270s net 0.0959s post 0.0156s
+testing 708/1162 data 0.0270s net 0.0959s post 0.0156s
+testing 710/1162 data 0.0270s net 0.0958s post 0.0155s
+testing 712/1162 data 0.0270s net 0.0958s post 0.0155s
+testing 714/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 716/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 718/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 720/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 722/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 724/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 726/1162 data 0.0271s net 0.0958s post 0.0155s
+testing 728/1162 data 0.0270s net 0.0958s post 0.0155s
+testing 730/1162 data 0.0270s net 0.0958s post 0.0155s
+testing 732/1162 data 0.0269s net 0.0958s post 0.0155s
+testing 734/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 736/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 738/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 740/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 742/1162 data 0.0266s net 0.0958s post 0.0155s
+testing 744/1162 data 0.0266s net 0.0958s post 0.0155s
+testing 746/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 748/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 750/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 752/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 754/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 756/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 758/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 760/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 762/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 764/1162 data 0.0268s net 0.0958s post 0.0155s
+testing 766/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 768/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 770/1162 data 0.0267s net 0.0959s post 0.0155s
+testing 772/1162 data 0.0266s net 0.0959s post 0.0155s
+testing 774/1162 data 0.0266s net 0.0959s post 0.0155s
+testing 776/1162 data 0.0266s net 0.0959s post 0.0155s
+testing 778/1162 data 0.0265s net 0.0959s post 0.0155s
+testing 780/1162 data 0.0264s net 0.0959s post 0.0155s
+testing 782/1162 data 0.0265s net 0.0959s post 0.0155s
+testing 784/1162 data 0.0265s net 0.0959s post 0.0156s
+testing 786/1162 data 0.0266s net 0.0959s post 0.0156s
+testing 788/1162 data 0.0266s net 0.0959s post 0.0155s
+testing 790/1162 data 0.0267s net 0.0959s post 0.0155s
+testing 792/1162 data 0.0268s net 0.0959s post 0.0155s
+testing 794/1162 data 0.0268s net 0.0959s post 0.0155s
+testing 796/1162 data 0.0268s net 0.0959s post 0.0155s
+testing 798/1162 data 0.0267s net 0.0959s post 0.0155s
+testing 800/1162 data 0.0267s net 0.0959s post 0.0155s
+testing 802/1162 data 0.0267s net 0.0959s post 0.0155s
+testing 804/1162 data 0.0267s net 0.0959s post 0.0155s
+testing 806/1162 data 0.0267s net 0.0958s post 0.0155s
+testing 808/1162 data 0.0266s net 0.0959s post 0.0155s
+testing 810/1162 data 0.0266s net 0.0959s post 0.0155s
+testing 812/1162 data 0.0265s net 0.0959s post 0.0155s
+testing 814/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 816/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 818/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 820/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 822/1162 data 0.0265s net 0.0958s post 0.0155s
+testing 824/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 826/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 828/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 830/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 832/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 834/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 836/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 838/1162 data 0.0264s net 0.0958s post 0.0155s
+testing 840/1162 data 0.0263s net 0.0958s post 0.0155s
+testing 842/1162 data 0.0263s net 0.0958s post 0.0155s
+testing 844/1162 data 0.0262s net 0.0958s post 0.0155s
+testing 846/1162 data 0.0262s net 0.0958s post 0.0155s
+testing 848/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 850/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 852/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 854/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 856/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 858/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 860/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 862/1162 data 0.0260s net 0.0958s post 0.0155s
+testing 864/1162 data 0.0260s net 0.0958s post 0.0155s
+testing 866/1162 data 0.0260s net 0.0958s post 0.0155s
+testing 868/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 870/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 872/1162 data 0.0261s net 0.0958s post 0.0155s
+testing 874/1162 data 0.0260s net 0.0958s post 0.0155s
+testing 876/1162 data 0.0260s net 0.0958s post 0.0155s
+testing 878/1162 data 0.0259s net 0.0958s post 0.0155s
+testing 880/1162 data 0.0259s net 0.0958s post 0.0156s
+testing 882/1162 data 0.0259s net 0.0958s post 0.0156s
+testing 884/1162 data 0.0258s net 0.0958s post 0.0156s
+testing 886/1162 data 0.0257s net 0.0958s post 0.0156s
+testing 888/1162 data 0.0257s net 0.0958s post 0.0156s
+testing 890/1162 data 0.0257s net 0.0958s post 0.0156s
+testing 892/1162 data 0.0256s net 0.0958s post 0.0156s
+testing 894/1162 data 0.0255s net 0.0958s post 0.0156s
+testing 896/1162 data 0.0255s net 0.0958s post 0.0156s
+testing 898/1162 data 0.0254s net 0.0958s post 0.0156s
+testing 900/1162 data 0.0254s net 0.0958s post 0.0156s
+testing 902/1162 data 0.0253s net 0.0958s post 0.0156s
+testing 904/1162 data 0.0253s net 0.0958s post 0.0156s
+testing 906/1162 data 0.0253s net 0.0958s post 0.0156s
+testing 908/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 910/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 912/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 914/1162 data 0.0253s net 0.0958s post 0.0156s
+testing 916/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 918/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 920/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 922/1162 data 0.0251s net 0.0959s post 0.0156s
+testing 924/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 926/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 928/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 930/1162 data 0.0249s net 0.0958s post 0.0156s
+testing 932/1162 data 0.0249s net 0.0958s post 0.0156s
+testing 934/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 936/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 938/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 940/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 942/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 944/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 946/1162 data 0.0250s net 0.0958s post 0.0156s
+testing 948/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 950/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 952/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 954/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 956/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 958/1162 data 0.0252s net 0.0959s post 0.0156s
+testing 960/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 962/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 964/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 966/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 968/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 970/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 972/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 974/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 976/1162 data 0.0252s net 0.0958s post 0.0156s
+testing 978/1162 data 0.0251s net 0.0958s post 0.0156s
+testing 980/1162 data 0.0251s net 0.0959s post 0.0156s
+testing 982/1162 data 0.0251s net 0.0959s post 0.0156s
+testing 984/1162 data 0.0252s net 0.0959s post 0.0156s
+testing 986/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 988/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 990/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 992/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 994/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 996/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 998/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 1000/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 1002/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 1004/1162 data 0.0253s net 0.0959s post 0.0156s
+testing 1006/1162 data 0.0252s net 0.0959s post 0.0156s
+testing 1008/1162 data 0.0252s net 0.0959s post 0.0156s
+testing 1010/1162 data 0.0252s net 0.0959s post 0.0156s
+testing 1012/1162 data 0.0251s net 0.0959s post 0.0156s
+testing 1014/1162 data 0.0251s net 0.0959s post 0.0156s
+testing 1016/1162 data 0.0250s net 0.0959s post 0.0156s
+testing 1018/1162 data 0.0250s net 0.0959s post 0.0156s
+testing 1020/1162 data 0.0250s net 0.0959s post 0.0156s
+testing 1022/1162 data 0.0249s net 0.0959s post 0.0156s
+testing 1024/1162 data 0.0249s net 0.0959s post 0.0156s
+testing 1026/1162 data 0.0248s net 0.0959s post 0.0156s
+testing 1028/1162 data 0.0248s net 0.0959s post 0.0156s
+testing 1030/1162 data 0.0247s net 0.0959s post 0.0156s
+testing 1032/1162 data 0.0247s net 0.0959s post 0.0156s
+testing 1034/1162 data 0.0247s net 0.0959s post 0.0156s
+testing 1036/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1038/1162 data 0.0246s net 0.0959s post 0.0157s
+testing 1040/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1042/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1044/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1046/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1048/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1050/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1052/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1054/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1056/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1058/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1060/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1062/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1064/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1066/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1068/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1070/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1072/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1074/1162 data 0.0245s net 0.0959s post 0.0157s
+testing 1076/1162 data 0.0246s net 0.0959s post 0.0157s
+testing 1078/1162 data 0.0246s net 0.0959s post 0.0157s
+testing 1080/1162 data 0.0246s net 0.0959s post 0.0157s
+testing 1082/1162 data 0.0246s net 0.0959s post 0.0157s
+testing 1084/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1086/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1088/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1090/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1092/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1094/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1096/1162 data 0.0247s net 0.0960s post 0.0157s
+testing 1098/1162 data 0.0247s net 0.0960s post 0.0157s
+testing 1100/1162 data 0.0247s net 0.0960s post 0.0157s
+testing 1102/1162 data 0.0247s net 0.0960s post 0.0157s
+testing 1104/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1106/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1108/1162 data 0.0247s net 0.0960s post 0.0157s
+testing 1110/1162 data 0.0247s net 0.0960s post 0.0157s
+testing 1112/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1114/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1116/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1118/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1120/1162 data 0.0247s net 0.0959s post 0.0157s
+testing 1122/1162 data 0.0246s net 0.0959s post 0.0157s
+testing 1124/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1126/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1128/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1130/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1132/1162 data 0.0244s net 0.0959s post 0.0156s
+testing 1134/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1136/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1138/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1140/1162 data 0.0245s net 0.0959s post 0.0156s
+testing 1142/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1144/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1146/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1148/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1150/1162 data 0.0246s net 0.0959s post 0.0156s
+testing 1152/1162 data 0.0247s net 0.0959s post 0.0156s
+testing 1154/1162 data 0.0247s net 0.0959s post 0.0156s
+testing 1156/1162 data 0.0248s net 0.0959s post 0.0156s
+testing 1158/1162 data 0.0248s net 0.0959s post 0.0156s
+testing 1160/1162 data 0.0248s net 0.0959s post 0.0156s
+testing 1162/1162 data 0.0248s net 0.0959s post 0.0156s
+Writing 1 VOC results file
+Writing 2 VOC results file
+Writing 3 VOC results file
+Writing 4 VOC results file
+Writing 5 VOC results file
+Writing 6 VOC results file
+Writing 7 VOC results file
+Writing 8 VOC results file
+Writing 9 VOC results file
+Writing 10 VOC results file
+Writing 11 VOC results file
+Writing 12 VOC results file
+Writing 13 VOC results file
+Writing 14 VOC results file
+Writing 15 VOC results file
+Writing 16 VOC results file
+Writing 17 VOC results file
+Writing 18 VOC results file
+Writing 19 VOC results file
+Writing 20 VOC results file
+Writing 21 VOC results file
+Writing 22 VOC results file
+Writing 23 VOC results file
+Writing 24 VOC results file
+Writing 25 VOC results file
+Writing 26 VOC results file
+Writing 27 VOC results file
+Writing 28 VOC results file
+Writing 29 VOC results file
+Writing 30 VOC results file
+Writing 31 VOC results file
+Writing 32 VOC results file
+Writing 33 VOC results file
+Writing 34 VOC results file
+Writing 35 VOC results file
+Writing 36 VOC results file
+Writing 37 VOC results file
+Writing 38 VOC results file
+Writing 39 VOC results file
+Writing 41 VOC results file
+Writing 42 VOC results file
+Writing 43 VOC results file
+Writing 44 VOC results file
+Writing 45 VOC results file
+Writing 46 VOC results file
+Writing 47 VOC results file
+Writing 48 VOC results file
+Writing 49 VOC results file
+Writing 50 VOC results file
+Writing 51 VOC results file
+Writing 52 VOC results file
+Writing 53 VOC results file
+Writing 54 VOC results file
+Writing 55 VOC results file
+Writing 56 VOC results file
+Writing 57 VOC results file
+Writing 58 VOC results file
+Writing 59 VOC results file
+Writing 60 VOC results file
+Writing 61 VOC results file
+Writing 62 VOC results file
+Writing 63 VOC results file
+Writing 64 VOC results file
+Writing 65 VOC results file
+Writing 66 VOC results file
+Writing 67 VOC results file
+Writing 68 VOC results file
+Writing 69 VOC results file
+Writing 70 VOC results file
+Writing 71 VOC results file
+Writing 72 VOC results file
+Writing 73 VOC results file
+Writing 74 VOC results file
+Writing 75 VOC results file
+Writing 76 VOC results file
+Writing 77 VOC results file
+Writing 78 VOC results file
+Writing 79 VOC results file
+Writing 80 VOC results file
+Writing 81 VOC results file
+Writing 82 VOC results file
+Writing 83 VOC results file
+Writing 85 VOC results file
+Writing 86 VOC results file
+Writing 87 VOC results file
+Writing 88 VOC results file
+Writing 89 VOC results file
+Writing 90 VOC results file
+Writing 91 VOC results file
+Writing 92 VOC results file
+Writing 93 VOC results file
+Writing 94 VOC results file
+Writing 95 VOC results file
+Writing 96 VOC results file
+Writing 97 VOC results file
+Writing 98 VOC results file
+Writing 99 VOC results file
+Writing 100 VOC results file
+Writing 101 VOC results file
+Writing 102 VOC results file
+Writing 103 VOC results file
+Writing 104 VOC results file
+Writing 105 VOC results file
+Writing 106 VOC results file
+Writing 107 VOC results file
+Writing 108 VOC results file
+Writing 109 VOC results file
+Writing 110 VOC results file
+Writing 111 VOC results file
+Writing 112 VOC results file
+Writing 113 VOC results file
+Writing 114 VOC results file
+Writing 115 VOC results file
+Writing 116 VOC results file
+Writing 117 VOC results file
+Writing 118 VOC results file
+Writing 119 VOC results file
+Writing 120 VOC results file
+Writing 121 VOC results file
+Writing 122 VOC results file
+Writing 123 VOC results file
+Writing 124 VOC results file
+VOC07 metric? Y
+Mean AP@0.50 = 0.9499
+Mean AP@0.55 = 0.9499
+Mean AP@0.60 = 0.9496
+Mean AP@0.65 = 0.9496
+Mean AP@0.70 = 0.9460
+Mean AP@0.75 = 0.9350
+Mean AP@0.80 = 0.9115
+Mean AP@0.85 = 0.7745
+Mean AP@0.90 = 0.4141
+Mean AP@0.95 = 0.0476
+0.7828
